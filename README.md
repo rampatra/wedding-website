@@ -1,5 +1,6 @@
 # Wedding Website
-A beautiful, feature rich, device friendly wedding website.
+A beautiful, feature rich, device friendly wedding website. See [wedding.rampatra.com](http://wedding.rampatra.com/)
+for a demo.
 
 # Highlights
 1. Slick and fully __responsive__ design.
