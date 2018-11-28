@@ -1,0 +1,76 @@
+// Typography partial
+@import "partials/colors";
+
+// Fonts
+
+$sans-serif: 'Open Sans', sans-serif;
+$serif: Merriweather, Georgia, 'Times New Roman', serif;
+$accent-font: 'Nunito', sans-serif;
+
+// Weights
+
+$light: 300;
+$normal: 400;
+$semibold: 500;
+$bold: 700;
+
+// Sizes
+
+$font-size-h1: 60px;
+$font-size-h2: 40px;
+$font-size-h3: 24px;
+$font-size-h4: 18px;
+$font-size-h5: 15px;
+$font-size-p: 15px;
+$nav-font-size: 13px;
+$blog-post-title: 11px;
+
+// Responsive Sizes
+
+$responsive-h1: 40px;
+
+// Line height
+
+$base-line-height: 29px;
+
+// Styles
+
+/* ==========================================================================
+Typography
+========================================================================== */
+p {
+  font-size: $font-size-p;
+  line-height: $base-line-height;
+  color: $txt-primary;
+  padding-bottom: 20px;
+}
+
+h1 {
+  font-size: $font-size-h1;
+}
+
+h2 {
+  font-size: $font-size-h2;
+  font-weight: $light;
+  color: $h2-color;
+}
+
+h3 {
+  color: $h3-color;
+  font-size: $font-size-h4;
+  font-weight: $bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: $base-line-height;
+}
+
+h4 {
+  font-size: $font-size-h4;
+}
+
+h5 {
+  font-size: $font-size-h5;
+  color: $h5-color;
+  text-transform: uppercase;
+  font-weight: $semibold;
+}

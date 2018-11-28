@@ -1,0 +1,55 @@
+// Buttons partial
+
+@import "partials/colors";
+
+.btn {
+	font-size: 13px;
+	border: solid 2px;
+	-moz-border-radius: 40px;
+	-webkit-border-radius: 40px;
+	border-radius: 40px;
+	display: inline-block;
+	text-transform: uppercase;
+}
+.btn:hover, .btn:focus {
+	color: $white-color;
+	border-color: $accent-color;
+	background-color: $accent-color;
+}
+.btn-white {
+	font-size: 13px;
+	border: solid 2px;
+	-moz-border-radius: 40px;
+	-webkit-border-radius: 40px;
+	border-radius: 40px;
+	display: inline-block;
+	border-color: $txt-light;
+}
+.btn-white:hover, .btn-white:focus {
+	color: $accent-color;
+	border-color: $accent-color;
+}
+.btn-fill {
+	color: $white-color;
+	border: solid 2px $accent-color;
+	-moz-border-radius: 40px;
+	-webkit-border-radius: 40px;
+	border-radius: 40px;
+	display: inline-block;
+	text-transform: uppercase;
+	background-color: $accent-color;
+}
+.btn-fill:hover, .btn-fill:focus {
+	color: $white-color;
+	background-color: $accent-color-hover;
+	border-color: $accent-color-hover;
+}
+.btn-small {
+	padding: 8px 30px;
+}
+.btn-large {
+	padding: 15px 40px;
+}
+.btn-margin-right {
+	margin-right: 20px;
+}
