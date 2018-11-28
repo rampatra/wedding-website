@@ -1,0 +1,67 @@
+{
+  "_from": "waypoints@4.0.1",
+  "_id": "waypoints@4.0.1",
+  "_inBundle": false,
+  "_integrity": "sha1-CZeaBXOBCylifLpDZqKEoGLsacg=",
+  "_location": "/waypoints",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "waypoints@4.0.1",
+    "name": "waypoints",
+    "escapedName": "waypoints",
+    "rawSpec": "4.0.1",
+    "saveSpec": null,
+    "fetchSpec": "4.0.1"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/waypoints/-/waypoints-4.0.1.tgz",
+  "_shasum": "09979a0573810b29627cba4366a284a062ec69c8",
+  "_spec": "waypoints@4.0.1",
+  "_where": "/Users/rpatra16/MyProjects/RamAndAntara",
+  "author": {
+    "name": "Caleb Troughton",
+    "email": "caleb@imakewebthings.com",
+    "url": "http://imakewebthings.com"
+  },
+  "bugs": {
+    "url": "https://github.com/imakewebthings/waypoints/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Easily execute a function when you scroll to an element",
+  "devDependencies": {
+    "eslint": "^0.6.2",
+    "gulp": "^3.6.2",
+    "gulp-concat": "^2.2.0",
+    "gulp-eslint": "^0.1.7",
+    "gulp-footer": "^1.0.5",
+    "gulp-header": "^1.0.2",
+    "gulp-rename": "^1.2.0",
+    "gulp-tap": "^0.1.1",
+    "gulp-uglify": "^0.3.1",
+    "merge-stream": "^0.1.1",
+    "testem": "0.6.24"
+  },
+  "homepage": "https://github.com/imakewebthings/waypoints#readme",
+  "keywords": [
+    "scroll"
+  ],
+  "license": "MIT",
+  "name": "waypoints",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imakewebthings/waypoints.git"
+  },
+  "scripts": {
+    "build": "gulp build",
+    "start": "gulp",
+    "tdd": "testem",
+    "test": "testem ci",
+    "watch": "gulp watch"
+  },
+  "version": "4.0.1"
+}
