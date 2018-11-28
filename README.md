@@ -1,6 +1,6 @@
 # Wedding Website
 A beautiful, feature rich, device friendly wedding website. See [wedding.rampatra.com](http://wedding.rampatra.com/)
-for a demo.
+for a demo.  
 _Use invite code `271117` to RSVP._
 
 # Highlights
