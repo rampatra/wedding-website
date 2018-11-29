@@ -559,7 +559,7 @@ Features-stack
   .rightcol {
     padding-left: 100px;
   }
-  
+
   .time {
     font-size: 13px;
     font-style: italic;
@@ -656,7 +656,7 @@ Instagram
 /* ==========================================================================
 Engagement Pics
 ========================================================================== */
-#eng-pics {  
+#eng-pics {
   img {
     width: 100%;
     height: auto;
@@ -892,4 +892,12 @@ body.modal-open {
 }
 .modal-body {
   padding:25px;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.pointer-events-auto {
+  pointer-events: auto;
 }
