@@ -8,7 +8,7 @@ _See [wedding.rampatra.com](http://wedding.rampatra.com/) for a demo. Use invite
 3. __Receive email alerts__ when someone RSVPs.
 4. __Add to Calendar__ feature which supports four different calendars.
 5. __Book Uber__ button lets guests book a cab to the venue with just a single tap.
-6. Start and run the website __completely free of charge__. No hosting, backend server, or database required as you can
+6. Start and run the website __completely free__. No hosting, backend server, or database required as you can
 use [GitHub pages](https://pages.github.com/) to host and Google sheets (with the help of Google scripts) to store rsvp data.
 
 # Getting Started
