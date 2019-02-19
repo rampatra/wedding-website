@@ -27,4 +27,4 @@ Hello, my name is Ram. I am a Software Engineer at [Oath](https://www.oath.com/)
 my leisure time and this is one of them. Now that my wedding is over, I am open-sourcing it. Hope you like it!
 
 # Contribute
-More than happy for PRs or [gifts](https://www.paypal.me/ramswaroop) :)
+Firstly, a big thanks 🙏🏻for the overwhelming response on [HackerNews](https://news.ycombinator.com/item?id=18556787) and [Reddit](https://www.reddit.com/r/opensource/comments/a1bx4h/i_am_open_sourcing_my_wedding_website_on_my_first/). I would be more than happy for [PRs](https://help.github.com/articles/about-pull-requests/) or [gifts](https://www.paypal.me/ramswaroop) ;)
