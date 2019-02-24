@@ -23,7 +23,7 @@ this [article](https://github.com/dwyl/learn-to-send-email-via-google-script-htm
 for rsvp feature.
 
 # About Me
-Hello, my name is Ram. I am a Software Engineer at [Oath](https://www.oath.com/). I enjoy making teeny tiny applications in
+Hello, my name is Ram. I am a Software Engineer at [Verizon Media](https://www.verizonmedia.com/). I enjoy making teeny tiny applications in
 my leisure time and this is one of them. Now that my wedding is over, I am open-sourcing it. Hope you like it!
 
 # Contribute
