@@ -1,7 +1,14 @@
-# flagged-respawn [![Build Status](https://secure.travis-ci.org/js-cli/js-flagged-respawn.svg)](http://travis-ci.org/js-cli/js-flagged-respawn)
-> A tool for respawning node binaries when special flags are present.
+<p align="center">
+  <a href="http://gulpjs.com">
+    <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png">
+  </a>
+</p>
 
-[![NPM](https://nodei.co/npm/flagged-respawn.png)](https://nodei.co/npm/flagged-respawn/)
+# flagged-respawn
+
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Travis Build Status][travis-image]][travis-url] [![AppVeyor Build Status][appveyor-image]][appveyor-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Gitter chat][gitter-image]][gitter-url]
+
+A tool for respawning node binaries when special flags are present.
 
 ## What is it?
 
@@ -72,22 +79,33 @@ If `--no-respawning` flag is given in *argv*, this function does not respawned e
 * **<u><i>callback</i>(ready, proc, argv) : Void</u>**
 
     *callback* function is called both when respawned or not, and it can be distinguished by callback's argument: *ready*. (*ready* indicates whether a process spawned its child process (false) or not (true), but it does not indicate whether a process is a spawned child process or not. *ready* for a spawned child process is true.)
-    
+
     *argv* is an array of command line arguments which is respawned (when *ready* is false) or is passed current process except flags within *flags* and `--no-respawning` (when *ready* is true).
 
     **Parameter:**
-    
+
     | Parameter |  Type   | Description               |
     |:----------|:-------:|:--------------------------|
     | *ready*   | boolean | True, if not respawning and is ready to execute main function. |
     | *proc*    | object  | Child process object if respawned, otherwise current process object. |
     | *argv*    | Array   | An array of command line arguments. |
 
-## Release History
+## License
 
-* 2017-12-16 - v1.0.0 - Force/Forbid respawn, Improved API & testing
-* 2016-03-22 - v0.3.2 - fix issue with v8 flags values being dropped
-* 2014-09-12 - v0.3.1 - use `{ stdio: 'inherit' }` for spawn to maintain colors
-* 2014-09-11 - v0.3.0 - for real this time
-* 2014-09-11 - v0.2.0 - cleanup
-* 2014-09-04 - v0.1.1 - initial release
+MIT
+
+[downloads-image]: http://img.shields.io/npm/dm/flagged-respawn.svg
+[npm-url]: https://www.npmjs.com/package/flagged-respawn
+[npm-image]: http://img.shields.io/npm/v/flagged-respawn.svg
+
+[travis-url]: https://travis-ci.org/gulpjs/flagged-respawn
+[travis-image]: http://img.shields.io/travis/gulpjs/flagged-respawn.svg?label=travis-ci
+
+[appveyor-url]: https://ci.appveyor.com/project/gulpjs/flagged-respawn
+[appveyor-image]: https://img.shields.io/appveyor/ci/gulpjs/flagged-respawn.svg?label=appveyor
+
+[coveralls-url]: https://coveralls.io/r/gulpjs/flagged-respawn
+[coveralls-image]: http://img.shields.io/coveralls/gulpjs/flagged-respawn/master.svg
+
+[gitter-url]: https://gitter.im/gulpjs/gulp
+[gitter-image]: https://badges.gitter.im/gulpjs/gulp.svg

@@ -1,8 +1,14 @@
-# Fined [![Build Status][travis-img]][travis-url] [![Build Status][appveyor-img]][appveyor-url] [![Coverage][coveralls-img]][coveralls-url]
+<p align="center">
+  <a href="http://gulpjs.com">
+    <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png">
+  </a>
+</p>
 
-> Find a file given a declaration of locations
+# fined
 
-[![NPM][npm-img]][npm-url]
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Travis Build Status][travis-image]][travis-url] [![AppVeyor Build Status][appveyor-image]][appveyor-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Gitter chat][gitter-image]][gitter-url]
+
+Find a file given a declaration of locations.
 
 ## Usage
 
@@ -17,7 +23,7 @@ var opts = {
   name: '.app',
   cwd: '.',
   extensions: {
-    'rc': 'default-rc-loader', 
+    'rc': 'default-rc-loader',
     '.yml': 'default-yml-loader',
   },
 };
@@ -58,11 +64,18 @@ This function returns a plain object which consists of following properties if a
 
 MIT
 
-[npm-img]: https://nodei.co/npm/fined.png
-[npm-url]: https://nodei.co/npm/fined/
-[travis-img]: https://travis-ci.org/js-cli/fined.svg?branch=master
-[travis-url]: https://travis-ci.org/js-cli/fined
-[appveyor-img]: https://ci.appveyor.com/api/projects/status/github/js-cli/fined?branch=master&svg=true
-[appveyor-url]: https://ci.appveyor.com/project/js-cli/fined
-[coveralls-img]: https://coveralls.io/repos/github/js-cli/fined/badge.svg?branch=master
-[coveralls-url]: https://coveralls.io/github/js-cli/fined?branch=master
+[downloads-image]: http://img.shields.io/npm/dm/fined.svg
+[npm-url]: https://www.npmjs.com/package/fined
+[npm-image]: http://img.shields.io/npm/v/fined.svg
+
+[travis-url]: https://travis-ci.org/gulpjs/fined
+[travis-image]: http://img.shields.io/travis/gulpjs/fined.svg?label=travis-ci
+
+[appveyor-url]: https://ci.appveyor.com/project/gulpjs/fined
+[appveyor-image]: https://img.shields.io/appveyor/ci/gulpjs/fined.svg?label=appveyor
+
+[coveralls-url]: https://coveralls.io/r/gulpjs/fined
+[coveralls-image]: http://img.shields.io/coveralls/gulpjs/fined/master.svg
+
+[gitter-url]: https://gitter.im/gulpjs/gulp
+[gitter-image]: https://badges.gitter.im/gulpjs/gulp.svg

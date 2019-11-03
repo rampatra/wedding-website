@@ -1,11 +1,11 @@
-const isV8flags = require('./is-v8flags');
+var isV8flags = require('./is-v8flags');
 
-module.exports = function (flags, argv) {
+module.exports = function(flags, argv) {
   if (!argv) {
     argv = process.argv;
   }
   var args = [argv[1]];
-  argv.slice(2).forEach(function (arg) {
+  argv.slice(2).forEach(function(arg) {
     var flag = arg.split('=')[0];
     if (isV8flags(flag, flags)) {
       args.unshift(arg);

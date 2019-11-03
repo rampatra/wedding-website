@@ -1,0 +1,51 @@
+commit 4374b79aed648738d2458ce027cbe2b372bf7b3a
+Author: isaacs <i@izs.me>
+Date:   Wed Jun 26 12:12:17 2019 -0700
+
+    Add support for stat options
+    
+    Fix #158
+
+diff --git a/polyfills.js b/polyfills.js
+index b964ed0..bc9759b 100644
+--- a/polyfills.js
++++ b/polyfills.js
+@@ -273,17 +273,23 @@ function patch (fs) {
+   }
+ 
+ 
++  // stat options added in v10.5.0
++  var supportsStatOptions = /^v[1-9][1-9]|^v10\.[5-9]/.test(process.version)
+   function statFix (orig) {
+     if (!orig) return orig
+     // Older versions of Node erroneously returned signed integers for
+     // uid + gid.
+-    return function (target, cb) {
+-      return orig.call(fs, target, function (er, stats) {
+-        if (!stats) return cb.apply(this, arguments)
++    return function (target, options, cb) {
++      if (typeof options === 'function')
++        cb = options, options = null
++      function callback (er, stats) {
++        if (!stats) return cb && cb.apply(this, arguments)
+         if (stats.uid < 0) stats.uid += 0x100000000
+         if (stats.gid < 0) stats.gid += 0x100000000
+         if (cb) cb.apply(this, arguments)
+-      })
++      }
++      return supportsStatOptions ? orig.call(fs, target, options || {}, callback)
++        : orig.call(fs, target, callback)
+     }
+   }
+ 
+@@ -291,8 +297,8 @@ function patch (fs) {
+     if (!orig) return orig
+     // Older versions of Node erroneously returned signed integers for
+     // uid + gid.
+-    return function (target) {
+-      var stats = orig.call(fs, target)
++    return function (target, options) {
++      var stats = orig.call(fs, target, options)
+       if (stats.uid < 0) stats.uid += 0x100000000
+       if (stats.gid < 0) stats.gid += 0x100000000
+       return stats;

@@ -1,8 +1,14 @@
+<p align="center">
+  <a href="http://gulpjs.com">
+    <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png">
+  </a>
+</p>
+
 # glogg
 
-[![Travis Build Status](https://img.shields.io/travis/js-cli/glogg/master.svg?label=travis&style=flat-square)](https://travis-ci.org/js-cli/glogg)
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Travis Build Status][travis-image]][travis-url] [![AppVeyor Build Status][appveyor-image]][appveyor-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Gitter chat][gitter-image]][gitter-url]
 
-Global logging utility
+Global logging utility.
 
 ## Usage
 
@@ -90,3 +96,19 @@ the logger methods.
 ## License
 
 MIT
+
+[downloads-image]: http://img.shields.io/npm/dm/glogg.svg
+[npm-url]: https://www.npmjs.com/package/glogg
+[npm-image]: http://img.shields.io/npm/v/glogg.svg
+
+[travis-url]: https://travis-ci.org/gulpjs/glogg
+[travis-image]: http://img.shields.io/travis/gulpjs/glogg.svg?label=travis-ci
+
+[appveyor-url]: https://ci.appveyor.com/project/gulpjs/glogg
+[appveyor-image]: https://img.shields.io/appveyor/ci/gulpjs/glogg.svg?label=appveyor
+
+[coveralls-url]: https://coveralls.io/r/gulpjs/glogg
+[coveralls-image]: http://img.shields.io/coveralls/gulpjs/glogg/master.svg
+
+[gitter-url]: https://gitter.im/gulpjs/gulp
+[gitter-image]: https://badges.gitter.im/gulpjs/gulp.svg

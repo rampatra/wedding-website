@@ -1,10 +1,10 @@
-const reorder = require('./lib/reorder');
-const respawn = require('./lib/respawn');
-const remover = require('./lib/remover');
+var reorder = require('./lib/reorder');
+var respawn = require('./lib/respawn');
+var remover = require('./lib/remover');
 
-const FORBID_RESPAWNING_FLAG = '--no-respawning';
+var FORBID_RESPAWNING_FLAG = '--no-respawning';
 
-module.exports = function (flags, argv, forcedFlags, execute) {
+module.exports = function(flags, argv, forcedFlags, execute) {
   if (!flags) {
     throw new Error('You must specify flags to respawn with.');
   }

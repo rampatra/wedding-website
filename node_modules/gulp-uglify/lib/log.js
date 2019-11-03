@@ -1,10 +1,10 @@
 'use strict';
 var hasLog = require('has-gulplog');
-var each = require('lodash/fp/forEach');
+var each = require('array-each');
 
 var levels = ['debug', 'info', 'warn', 'error'];
 
-each(function(level) {
+each(levels, function(level) {
   module.exports[level] = function() {
     if (hasLog()) {
       var log = require('gulplog');
@@ -12,4 +12,4 @@ each(function(level) {
       log[level].apply(log, arguments);
     }
   };
-}, levels);
+});
