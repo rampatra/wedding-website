@@ -11,7 +11,7 @@ declare function makeError<T extends Error>(super_: { new (...args: any[]): T })
 /**
  * Create a specialized error instance.
  */
-declare function makeError<T extends Error>(name: string | Function, super_: { new (...args: any[]): T }): makeError.Constructor<T>;
+declare function makeError<T extends Error, K>(name: string | Function, super_: K): K & makeError.SpecializedConstructor<T>;
 
 declare module makeError {
   /**
@@ -26,7 +26,12 @@ declare module makeError {
   }
 
   export interface Constructor <T> {
-    new (message?: string): T
+    new (message?: string): T;
+    super_: any
+    prototype: T
+  }
+
+  export interface SpecializedConstructor <T> {
     super_: any
     prototype: T
   }

@@ -1,8 +1,8 @@
-const fs = require('fs');
-const path = require('path');
-const fileSearch = require('./file_search');
+var fs = require('fs');
+var path = require('path');
+var fileSearch = require('./file_search');
 
-module.exports = function (opts) {
+module.exports = function(opts) {
   opts = opts || {};
   var configNameSearch = opts.configNameSearch;
   var configPath = opts.configPath;

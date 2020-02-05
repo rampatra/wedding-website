@@ -1,6 +1,5 @@
 exports.alphasort = alphasort
 exports.alphasorti = alphasorti
-exports.isAbsolute = process.platform === "win32" ? absWin : absUnix
 exports.setopts = setopts
 exports.ownProp = ownProp
 exports.makeAbs = makeAbs
@@ -15,25 +14,8 @@ function ownProp (obj, field) {
 
 var path = require("path")
 var minimatch = require("minimatch")
+var isAbsolute = require("path-is-absolute")
 var Minimatch = minimatch.Minimatch
-
-function absWin (p) {
-  if (absUnix(p)) return true
-  // pull off the device/UNC bit from a windows path.
-  // from node's lib/path.js
-  var splitDeviceRe =
-      /^([a-zA-Z]:|[\\\/]{2}[^\\\/]+[\\\/]+[^\\\/]+)?([\\\/])?([\s\S]*?)$/
-  var result = splitDeviceRe.exec(p)
-  var device = result[1] || ''
-  var isUnc = device && device.charAt(1) !== ':'
-  var isAbsolute = !!result[2] || isUnc // UNC paths are always absolute
-
-  return isAbsolute
-}
-
-function absUnix (p) {
-  return p.charAt(0) === "/" || p === ""
-}
 
 function alphasorti (a, b) {
   return a.toLowerCase().localeCompare(b.toLowerCase())
@@ -54,15 +36,16 @@ function setupIgnores (self, options) {
   }
 }
 
+// ignore patterns are always in dot:true mode.
 function ignoreMap (pattern) {
   var gmatcher = null
   if (pattern.slice(-3) === '/**') {
     var gpattern = pattern.replace(/(\/\*\*)+$/, '')
-    gmatcher = new Minimatch(gpattern, { nonegate: true })
+    gmatcher = new Minimatch(gpattern, { dot: true })
   }
 
   return {
-    matcher: new Minimatch(pattern, { nonegate: true }),
+    matcher: new Minimatch(pattern, { dot: true }),
     gmatcher: gmatcher
   }
 }
@@ -79,6 +62,7 @@ function setopts (self, pattern, options) {
     pattern = "**/" + pattern
   }
 
+  self.silent = !!options.silent
   self.pattern = pattern
   self.strict = options.strict !== false
   self.realpath = !!options.realpath
@@ -96,6 +80,7 @@ function setopts (self, pattern, options) {
   self.nocase = !!options.nocase
   self.stat = !!options.stat
   self.noprocess = !!options.noprocess
+  self.absolute = !!options.absolute
 
   self.maxLength = options.maxLength || Infinity
   self.cache = options.cache || Object.create(null)
@@ -109,8 +94,8 @@ function setopts (self, pattern, options) {
   if (!ownProp(options, "cwd"))
     self.cwd = cwd
   else {
-    self.cwd = options.cwd
-    self.changedCwd = path.resolve(options.cwd) !== cwd
+    self.cwd = path.resolve(options.cwd)
+    self.changedCwd = self.cwd !== cwd
   }
 
   self.root = options.root || path.resolve(self.cwd, "/")
@@ -118,7 +103,17 @@ function setopts (self, pattern, options) {
   if (process.platform === "win32")
     self.root = self.root.replace(/\\/g, "/")
 
+  // TODO: is an absolute `cwd` supposed to be resolved against `root`?
+  // e.g. { cwd: '/test', root: __dirname } === path.join(__dirname, '/test')
+  self.cwdAbs = isAbsolute(self.cwd) ? self.cwd : makeAbs(self, self.cwd)
+  if (process.platform === "win32")
+    self.cwdAbs = self.cwdAbs.replace(/\\/g, "/")
   self.nomount = !!options.nomount
+
+  // disable comments and negation in Minimatch.
+  // Note that they are not supported in Glob itself anyway.
+  options.nonegate = true
+  options.nocomment = true
 
   self.minimatch = new Minimatch(pattern, options)
   self.options = self.minimatch.options
@@ -164,7 +159,11 @@ function finish (self) {
     }
     if (self.nodir) {
       all = all.filter(function (e) {
-        return !(/\/$/.test(e))
+        var notDir = !(/\/$/.test(e))
+        var c = self.cache[e] || self.cache[makeAbs(self, e)]
+        if (notDir && c)
+          notDir = c !== 'DIR' && !Array.isArray(c)
+        return notDir
       })
     }
   }
@@ -205,13 +204,17 @@ function makeAbs (self, f) {
   var abs = f
   if (f.charAt(0) === '/') {
     abs = path.join(self.root, f)
-  } else if (exports.isAbsolute(f)) {
+  } else if (isAbsolute(f) || f === '') {
     abs = f
   } else if (self.changedCwd) {
     abs = path.resolve(self.cwd, f)
-  } else if (self.realpath) {
+  } else {
     abs = path.resolve(f)
   }
+
+  if (process.platform === 'win32')
+    abs = abs.replace(/\\/g, '/')
+
   return abs
 }
 

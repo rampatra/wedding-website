@@ -1,4 +1,4 @@
-module.exports = function (opts) {
+module.exports = function(opts) {
   opts = opts || {};
   var configName = opts.configName;
   var extensions = opts.extensions;
@@ -11,7 +11,7 @@ module.exports = function (opts) {
   if (!Array.isArray(extensions)) {
     throw new Error('Please provide an array of valid extensions.');
   }
-  return extensions.map(function (ext) {
+  return extensions.map(function(ext) {
     return configName + ext;
   });
 };

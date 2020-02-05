@@ -1,12 +1,12 @@
-const extend = require('extend');
+var extend = require('extend');
 
-module.exports = function (opts) {
+module.exports = function(opts) {
   var defaults = {
     extensions: {
       '.js': null,
-      '.json': null
+      '.json': null,
     },
-    searchPaths: []
+    searchPaths: [],
   };
   if (!opts) {
     opts = {};

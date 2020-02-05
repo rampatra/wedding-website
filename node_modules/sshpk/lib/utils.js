@@ -17,7 +17,8 @@ module.exports = {
 	publicFromPrivateECDSA: publicFromPrivateECDSA,
 	zeroPadToLength: zeroPadToLength,
 	writeBitString: writeBitString,
-	readBitString: readBitString
+	readBitString: readBitString,
+	pbkdf2: pbkdf2
 };
 
 var assert = require('assert-plus');
@@ -122,6 +123,40 @@ function opensslKeyDeriv(cipher, salt, passphrase, count) {
 	    key: material.slice(0, clen.key),
 	    iv: material.slice(clen.key, clen.key + clen.iv)
 	});
+}
+
+/* See: RFC2898 */
+function pbkdf2(hashAlg, salt, iterations, size, passphrase) {
+	var hkey = Buffer.alloc(salt.length + 4);
+	salt.copy(hkey);
+
+	var gen = 0, ts = [];
+	var i = 1;
+	while (gen < size) {
+		var t = T(i++);
+		gen += t.length;
+		ts.push(t);
+	}
+	return (Buffer.concat(ts).slice(0, size));
+
+	function T(I) {
+		hkey.writeUInt32BE(I, hkey.length - 4);
+
+		var hmac = crypto.createHmac(hashAlg, passphrase);
+		hmac.update(hkey);
+
+		var Ti = hmac.digest();
+		var Uc = Ti;
+		var c = 1;
+		while (c++ < iterations) {
+			hmac = crypto.createHmac(hashAlg, passphrase);
+			hmac.update(Uc);
+			Uc = hmac.digest();
+			for (var x = 0; x < Ti.length; ++x)
+				Ti[x] ^= Uc[x];
+		}
+		return (Ti);
+	}
 }
 
 /* Count leading zero bits on a buffer */

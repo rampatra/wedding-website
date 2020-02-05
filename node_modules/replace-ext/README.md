@@ -1,44 +1,50 @@
-# replace-ext [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Dependency Status][david-image]][david-url]
+<p align="center">
+  <a href="http://gulpjs.com">
+    <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png">
+  </a>
+</p>
 
+# replace-ext
 
-## Information
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![AppVeyor Build Status][appveyor-image]][appveyor-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Gitter chat][gitter-image]][gitter-url]
 
-<table>
-<tr> 
-<td>Package</td><td>replace-ext</td>
-</tr>
-<tr>
-<td>Description</td>
-<td>Replaces a file extension with another one</td>
-</tr>
-<tr>
-<td>Node Version</td>
-<td>>= 0.4</td>
-</tr>
-</table>
+Replaces a file extension with another one.
 
 ## Usage
 
-```javascript
+```js
 var replaceExt = require('replace-ext');
 
 var path = '/some/dir/file.js';
-var npath = replaceExt(path, '.coffee');
+var newPath = replaceExt(path, '.coffee');
 
-console.log(npath); // /some/dir/file.coffee
+console.log(newPath); // /some/dir/file.coffee
 ```
 
-[npm-url]: https://npmjs.org/package/replace-ext
-[npm-image]: https://badge.fury.io/js/replace-ext.png
+## API
 
-[travis-url]: https://travis-ci.org/wearefractal/replace-ext
-[travis-image]: https://travis-ci.org/wearefractal/replace-ext.png?branch=master
+### `replaceExt(path, extension)`
 
-[coveralls-url]: https://coveralls.io/r/wearefractal/replace-ext
-[coveralls-image]: https://coveralls.io/repos/wearefractal/replace-ext/badge.png
+Replaces the extension from `path` with `extension` and returns the updated path string.
 
-[depstat-url]: https://david-dm.org/wearefractal/replace-ext
-[depstat-image]: https://david-dm.org/wearefractal/replace-ext.png
+Does not replace the extension if `path` is not a string or is empty.
 
-[david-url]: https://david-dm.org/wearefractal/replace-ext
-[david-image]: https://david-dm.org/wearefractal/replace-ext.png?theme=shields.io
+## License
+
+MIT
+
+[downloads-image]: http://img.shields.io/npm/dm/replace-ext.svg
+[npm-url]: https://www.npmjs.com/package/replace-ext
+[npm-image]: http://img.shields.io/npm/v/replace-ext.svg
+
+[travis-url]: https://travis-ci.org/gulpjs/replace-ext
+[travis-image]: http://img.shields.io/travis/gulpjs/replace-ext.svg?label=travis-ci
+
+[appveyor-url]: https://ci.appveyor.com/project/gulpjs/replace-ext
+[appveyor-image]: https://img.shields.io/appveyor/ci/gulpjs/replace-ext.svg?label=appveyor
+
+[coveralls-url]: https://coveralls.io/r/gulpjs/replace-ext
+[coveralls-image]: http://img.shields.io/coveralls/gulpjs/replace-ext/master.svg
+
+[gitter-url]: https://gitter.im/gulpjs/gulp
+[gitter-image]: https://badges.gitter.im/gulpjs/gulp.svg

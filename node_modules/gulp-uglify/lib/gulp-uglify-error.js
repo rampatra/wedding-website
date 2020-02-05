@@ -8,7 +8,8 @@ gulpUglifyError.prototype.toString = function() {
   return (
     makeErrorCause.BaseError.prototype.toString.call(this) +
     (this.fileName ? '\nFile: ' + this.fileName : '') +
-    (cause.line ? '\nLine: ' + cause.line : '')
+    (cause.line ? '\nLine: ' + cause.line : '') +
+    (cause.col ? '\nCol: ' + cause.col : '')
   );
 };
 

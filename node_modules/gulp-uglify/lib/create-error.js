@@ -1,5 +1,4 @@
 'use strict';
-var curry = require('lodash/fp/curry');
 var GulpUglifyError = require('./gulp-uglify-error');
 
 function createError(file, msg, cause) {
@@ -10,4 +9,4 @@ function createError(file, msg, cause) {
   return perr;
 }
 
-module.exports = curry(createError);
+module.exports = createError;

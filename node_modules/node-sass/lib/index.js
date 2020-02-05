@@ -3,8 +3,8 @@
  */
 
 var path = require('path'),
-  clonedeep = require('lodash.clonedeep'),
-  assign = require('lodash.assign'),
+  clonedeep = require('lodash/cloneDeep'),
+  assign = require('lodash/assign'),
   sass = require('./extensions');
 
 /**
@@ -300,9 +300,11 @@ module.exports.render = function(opts, cb) {
     var stats = endStats(result.stats);
     var payload = {
       css: result.css,
-      map: result.map,
       stats: stats
     };
+    if (result.map) {
+      payload.map = result.map;
+    }
 
     if (cb) {
       options.context.callback.call(options.context, null, payload);

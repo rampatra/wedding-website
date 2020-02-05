@@ -1,158 +1,346 @@
-// Monkey-patching the fs module.
-// It's ugly, but there is simply no other way to do this.
-var fs = module.exports = require('./fs.js')
-
-var assert = require('assert')
-
-// fix up some busted stuff, mostly on windows and old nodes
-require('./polyfills.js')
+var fs = require('fs')
+var polyfills = require('./polyfills.js')
+var legacy = require('./legacy-streams.js')
+var clone = require('./clone.js')
 
 var util = require('util')
+
+/* istanbul ignore next - node 0.x polyfill */
+var gracefulQueue
+var previousSymbol
+
+/* istanbul ignore else - node 0.x polyfill */
+if (typeof Symbol === 'function' && typeof Symbol.for === 'function') {
+  gracefulQueue = Symbol.for('graceful-fs.queue')
+  // This is used in testing by future versions
+  previousSymbol = Symbol.for('graceful-fs.previous')
+} else {
+  gracefulQueue = '___graceful-fs.queue'
+  previousSymbol = '___graceful-fs.previous'
+}
 
 function noop () {}
 
 var debug = noop
 if (util.debuglog)
-  debug = util.debuglog('gfs')
-else if (/\bgfs\b/i.test(process.env.NODE_DEBUG || ''))
+  debug = util.debuglog('gfs4')
+else if (/\bgfs4\b/i.test(process.env.NODE_DEBUG || ''))
   debug = function() {
     var m = util.format.apply(util, arguments)
-    m = 'GFS: ' + m.split(/\n/).join('\nGFS: ')
+    m = 'GFS4: ' + m.split(/\n/).join('\nGFS4: ')
     console.error(m)
   }
 
-if (/\bgfs\b/i.test(process.env.NODE_DEBUG || '')) {
-  process.on('exit', function() {
-    debug('fds', fds)
-    debug(queue)
-    assert.equal(queue.length, 0)
+// Once time initialization
+if (!global[gracefulQueue]) {
+  // This queue can be shared by multiple loaded instances
+  var queue = []
+  Object.defineProperty(global, gracefulQueue, {
+    get: function() {
+      return queue
+    }
   })
+
+  // Patch fs.close/closeSync to shared queue version, because we need
+  // to retry() whenever a close happens *anywhere* in the program.
+  // This is essential when multiple graceful-fs instances are
+  // in play at the same time.
+  fs.close = (function (fs$close) {
+    function close (fd, cb) {
+      return fs$close.call(fs, fd, function (err) {
+        // This function uses the graceful-fs shared queue
+        if (!err) {
+          retry()
+        }
+
+        if (typeof cb === 'function')
+          cb.apply(this, arguments)
+      })
+    }
+
+    Object.defineProperty(close, previousSymbol, {
+      value: fs$close
+    })
+    return close
+  })(fs.close)
+
+  fs.closeSync = (function (fs$closeSync) {
+    function closeSync (fd) {
+      // This function uses the graceful-fs shared queue
+      fs$closeSync.apply(fs, arguments)
+      retry()
+    }
+
+    Object.defineProperty(closeSync, previousSymbol, {
+      value: fs$closeSync
+    })
+    return closeSync
+  })(fs.closeSync)
+
+  if (/\bgfs4\b/i.test(process.env.NODE_DEBUG || '')) {
+    process.on('exit', function() {
+      debug(global[gracefulQueue])
+      require('assert').equal(global[gracefulQueue].length, 0)
+    })
+  }
 }
 
-
-var originalOpen = fs.open
-fs.open = open
-
-function open(path, flags, mode, cb) {
-  if (typeof mode === "function") cb = mode, mode = null
-  if (typeof cb !== "function") cb = noop
-  new OpenReq(path, flags, mode, cb)
+module.exports = patch(clone(fs))
+if (process.env.TEST_GRACEFUL_FS_GLOBAL_PATCH && !fs.__patched) {
+    module.exports = patch(fs)
+    fs.__patched = true;
 }
 
-function OpenReq(path, flags, mode, cb) {
-  this.path = path
-  this.flags = flags
-  this.mode = mode
-  this.cb = cb
-  Req.call(this)
-}
+function patch (fs) {
+  // Everything that references the open() function needs to be in here
+  polyfills(fs)
+  fs.gracefulify = patch
 
-util.inherits(OpenReq, Req)
+  fs.createReadStream = createReadStream
+  fs.createWriteStream = createWriteStream
+  var fs$readFile = fs.readFile
+  fs.readFile = readFile
+  function readFile (path, options, cb) {
+    if (typeof options === 'function')
+      cb = options, options = null
 
-OpenReq.prototype.process = function() {
-  originalOpen.call(fs, this.path, this.flags, this.mode, this.done)
-}
+    return go$readFile(path, options, cb)
 
-var fds = {}
-OpenReq.prototype.done = function(er, fd) {
-  debug('open done', er, fd)
-  if (fd)
-    fds['fd' + fd] = this.path
-  Req.prototype.done.call(this, er, fd)
-}
+    function go$readFile (path, options, cb) {
+      return fs$readFile(path, options, function (err) {
+        if (err && (err.code === 'EMFILE' || err.code === 'ENFILE'))
+          enqueue([go$readFile, [path, options, cb]])
+        else {
+          if (typeof cb === 'function')
+            cb.apply(this, arguments)
+          retry()
+        }
+      })
+    }
+  }
 
+  var fs$writeFile = fs.writeFile
+  fs.writeFile = writeFile
+  function writeFile (path, data, options, cb) {
+    if (typeof options === 'function')
+      cb = options, options = null
 
-var originalReaddir = fs.readdir
-fs.readdir = readdir
+    return go$writeFile(path, data, options, cb)
 
-function readdir(path, cb) {
-  if (typeof cb !== "function") cb = noop
-  new ReaddirReq(path, cb)
-}
+    function go$writeFile (path, data, options, cb) {
+      return fs$writeFile(path, data, options, function (err) {
+        if (err && (err.code === 'EMFILE' || err.code === 'ENFILE'))
+          enqueue([go$writeFile, [path, data, options, cb]])
+        else {
+          if (typeof cb === 'function')
+            cb.apply(this, arguments)
+          retry()
+        }
+      })
+    }
+  }
 
-function ReaddirReq(path, cb) {
-  this.path = path
-  this.cb = cb
-  Req.call(this)
-}
+  var fs$appendFile = fs.appendFile
+  if (fs$appendFile)
+    fs.appendFile = appendFile
+  function appendFile (path, data, options, cb) {
+    if (typeof options === 'function')
+      cb = options, options = null
 
-util.inherits(ReaddirReq, Req)
+    return go$appendFile(path, data, options, cb)
 
-ReaddirReq.prototype.process = function() {
-  originalReaddir.call(fs, this.path, this.done)
-}
+    function go$appendFile (path, data, options, cb) {
+      return fs$appendFile(path, data, options, function (err) {
+        if (err && (err.code === 'EMFILE' || err.code === 'ENFILE'))
+          enqueue([go$appendFile, [path, data, options, cb]])
+        else {
+          if (typeof cb === 'function')
+            cb.apply(this, arguments)
+          retry()
+        }
+      })
+    }
+  }
 
-ReaddirReq.prototype.done = function(er, files) {
-  if (files && files.sort)
-    files = files.sort()
-  Req.prototype.done.call(this, er, files)
-  onclose()
-}
+  var fs$readdir = fs.readdir
+  fs.readdir = readdir
+  function readdir (path, options, cb) {
+    var args = [path]
+    if (typeof options !== 'function') {
+      args.push(options)
+    } else {
+      cb = options
+    }
+    args.push(go$readdir$cb)
 
+    return go$readdir(args)
 
-var originalClose = fs.close
-fs.close = close
+    function go$readdir$cb (err, files) {
+      if (files && files.sort)
+        files.sort()
 
-function close (fd, cb) {
-  debug('close', fd)
-  if (typeof cb !== "function") cb = noop
-  delete fds['fd' + fd]
-  originalClose.call(fs, fd, function(er) {
-    onclose()
-    cb(er)
+      if (err && (err.code === 'EMFILE' || err.code === 'ENFILE'))
+        enqueue([go$readdir, [args]])
+
+      else {
+        if (typeof cb === 'function')
+          cb.apply(this, arguments)
+        retry()
+      }
+    }
+  }
+
+  function go$readdir (args) {
+    return fs$readdir.apply(fs, args)
+  }
+
+  if (process.version.substr(0, 4) === 'v0.8') {
+    var legStreams = legacy(fs)
+    ReadStream = legStreams.ReadStream
+    WriteStream = legStreams.WriteStream
+  }
+
+  var fs$ReadStream = fs.ReadStream
+  if (fs$ReadStream) {
+    ReadStream.prototype = Object.create(fs$ReadStream.prototype)
+    ReadStream.prototype.open = ReadStream$open
+  }
+
+  var fs$WriteStream = fs.WriteStream
+  if (fs$WriteStream) {
+    WriteStream.prototype = Object.create(fs$WriteStream.prototype)
+    WriteStream.prototype.open = WriteStream$open
+  }
+
+  Object.defineProperty(fs, 'ReadStream', {
+    get: function () {
+      return ReadStream
+    },
+    set: function (val) {
+      ReadStream = val
+    },
+    enumerable: true,
+    configurable: true
   })
-}
+  Object.defineProperty(fs, 'WriteStream', {
+    get: function () {
+      return WriteStream
+    },
+    set: function (val) {
+      WriteStream = val
+    },
+    enumerable: true,
+    configurable: true
+  })
 
+  // legacy names
+  var FileReadStream = ReadStream
+  Object.defineProperty(fs, 'FileReadStream', {
+    get: function () {
+      return FileReadStream
+    },
+    set: function (val) {
+      FileReadStream = val
+    },
+    enumerable: true,
+    configurable: true
+  })
+  var FileWriteStream = WriteStream
+  Object.defineProperty(fs, 'FileWriteStream', {
+    get: function () {
+      return FileWriteStream
+    },
+    set: function (val) {
+      FileWriteStream = val
+    },
+    enumerable: true,
+    configurable: true
+  })
 
-var originalCloseSync = fs.closeSync
-fs.closeSync = closeSync
-
-function closeSync (fd) {
-  try {
-    return originalCloseSync(fd)
-  } finally {
-    onclose()
+  function ReadStream (path, options) {
+    if (this instanceof ReadStream)
+      return fs$ReadStream.apply(this, arguments), this
+    else
+      return ReadStream.apply(Object.create(ReadStream.prototype), arguments)
   }
-}
 
+  function ReadStream$open () {
+    var that = this
+    open(that.path, that.flags, that.mode, function (err, fd) {
+      if (err) {
+        if (that.autoClose)
+          that.destroy()
 
-// Req class
-function Req () {
-  // start processing
-  this.done = this.done.bind(this)
-  this.failures = 0
-  this.process()
-}
-
-Req.prototype.done = function (er, result) {
-  var tryAgain = false
-  if (er) {
-    var code = er.code
-    var tryAgain = code === "EMFILE" || code === "ENFILE"
-    if (process.platform === "win32")
-      tryAgain = tryAgain || code === "OK"
+        that.emit('error', err)
+      } else {
+        that.fd = fd
+        that.emit('open', fd)
+        that.read()
+      }
+    })
   }
 
-  if (tryAgain) {
-    this.failures ++
-    enqueue(this)
-  } else {
-    var cb = this.cb
-    cb(er, result)
+  function WriteStream (path, options) {
+    if (this instanceof WriteStream)
+      return fs$WriteStream.apply(this, arguments), this
+    else
+      return WriteStream.apply(Object.create(WriteStream.prototype), arguments)
   }
+
+  function WriteStream$open () {
+    var that = this
+    open(that.path, that.flags, that.mode, function (err, fd) {
+      if (err) {
+        that.destroy()
+        that.emit('error', err)
+      } else {
+        that.fd = fd
+        that.emit('open', fd)
+      }
+    })
+  }
+
+  function createReadStream (path, options) {
+    return new fs.ReadStream(path, options)
+  }
+
+  function createWriteStream (path, options) {
+    return new fs.WriteStream(path, options)
+  }
+
+  var fs$open = fs.open
+  fs.open = open
+  function open (path, flags, mode, cb) {
+    if (typeof mode === 'function')
+      cb = mode, mode = null
+
+    return go$open(path, flags, mode, cb)
+
+    function go$open (path, flags, mode, cb) {
+      return fs$open(path, flags, mode, function (err, fd) {
+        if (err && (err.code === 'EMFILE' || err.code === 'ENFILE'))
+          enqueue([go$open, [path, flags, mode, cb]])
+        else {
+          if (typeof cb === 'function')
+            cb.apply(this, arguments)
+          retry()
+        }
+      })
+    }
+  }
+
+  return fs
 }
 
-var queue = []
-
-function enqueue(req) {
-  queue.push(req)
-  debug('enqueue %d %s', queue.length, req.constructor.name, req)
+function enqueue (elem) {
+  debug('ENQUEUE', elem[0].name, elem[1])
+  global[gracefulQueue].push(elem)
 }
 
-function onclose() {
-  var req = queue.shift()
-  if (req) {
-    debug('process', req.constructor.name, req)
-    req.process()
+function retry () {
+  var elem = global[gracefulQueue].shift()
+  if (elem) {
+    debug('RETRY', elem[0].name, elem[1])
+    elem[0].apply(null, elem[1])
   }
 }

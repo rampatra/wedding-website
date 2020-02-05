@@ -80,6 +80,8 @@ function findFile(cwd, filename, options) {
 function tryReaddirSync(fp) {
   try {
     return fs.readdirSync(fp);
-  } catch(err) {}
+  } catch (err) {
+    // Ignore error
+  }
   return [];
 }

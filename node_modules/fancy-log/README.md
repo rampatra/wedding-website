@@ -1,10 +1,14 @@
+<p align="center">
+  <a href="http://gulpjs.com">
+    <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png">
+  </a>
+</p>
+
 # fancy-log
 
-[![Travis Build Status](https://img.shields.io/travis/js-cli/fancy-log.svg?branch=master&label=travis&style=flat-square)](https://travis-ci.org/js-cli/fancy-log)
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Travis Build Status][travis-image]][travis-url] [![AppVeyor Build Status][appveyor-image]][appveyor-url] [![Coveralls Status][coveralls-image]][coveralls-url] [![Gitter chat][gitter-image]][gitter-url]
 
-Log things, prefixed with a timestamp
-
-__This module was pulled out of gulp-util for use inside the CLI__
+Log things, prefixed with a timestamp.
 
 ## Usage
 
@@ -49,3 +53,19 @@ current time in HH:MM:ss format.
 ## License
 
 MIT
+
+[downloads-image]: http://img.shields.io/npm/dm/fancy-log.svg
+[npm-url]: https://www.npmjs.com/package/fancy-log
+[npm-image]: http://img.shields.io/npm/v/fancy-log.svg
+
+[travis-url]: https://travis-ci.org/gulpjs/fancy-log
+[travis-image]: http://img.shields.io/travis/gulpjs/fancy-log.svg?label=travis-ci
+
+[appveyor-url]: https://ci.appveyor.com/project/gulpjs/fancy-log
+[appveyor-image]: https://img.shields.io/appveyor/ci/gulpjs/fancy-log.svg?label=appveyor
+
+[coveralls-url]: https://coveralls.io/r/gulpjs/fancy-log
+[coveralls-image]: http://img.shields.io/coveralls/gulpjs/fancy-log/master.svg
+
+[gitter-url]: https://gitter.im/gulpjs/gulp
+[gitter-image]: https://badges.gitter.im/gulpjs/gulp.svg

@@ -200,7 +200,7 @@ $(document).ready(function () {
             address: 'ITC Fortune Park Hotel, Kolkata',
 
             // Event Description
-            description: "We can't wait to see you on our big day. For any queries or issues contact Mr. Amit Roy at +91 9435021804 or +91 7086018971."
+            description: "We can't wait to see you on our big day. For any queries or issues, please contact Mr. Amit Roy at +91 9876543210."
         }
     });
 

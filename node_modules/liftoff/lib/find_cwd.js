@@ -1,6 +1,6 @@
-const path = require('path');
+var path = require('path');
 
-module.exports = function (opts) {
+module.exports = function(opts) {
   if (!opts) {
     opts = {};
   }

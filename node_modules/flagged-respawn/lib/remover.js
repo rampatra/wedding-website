@@ -1,4 +1,4 @@
-const isV8flags = require('./is-v8flags');
+var isV8flags = require('./is-v8flags');
 
 module.exports = function(flags, argv) {
   var args = argv.slice(0, 1);
