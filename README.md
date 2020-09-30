@@ -1,8 +1,8 @@
-# Wedding Website
+# Wedding Website:
 A beautiful, feature rich, device friendly wedding website.  
 _See [wedding.rampatra.com](http://wedding.rampatra.com/) for a demo. Use invite code `271117` to RSVP._
 
-# Highlights
+# Highlights:
 1. Slick and fully __responsive__ design.
 2. __RSVP feature__ which directly uploads data to a Google sheet.
 3. __Receive email alerts__ when someone RSVPs.
@@ -14,13 +14,13 @@ _See [wedding.rampatra.com](http://wedding.rampatra.com/) for a demo. Use invite
    [GitHub Pages](https://pages.github.com/) to host and Google sheets (with the help of Google scripts) to store RSVP
    data.
 
-# Getting Started
+# Getting Started:
 1. `$ cd wedding-website` - go inside the project directory
 2. `$ npm install` - install dependencies _(optional)_
 3. `$ gulp` - compile sass to css, minify js, etc. _(optional)_
 4. That's it, open `index.html` on your browser by just double-clicking on the file.
 
-# Documentation
+# Documentation:
 I have written a 
 [blog post describing all the features of this wedding website](https://blog.rampatra.com/wedding-website) and how to
 customize each of them according to your needs.
