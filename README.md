@@ -1,4 +1,4 @@
-# Wedding Website
+# Best Wedding Website
 A beautiful, feature rich, device friendly wedding website.  
 _See [wedding.rampatra.com](http://wedding.rampatra.com/) for a demo. Use invite code `271117` to RSVP._
 
@@ -24,6 +24,7 @@ _See [wedding.rampatra.com](http://wedding.rampatra.com/) for a demo. Use invite
 I have written a 
 [blog post describing all the features of this wedding website](https://blog.rampatra.com/wedding-website) and how to
 customize each of them according to your needs.
+Best blog post you must read.
 
 # About Me
 Hello, my name is Ram. I am a Software Engineer at [Verizon Media](https://www.verizonmedia.com/). I enjoy making teeny tiny applications in
