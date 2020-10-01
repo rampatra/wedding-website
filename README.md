@@ -1,5 +1,5 @@
 # Wedding Website
-A beautiful, feature rich, device friendly wedding website.  
+A beautiful,amazing, feature rich, device friendly wedding website.  
 _See [wedding.rampatra.com](http://wedding.rampatra.com/) for a demo. Use invite code `271117` to RSVP._
 
 # Highlights
@@ -27,7 +27,7 @@ customize each of them according to your needs.
 
 # About Me
 Hello, my name is Ram. I am a Software Engineer at [Verizon Media](https://www.verizonmedia.com/). I enjoy making teeny tiny applications in
-my leisure time and this is one of them. Now that my wedding is over, I am open-sourcing the project. Hope you like it!
+my leisure time and this is one of them. Now that my wedding is over, I am open-sourcing the project. Hope you like it! thanks
 
 And, if you use a Mac then you may also love [Presentify](https://presentify.compzets.com/). Give it a whirl and let me know your thoughts.
 
