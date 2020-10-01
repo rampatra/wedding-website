@@ -1,7 +1,7 @@
 # Wedding Website
-A beautiful, feature rich, device friendly wedding website.  
-_See [wedding.rampatra.com](http://wedding.rampatra.com/) for a demo. Use invite code `271117` to RSVP._
-
+This is a beautiful, feature rich, device friendly wedding website which helps and supports you to manage your wedding regarded works.
+_You can visit [wedding.rampatra.com](http://wedding.rampatra.com/) for a demo. Use invite code `271117` to RSVP._
+ 
 # Highlights
 1. Slick and fully __responsive__ design.
 2. __RSVP feature__ which directly uploads data to a Google sheet.
