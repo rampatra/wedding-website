@@ -33,3 +33,12 @@ my leisure time and this is one of them. Now that my wedding is over, I am open-
 Firstly, a big thanks 🙏🏻for the overwhelming response on [HackerNews](https://news.ycombinator.com/item?id=18556787) and [Reddit](https://www.reddit.com/r/opensource/comments/a1bx4h/i_am_open_sourcing_my_wedding_website_on_my_first/). I would be more than happy for [PRs](https://help.github.com/articles/about-pull-requests/) or [gifts](https://www.paypal.me/ramswaroop) ;) Just kidding, ignore it.
 
 <a href="https://www.buymeacoffee.com/rampatra" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+
+# Instructions
+
+If there is something wrong with the content on that web site,
+feel free to
+[file an issue with this repository](https://github.com/rampatra/wedding-website/issues),
+or formulate a pull request.
+Note that most pages will come with an edit link in the bottom right corner.
+
