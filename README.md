@@ -29,7 +29,9 @@ customize each of them according to your needs.
 Hello, my name is Ram. I am a Software Engineer at [Verizon Media](https://www.verizonmedia.com/). I enjoy making teeny tiny applications in
 my leisure time and this is one of them. Now that my wedding is over, I am open-sourcing it. Hope you like it!
 
+And, if you use Mac then you may also love [Presentify](https://presentify.compzets.com/). Do check it out and let me know your thoughts.
+
 # Contribute
-Firstly, a big thanks 🙏🏻for the overwhelming response on [HackerNews](https://news.ycombinator.com/item?id=18556787) and [Reddit](https://www.reddit.com/r/opensource/comments/a1bx4h/i_am_open_sourcing_my_wedding_website_on_my_first/). I would be more than happy for [PRs](https://help.github.com/articles/about-pull-requests/) or [gifts](https://www.paypal.me/ramswaroop) ;) Just kidding, ignore it.
+Firstly, a big thanks 🙏🏻 for the overwhelming response on [HackerNews](https://news.ycombinator.com/item?id=18556787) and [Reddit](https://www.reddit.com/r/opensource/comments/a1bx4h/i_am_open_sourcing_my_wedding_website_on_my_first/). I would be more than happy for [PRs](https://help.github.com/articles/about-pull-requests/) or [gifts](https://www.paypal.me/ramswaroop) ;) Just kidding, ignore it.
 
 <a href="https://www.buymeacoffee.com/rampatra" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
