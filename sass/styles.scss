@@ -252,7 +252,7 @@ Hero
 ========================================================================== */
 .hero {
   min-height: 750px;
-  background: url('../img/hero-min.jpg') center center;
+  background: url('../img/big-back.jpeg') center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -725,10 +725,10 @@ Engagement Pics
 /* ==========================================================================
 Embed video
 ========================================================================== */
-#video-bg {
+.video-bg {
   height: 300px;
 }
-#video-content {
+.video-content {
   width: 100%;
   height: 100%;
   padding-top: 100px;
@@ -736,36 +736,36 @@ Embed video
   background: rgba(17, 17, 17, 0.5);
   text-align: center;
 }
-#video-content h5 {
+.video-content h5 {
   color: #ffffff;
   font-size: 30px;
   font-weight: 300;
   letter-spacing: 10px;
 }
-#video-content p {
+.video-content p {
   color: #ffffff;
 }
 
 /* ==========================================================================
 Google map
 ========================================================================== */
-#map-canvas {
+#map-canvas,#map-canvas-wedding {
   height: 500px;
   width: 100%;
 }
-#map-content-wrapper {
+#map-content-wrapper,#map-content-wrapper-wedding {
   position: relative;
   margin-top: -502px;
   margin-bottom: 150px;
 }
-#map-content {
+#map-content,#map-content-wedding {
   margin-top: 40px;
   padding: 50px 60px;
   background: #fff;
   -webkit-transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
   transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
 }
-#btn-show-content {
+#btn-show-content,#btn-show-content-wedding {
   padding: 20px;
   background: #fff;
   cursor: pointer;
@@ -773,6 +773,7 @@ Google map
   -webkit-transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
   transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
 }
+
 .toggle-map-content {
   opacity: 0;
   visibility: hidden;
