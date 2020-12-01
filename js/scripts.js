@@ -272,7 +272,7 @@ $(document).ready(function () {
 
 // Google map
 function initMaps() {
-    initMap('map-canvas', {lat: 56.820777, lng: 24.473452});
+    initMap('map-canvas', {lat: 56.599556, lng: 25.657467});
     initMap('map-canvas-wedding', {lat: 56.820777, lng: 24.473452});
 }
 
