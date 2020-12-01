@@ -87,7 +87,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h3 id="uzruna">Mēs precamies!</h3>
+                <h3 id="uzruna"></h3>
                 <p>Kāzas notiks 2021. gada vasarā, 10. un 11. jūlijā un mēs ļoti priecātos, ja jūs mums pievienotos šajā īpašajā dienā.</p>
                 <div class="share-bar"></div>
                 <div class="fb-like" data-href="http://gints-prec-santu.lv" data-width="" data-layout="button" data-action="like" data-size="small" data-share="true"></div>
@@ -108,7 +108,7 @@
                 <div class="wp3">
                     <p><strong>10. jūlijs</strong></p>
 
-                    <h5>Laulību ceremonija <span class="time">13:00-15:00</span></h5>
+                    <h5>Laulību ceremonija <span class="time">14:00</span></h5>
                     <p>Tiksimies skaistajā Daugavas krastā, lai laulāto kārtā celtu Santu un Gintu.</p>
                 </div>
                 <div class="wp5">
@@ -125,7 +125,7 @@
                     <p>omnomnomnomnom</p>
                 </div>
                 <div class="wp6">
-                    <h5>Chillax un pēdējās atvadas <span class="time">12:00-16:30</span></h5>
+                    <h5>Chillax <span class="time">12:00-16:30</span></h5>
                     <p>Tie, kam nekur nebūs jāsteidzas, būs mīļi aicināti relaksēties saunā, pirtī un
                       džakūzī ar mazāk vai vairāk alkoholisku dzērienu rociņās.</p>
                 </div>
@@ -236,11 +236,11 @@
 
 <section id="video-1" class="video-bg hidden-sm hidden-xs">
     <div class="player"
-         data-property="{videoURL:'https://youtu.be/cVhzct1nGpk',containment:'#video-1',autoPlay:true, mute:true, showControls:false, startAt:00, stopAt:287, opacity:1}">
+         data-property="{videoURL:'https://youtu.be/cVhzct1nGpk',containment:'#video-1',autoPlay:true, mute:true, showControls:false, startAt:00, stopAt:29, opacity:1}">
     </div>
     <div class="video-content">
         <h5>Lokstenes svētnīca</h5>
-        <p></p>
+        <p>Saules vārti kas sasniedzami vien ar plostu</p>
     </div>
 </section>
 
@@ -255,7 +255,7 @@
             <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
                 <div class="text-center">
                     <div id="btn-show-content-wedding" class="toggle-map-content pointer-events-auto">
-                        <i class="fa fa-info-circle"></i>&nbsp;&nbsp; Parādīt informāciju
+                        <i class="fa fa-info-circle"></i>&nbsp;&nbsp; Rādīt informāciju
                     </div>
                 </div>
                 <div id="map-content-wedding" class="pointer-events-auto">
@@ -329,14 +329,16 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-envelope"></i><input type="email" name="email" class=""
+                                <i class="fa fa-envelope"></i>
+                                <input type="email" name="email" class=""
                                                                      placeholder="E-pasts"
                                                                      required>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-user"></i><input name="name" class=""
+                                <i class="fa fa-user"></i>
+                                <input name="name" class=""
                                                                  placeholder="Vārds, uzvārds"
                                                                  id="guest_name"
                                                                  required>
@@ -346,27 +348,32 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-users"></i><input type="number" name="kids" class="" min="0"
+                                <i class="fa fa-users"></i>
+                                <input type="number" name="kids" class="" min="0"
                                                                   max="4"
-                                                                  value="0"
                                                                   placeholder="Bērnu skaits"
                                                                   required>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-key"></i><input type="checkbox" name="invite_code"
+                                <i class="fa fa-key"></i>
+                                <input type="textbox" id="invite_code" name="invite_code"
                                                                 class="no-spin" min="0"
-                                                                placeholder="Invite code"
+                                                                placeholder="Ielūguma kods"
                                                                 required>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12 col-sm-12">
-                          <div>
-                            <i class="fa fa-heart"></i>Ieradīšos ar otru pusīti
-                          </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-heart"></i>
+                                <select name="plus_one" class="no-spin">
+                                    <option value="true">Ieradīšos ar otru pusīti</option>
+                                    <option value="false" selected>Ieradīšos viens/a</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                     <button class="btn-fill rsvp-btn">

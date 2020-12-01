@@ -143,6 +143,7 @@ $(document).ready(function () {
     return (results !== null) ? results[1] || 0 : false;
     }
 
+    var pamatteksts = 'Ielūdzam uz mūsu kāzām!';
     function updateUzruna(input) {
         var uzrunasTeksts = '';
         var vardi = input.split(",");
@@ -153,13 +154,15 @@ $(document).ready(function () {
           }
         });
         var uzruna = document.getElementById('uzruna');
-        uzrunasTeksts = uzrunasTeksts + 'Mēs beidzot precamies!';
+        uzrunasTeksts = uzrunasTeksts + pamatteksts;
         uzruna.innerHTML = decodeURIComponent(uzrunasTeksts);
     }
 
     var queryInputUzruna = $.urlParam('uzruna');
     if (queryInputUzruna) {
       updateUzruna(decodeURIComponent(queryInputUzruna));
+    } else {
+        uzruna.innerHTML = pamatteksts;
     }
     var queryInputCode = $.urlParam('kods');
     if (queryInputCode) {
@@ -203,7 +206,7 @@ $(document).ready(function () {
     });
     $('#btn-show-content-wedding').click(function () {
         $('#map-content-wedding').toggleClass('toggle-map-content');
-        $('#btn-show-conten-weddingt').toggleClass('toggle-map-content');
+        $('#btn-show-content-wedding').toggleClass('toggle-map-content');
     });
 
     /********************** Add to Calendar **********************/
@@ -218,7 +221,7 @@ $(document).ready(function () {
             title: "Ginta un Santas kāzas",
 
             // Event start date
-            start: new Date('Jul 10, 2021 13:00'),
+            start: new Date('Jul 10, 2021 14:00'),
 
             // Event duration (IN MINUTES)
             // duration: 120,
@@ -228,7 +231,7 @@ $(document).ready(function () {
             end: new Date('Jul 11, 2021 16:30'),
 
             // Event Address
-            address: 'Bebru nams, Daugmale',
+            address: 'Lokstenes svētnīca, pēc tam Bebru nams, Daugmale',
 
             // Event Description
             description: "Mīļi gaidīti mūsu kāzās. Neskaidrību gadījumā sazinieties ar Santu vai Gintu. Tel. nr. +371 26701355"
@@ -272,11 +275,11 @@ $(document).ready(function () {
 
 // Google map
 function initMaps() {
-    initMap('map-canvas', {lat: 56.599556, lng: 25.657467});
-    initMap('map-canvas-wedding', {lat: 56.820777, lng: 24.473452});
+    initMap('map-canvas', {lat: 56.598900, lng: 25.655900}, "Pārceltuve uz svētnīcu");
+    initMap('map-canvas-wedding', {lat: 56.820777, lng: 24.473452}, null);
 }
 
-function initMap(elementId, location) {
+function initMap(elementId, location, title) {
     var map = new google.maps.Map(document.getElementById(elementId), {
         zoom: 15,
         center: location,
@@ -285,8 +288,25 @@ function initMap(elementId, location) {
 
     var marker = new google.maps.Marker({
         position: location,
+        title: title,
         map: map
     });
+    if (title != null) {
+        var contentString = '<div id="content">' +
+        '<div id="siteNotice">' +
+        "</div>" +
+        '<h3 id="firstHeading" class="firstHeading">' + title + '</h3>' +
+        /*'<div id="bodyContent">' +
+        "<p></p>" +
+        "</div>" +*/
+        "</div>";
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString,
+          });
+        marker.addListener("click", function() {
+            infowindow.open(map, marker);
+          });
+    }
 }
 
 // alert_markup
