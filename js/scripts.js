@@ -180,7 +180,7 @@ $(document).ready(function () {
 
     for (var i = 0; i < share_bar.length; i++) {
         var html = '<iframe allowtransparency="true" frameborder="0" scrolling="no"' +
-            'src="https://platform.twitter.com/widgets/tweet_button.html?url=' + encodeURIComponent(window.location) + '&amp;text=' + encodeURIComponent(document.title) + '&amp;via=ramswarooppatra&amp;hashtags=ramandantara&amp;count=horizontal"' +
+            'src="https://platform.twitter.com/widgets/tweet_button.html?url=' + encodeURIComponent(window.location) + '&amp;text=' + encodeURIComponent(document.title) + '&amp;via=ramswarooppatra&amp;hashtags=Gints-prec-Santu&amp;count=horizontal"' +
             'style="width:105px; height:21px;">' +
             '</iframe>'
         share_bar[i].innerHTML = html;
@@ -241,6 +241,8 @@ $(document).ready(function () {
     $('#add-to-cal').html(myCalendar);
 
 
+    var codesMd5 = ["a8b5e14e5a368b5e42a89eaf7e8033a1","2e8e6a7f4630799315c1d10e7b3f614d","56dd8d64b9ea2fdaa1fbd2a14880f06a","11a26099dabcd50a8b06d3da422d543b","ba6f133d8aa180c5df6fe970fb68b0c3","a44ed5f13a66fa15dc93caf18645afd8","d6c269e0a8d5441372532c05bc34ce86","cf1bf92f9eee6dfc63f7436a14c0d552","8e60c8f8749fad33a82453a3a5274766","4f79275a2aab1a036678f1863e8b0264","8d28c8c0651e0c388599606bd2b0994a","8a78a681c29ee73cf76d67ad4a5510ce","96bc57a9823cec717464c641452e05a1","21b084e8c97e6457f57137a308469107","819a8970246e4aec1c3b431c75a9be75","6bf8ca099fc924bdcee7f0691d72e09b","d1997987df29bc9d42323e2493ae6955","eb7ddb1a821e8788b89a65a698cc1abc","34b3f846ed657d5c199f54206717942b","60f6beb0d248bdeef2cf582009f56fc7","845a1587de230f1bb0be64a68c8e197c","7ae56bef6aae10162d6d1f4090c911e4","2cde153f1103f163787ccbd1b4b1b335","d8d0017f3e1720da6d795264d46bec55","e37e6c6422f5e9c06a0d66ac2c5cfd17","5ba21e43265ec4b1a88c6fa560071405","d66b431bea79da45353990b55ddc1d75","7ac195b91fdb8f8d7627789c9b8e411e","7bda55636b6b350f225d35e6ca62e5cc","21f5ccc9c360c081744bb5ac0389b52b","83a13c75c8529d242374bfbfb040e243","f4f67b09ea75cbf4066a34b3ccd71c87","70fced40aad0476e14049fbc4f486e71","ee3b68c130ee2ee484144629183d82bd","cc325f13d7d5c9e58cd6523f3825eb87","d3f90556cbc03f76efb37108dd991659","c371d8b6f4eb540dda6cebd474f19d88","2bdcfe8c5ad821ec7c48eae4979c5da7","7c5f0d9db6771ade85c56b6c766a1bc5","241e28e4b9da621cfa33aadd50666264","610b6d537a0373316d98205410cf7987","e2e96061479c2e7c673715347965071c","48aeb33876f056e478a6888b2253b4ed","ea01d1eaa5e0c5ac8c89fdff75fa4c89","900c89a90ae08a9c716be0b319f5ea31","e62c0f84773946cae8500edd1eb64840","eec9eaa367d8372d64b7a2b67bb65a35","de4379830272e315f46306eb67513226","b0b6d636c554e9ef553a61847fe1afab","b1ff8abf0798d0d27e0e4747aa495230","17821b45671e5be95230f22aaa126dd8","593a54b969c57d9be02a2a792bcb1dc4","5d5246d5ffe496932b95fb21989696b8","14f41de27718646d17028514073eae98","8e44c352ebd3cc0506236f0c7ad4d634","997416244d179d8ccd485f4252644102","66605580c5ec87692799c7bb2da5ecd1","5971d6d359c6bb3577f6c9ed08b750d9","2b8e73725055344364a1a99959b60ed9","8139c35dae596b54ac6e84c9a3d3506a","d70943191eacc419566dd63965316a58","8ad5d9be99186187394a8973678ae606","174238c6a9aa7491192062b23c9cc13d","7c97d0b7ce70bf4def3366c0f8258df1","6f248625fd7a956f093c4fb3355cf803","547d3e7b3d98dad551efedeb7ef7e353","1d03446e71f9fe534296bd02446cfefe","addf913d42cd535b7c81b56a311fc257","d2167e270f2031d63e1062645d912350","7fdd43902a80cf97fb2f3c52fcdfd852"
+];
     /********************** RSVP **********************/
     $('#rsvp-form').on('submit', function (e) {
         e.preventDefault();
@@ -248,8 +250,9 @@ $(document).ready(function () {
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Mirklīti!</strong> Mēs vēl saglabājam informāciju.'));
 
-        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
-            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
+
+
+        if (!codesMd5.includes(MD5($('#invite_code').val()))) {
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
         } else {
             $.post('https://script.google.com/macros/s/AKfycbzOiSGvFSo8Sg3T7DjjahlO-DEqjXN7i5kl8eF1eaK-jRLiQkGg/exec', data)
