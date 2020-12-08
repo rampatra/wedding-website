@@ -409,7 +409,9 @@ Intro
 #intro p {
   text-align: center;
 }
-
+#decline-block {
+  margin-top: 3em;
+}
 /* ==========================================================================
 Features-stack
 ========================================================================== */
@@ -792,6 +794,12 @@ RSVP form
   padding-bottom: 140px;
   .rsvp-form {
     .rsvp-btn {
+      padding: 15px 0;
+      border-radius: 3px;
+      width: 100%;
+      font-size: 13px;
+    }
+    .rsvp-decline-btn {
       padding: 15px 0;
       border-radius: 3px;
       width: 100%;

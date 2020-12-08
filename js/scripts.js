@@ -148,6 +148,7 @@ $(document).ready(function () {
         var uzrunasTeksts = '';
         var vardi = input.split(",");
         document.getElementById('guest_name').value = vardi[0];
+        document.getElementById('guest_name_decline').value = vardi[0];
         vardi.forEach(function (item, i) {
           if (item) {
             uzrunasTeksts = uzrunasTeksts + item + '! ';
@@ -167,6 +168,7 @@ $(document).ready(function () {
     var queryInputCode = $.urlParam('kods');
     if (queryInputCode) {
       document.getElementById('invite_code').value = (decodeURIComponent(queryInputCode));
+      document.getElementById('invite_code_decline').value = (decodeURIComponent(queryInputCode));
     }
 
     /********************** Social Share buttons ***********************/
@@ -246,7 +248,8 @@ $(document).ready(function () {
     /********************** RSVP **********************/
     $('#rsvp-form').on('submit', function (e) {
         e.preventDefault();
-        var data = $(this).serialize();
+
+        var data = $(this).serialize() + "&ieradisies=true";
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Mirklīti!</strong> Mēs vēl saglabājam informāciju.'));
 
@@ -267,7 +270,33 @@ $(document).ready(function () {
                 })
                 .fail(function (data) {
                     console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Ups!</strong> Kaut kas nogāja greizi :( '));
+                });
+        }
+    });
+    $('#rsvp-decline-form').on('submit', function (e) {
+        e.preventDefault();
+
+        var data = $(this).serialize() + "&ieradisies=false";
+
+        $('#alert-wrapper-decline').html(alert_markup('info', '<strong>Mirklīti!</strong> Mēs vēl saglabājam informāciju.'));
+
+        if (!codesMd5.includes(MD5($('#invite_code_decline').val()))) {
+            $('#alert-wrapper-decline').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
+        } else {
+            $.post('https://script.google.com/macros/s/AKfycbzOiSGvFSo8Sg3T7DjjahlO-DEqjXN7i5kl8eF1eaK-jRLiQkGg/exec', data)
+                .done(function (data) {
+                    console.log(data);
+                    if (data.result === "error") {
+                        $('#alert-wrapper-decline').html(alert_markup('danger', data.message));
+                    } else {
+                        $('#alert-wrapper-decline').html('');
+                        $('#rsvp-decline-modal').modal('show');
+                    }
+                })
+                .fail(function (data) {
+                    console.log(data);
+                    $('#alert-wrapper-decline').html(alert_markup('danger', '<strong>Ups!</strong> Kaut kas nogāja greizi :( '));
                 });
         }
     });

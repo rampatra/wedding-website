@@ -44,6 +44,22 @@
 	background-color: $accent-color-hover;
 	border-color: $accent-color-hover;
 }
+.btn-fill-decline {
+	// margin-top: 1em;
+	color: $white-color;
+	border: solid 2px #aaa;
+	-moz-border-radius: 40px;
+	-webkit-border-radius: 40px;
+	border-radius: 40px;
+	display: inline-block;
+	text-transform: uppercase;
+	background-color: #aaa;
+}
+.btn-fill-decline:hover, .btn-fill-decline:focus {
+	color: $white-color;
+	background-color: #767676;
+	border-color: #767676;
+}
 .btn-small {
 	padding: 8px 30px;
 }

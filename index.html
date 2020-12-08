@@ -310,6 +310,20 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+    <div id="rsvp-decline-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    </button>
+                    <div class="section-padding">
+                        <h3>Paldies, ka pabrīdināji!</h3>
+                        <p>Mums būs skumīgi bez Tevis!</p>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
     <div class="container">
         <div class="row">
@@ -374,6 +388,44 @@
                     </div>
                     <button class="btn-fill rsvp-btn">
                         Nosūtīt!
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="decline-block">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              <p>Ja zini, ka nevarēsi ierasties, lūdzu, aizpildi zemāk esošo formu.</p>
+                <form id="rsvp-decline-form" class="rsvp-form"
+                      action=""
+                      method="POST">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-user"></i>
+                                <input name="name" class=""
+                                                                 placeholder="Vārds, uzvārds"
+                                                                 id="guest_name_decline"
+                                                                 required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-key"></i>
+                                <input type="textbox" id="invite_code_decline" name="invite_code"
+                                                                class="no-spin" min="0"
+                                                                placeholder="Ielūguma kods"
+                                                                required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" id="alert-wrapper-decline"/>
+                    </div>
+                    <button class="btn-fill-decline rsvp-decline-btn">
+                        Nevarēšu ierasties :((
                     </button>
                 </form>
             </div>
