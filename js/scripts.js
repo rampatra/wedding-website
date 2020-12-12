@@ -147,8 +147,6 @@ $(document).ready(function () {
     function updateUzruna(input) {
         var uzrunasTeksts = '';
         var vardi = input.split(",");
-        document.getElementById('guest_name').value = vardi[0];
-        document.getElementById('guest_name_decline').value = vardi[0];
         vardi.forEach(function (item, i) {
           if (item) {
             uzrunasTeksts = uzrunasTeksts + item + '! ';
@@ -157,11 +155,22 @@ $(document).ready(function () {
         var uzruna = document.getElementById('uzruna');
         uzrunasTeksts = uzrunasTeksts + pamatteksts;
         uzruna.innerHTML = decodeURIComponent(uzrunasTeksts);
+        document.getElementById('guest_name').value = input;
+        document.getElementById('guest_name_decline').value = input;
+    }
+
+    function hidePlusOneDropdown(input) {
+        var vardi = input.split(",");
+        if(vardi != null && vardi.length > 1) {
+            document.getElementById("plus-one-row").style.display = "none";
+            document.getElementById("plus-one").value = "true";​​​​​​​​​​
+        }
     }
 
     var queryInputUzruna = $.urlParam('uzruna');
     if (queryInputUzruna) {
       updateUzruna(decodeURIComponent(queryInputUzruna));
+      hidePlusOneDropdown(decodeURIComponent(queryInputUzruna));
     } else {
         uzruna.innerHTML = pamatteksts;
     }
