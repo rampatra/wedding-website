@@ -5,6 +5,26 @@ var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 
+var imageResize = require('gulp-image-resize');
+var del = require('del');
+
+gulp.task('resize', function () {
+    return gulp.src('gallery/*.*')
+        .pipe(imageResize({
+            width: 2160,
+            imageMagick: true
+        }))
+        .pipe(gulp.dest('gallery/fulls'))
+        .pipe(imageResize({
+            width: 512,
+            imageMagick: true
+        }))
+        .pipe(gulp.dest('gallery/thumbs'));
+});
+
+gulp.task('del', function () {
+    return del(['gallery/*.*']);
+});
 // compile scss to css
 gulp.task('sass', function () {
     return gulp.src('./sass/styles.scss')
@@ -27,4 +47,4 @@ gulp.task('minify-js', function () {
 });
 
 // default task
-gulp.task('default', gulp.series('sass', 'minify-js'));
+gulp.task('default', gulp.series('resize','del','sass', 'minify-js'));

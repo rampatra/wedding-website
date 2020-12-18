@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    initMap();
     /***************** Waypoints ******************/
 
     $('.wp1').waypoint(function () {
@@ -241,17 +241,25 @@ $(document).ready(function () {
 
 // Google map
 function initMap() {
-    var location = {lat: 22.5932759, lng: 88.27027720000001};
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 15,
-        center: location,
-        scrollwheel: false
-    });
-
-    var marker = new google.maps.Marker({
-        position: location,
-        map: map
-    });
+    var location = {lat: 42.804017,  lng: -83.165511};
+    var map = L.map('map-canvas').setView([42.804017,  -83.165511], 16);
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox/satellite-v9',
+        tileSize: 512,
+        zoomOffset: -1,
+        scrollWheelZoom: false,
+        accessToken: 'pk.eyJ1Ijoia29zaGVycG93ZXJoYXVzIiwiYSI6ImNraXVuYnkzZjJ5cjQydHBkbjh5MnZvd3EifQ.DhomIZqq9uTW4qxHApM2qA'
+    }).addTo(map);
+    map.scrollWheelZoom.disable();
+    // var marker = new google.maps.Marker({
+    //     position: location,
+    //     map: map
+    // });
+    L.marker([42.804017,  -83.165511]).addTo(map)
+    .bindPopup('Buhl Estate')
+    .openPopup();
 }
 
 function initBBSRMap() {
