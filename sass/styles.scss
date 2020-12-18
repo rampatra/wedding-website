@@ -293,7 +293,7 @@ Hero
 }
 .fixed {
   position: fixed;
-  background-color: rgba(55, 36, 40, .88);
+  background-color: rgba(212, 175, 55, .88);
   z-index: 999;
   width: 100%;
 }
@@ -600,7 +600,7 @@ Features-stack
       position: absolute;
       width: 100%;
       height: 100%;
-      background-color: rgba($white-color, 0.5);
+      background-color: #76b8bc;
       -moz-transition: all 300ms ease-in-out;
       -o-transition: all 300ms ease-in-out;
       -webkit-transition: all 300ms ease-in-out;
@@ -610,7 +610,7 @@ Features-stack
       opacity: 0;
     }
     i {
-      color: $white-color;
+      color: #74b6b9;
       font-size: 20px;
       position: absolute;
       width: 20px;
