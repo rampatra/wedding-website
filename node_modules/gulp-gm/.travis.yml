@@ -1,0 +1,18 @@
+---
+language: node_js
+
+node_js:
+  - "node"
+
+before_install:
+ - npm install -g gulp
+ - sudo apt-get install graphicsmagick
+
+install:
+ - npm install
+
+os:
+  #- osx
+  - linux
+
+script: npm test
