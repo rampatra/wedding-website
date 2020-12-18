@@ -58,6 +58,7 @@ section .header {
 }
 .section-padding {
   padding: $section-padding;
+  background: #429ea257
 }
 .section-border {
   border-bottom: 1px solid $keyline-color;
@@ -573,6 +574,7 @@ Features-stack
 ========================================================================== */
 .blog {
   padding-bottom: 120px;
+  background: rgb(11, 170, 176);
 
   img {
     width: 100%;
@@ -600,7 +602,7 @@ Features-stack
       position: absolute;
       width: 100%;
       height: 100%;
-      background-color: #76b8bc;
+      background: rgb(11, 170, 176);
       -moz-transition: all 300ms ease-in-out;
       -o-transition: all 300ms ease-in-out;
       -webkit-transition: all 300ms ease-in-out;
