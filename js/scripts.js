@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    initMap();
     /***************** Waypoints ******************/
 
     $('.wp1').waypoint(function () {
@@ -138,12 +137,15 @@ $(document).ready(function () {
 
     /********************** Social Share buttons ***********************/
 
-
     /********************** Embed youtube video *********************/
     $('.player').YTPlayer();
 
 
     /********************** Toggle Map Content **********************/
+
+    
+    map = initMap();
+
     $('#btn-show-map').click(function () {
         $('#map-content').toggleClass('toggle-map-content');
         $('#btn-show-content').toggleClass('toggle-map-content');
@@ -238,6 +240,8 @@ function initMap() {
     L.marker([42.804017,  -83.165511]).addTo(map)
     .bindPopup('Buhl Estate')
     .openPopup();
+
+    return map;
 }
 
 function initBBSRMap() {

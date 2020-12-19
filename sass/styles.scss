@@ -777,13 +777,13 @@ Embed video
 Google map
 ========================================================================== */
 #map-canvas {
-  height: 500px;
+  height: 400px;
   width: 100%;
   z-index: -1;
 }
 #map-content-wrapper {
   position: relative;
-  margin-top: -502px;
+  margin-top: -400px;
   margin-bottom: 150px;
   z-index: 1;
 }
