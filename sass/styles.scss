@@ -754,11 +754,13 @@ Google map
 #map-canvas {
   height: 500px;
   width: 100%;
+  z-index: -1;
 }
 #map-content-wrapper {
   position: relative;
   margin-top: -502px;
   margin-bottom: 150px;
+  z-index: 1;
 }
 #map-content {
   margin-top: 40px;
@@ -766,6 +768,7 @@ Google map
   background: #fff;
   -webkit-transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
   transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
+  z-index: 1;
 }
 #btn-show-content {
   padding: 20px;
@@ -774,10 +777,12 @@ Google map
   display: inline-block;
   -webkit-transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
   transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
+  z-index: 1;
 }
 .toggle-map-content {
   opacity: 0;
   visibility: hidden;
+  z-index: 1;
 }
 .pointer-events-none {
   pointer-events: none;
