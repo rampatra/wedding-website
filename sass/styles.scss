@@ -251,7 +251,7 @@ Navigation
 Hero
 ========================================================================== */
 .hero {
-  min-height: 750px;
+  min-height: 850px;
   background: url('../img/hero-min.jpg') center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -293,7 +293,7 @@ Hero
 }
 .fixed {
   position: fixed;
-  background-color: rgba(55, 36, 40, .88);
+  background-color: rgba(194, 227, 255, 0.781);
   z-index: 999;
   width: 100%;
 }
@@ -328,7 +328,7 @@ header {
       display: inline;
 
       a {
-        color: $txt-light;
+        color: $txt-dark;
         padding-right: 25px;
 
         &:hover {
@@ -345,7 +345,7 @@ header {
       display: inline;
 
       a {
-        color: $txt-light;
+        color: $txt-dark;
 
         &:hover {
           color: $accent-color;

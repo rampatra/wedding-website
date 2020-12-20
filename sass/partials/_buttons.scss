@@ -16,14 +16,14 @@
 	border-color: $accent-color;
 	background-color: $accent-color;
 }
-.btn-white {
+.btn-dark {
 	font-size: 13px;
 	border: solid 2px;
 	-moz-border-radius: 40px;
 	-webkit-border-radius: 40px;
 	border-radius: 40px;
 	display: inline-block;
-	border-color: $txt-light;
+	border-color: $txt-dark;
 }
 .btn-white:hover, .btn-white:focus {
 	color: $accent-color;
