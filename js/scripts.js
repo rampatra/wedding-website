@@ -137,6 +137,8 @@ $(document).ready(function () {
 
     /********************** Social Share buttons ***********************/
 
+    /********************** Embed youtube video *********************/
+    $('.player').YTPlayer();
 
 
     /********************** Toggle Map Content **********************/
