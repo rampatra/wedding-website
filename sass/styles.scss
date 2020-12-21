@@ -43,6 +43,22 @@ body {
   -webkit-text-size-adjust: 100%;
   //fix for iOS
 }
+.player {
+  height: 300px;
+  overflow: hidden;
+  position: relative; /* requires for to position video properly */
+  z-index: -2;
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  object-fit: cover; /* combined with 'absolute', works like background-size, but for DOM elements */
+}
+
 *:focus {
   outline: none !important;
 }
