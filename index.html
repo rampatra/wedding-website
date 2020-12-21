@@ -267,6 +267,10 @@
     <video id="v0" tabindex="0", autobuffer preload>
         <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src="img/addisonOaks.mp4"></source>
     </video>
+    
+    <div id="video-content">
+        <h5>Addison Oaks - Buhl Estate</h5>
+    </div>
     <div id="bgndVideo" >    
         <script>
 
@@ -283,8 +287,480 @@
 
     // Use requestAnimationFrame for smooth playback
     function scrollPlay(){  
-        
-    var frameNumber  = Math.min(Math.max((clientHeight - vid.getBoundingClientRect().y)/clientHeight, 0),1)  * vid.duration;
+    var relPos = Math.min(Math.max((clientHeight - vid.getBoundingClientRect().y)/clientHeight, 0),1)
+    var duration = vid.duration;
+    if (isNaN(relPos)) relPos = 0;
+    if (isNaN(duration)) duration = 0;
+    var frameNumber  = relPos  * duration;
+    vid.currentTime  = frameNumber;
+    window.requestAnimationFrame(scrollPlay);
+    }
+
+    window.requestAnimationFrame(scrollPlay);
+    
+    </script>
+</div>
+</section>
+
+<section id="map" class="section-padding">
+    <div class="text-center">
+        <h3>How do I get there?</h3>
+        <div class="col-md-4 col-md-offset-4 text-center">
+            <a class="btn btn-fill btn-small" href=https://goo.gl/maps/RnAq4dcU5bzfNFaT7 target="_blank">
+                <i class="fas fa-directions"></i>&nbsp;&nbsp;Directions
+            </a>
+        </div>
+        <p></p>
+    </div>
+    <div id="map-canvas" class="container"></div>
+    <div id="map-content-wrapper" class="container pointer-events-none">
+        <div class="row">
+            <div class="col-xs-offset-1 col-xs-10 col-md-offset-3 col-md-6">
+                <div class="text-center">
+                    <div id="btn-show-content" class="toggle-map-content pointer-events-auto">
+                        <i class="fa fa-info-circle"></i>&nbsp;&nbsp; Show info
+                    </div>
+                </div>
+                <div id="map-content" class="pointer-events-auto">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Addison Oaks - Buhl Estate</h5>
+                            <p>1480 W Romeo Rd, Leonard, MI 48367</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6" style="padding: 5px;">
+                            <p><br></p>
+                            <div class="row text-center">
+                                <div class="col-md-6" style="padding: 5px;">
+                                    <a class="btn btn-accent btn-small" id="btn-show-map"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Show map</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+
+<section id="hotels" class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="header">Accomodations</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    We understand this is a bit far out, so we will be working on organizing lodging and transportation.
+                    <ul>
+                        <li>Crowne Plaza - Auburn Hills</li>
+                        <li>Hamptom Inn</li>
+                        <li>Holiday Express</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+</section>
+
+<section class="rsvp text-center" id="rsvp">
+
+    <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    </button>
+                    <div class="section-padding">
+                        <h3>Thank you!</h3>
+                        <p>We are glad to see you join us on our big day.</p>
+                        <div id="add-to-cal"></div>
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h3>Répondez s'il vous plaît</h3>
+                <p>This function will be enabled when invitations are sent</p>
+                <form id="rsvp-form" class="rsvp-form"
+                      action=""
+                      method="POST">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-envelope"></i><input type="email" name="email" class=""
+                                                                     placeholder="Your email"
+                                                                     required disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-user"></i><input name="name" class=""
+                                                                 placeholder="Your name"
+                                                                 required disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0"
+                                                                  max="4"
+                                                                  placeholder="# of Guests"
+                                                                  required disabled>  
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
+                                                                class="" min="0"
+                                                                placeholder="Invite code"
+                                                                required disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" id="alert-wrapper"></div>
+                    </div>
+                    <button class="btn-fill rsvp-btn" disabled>
+                        Submit
+                    </button>
+                </form>
+                <div class="section-padding">
+                    <h3>Save the Date!</h3>
+                    <!-- Button code -->
+                    <div title="Add to Calendar" class="addeventatc">
+                        Add to Calendar
+                        <span class="start">05/29/2022 05:00 PM</span>
+                        <span class="end">05/29/2022 11:30 PM</span>
+                        <span class="timezone">America/Detroit</span>
+                        <span class="title">Jess & Joshs' Wedding!</span>
+                        <span class="description"></span>
+                        <span class="location">Addison Oaks - Buhl Estate 1480 W Romeo Rd, Leonard, MI 48367</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center content">
+                <span class="to-top-wrapper"><a href="#top" class="to-top"><i class="fa fa-angle-up"></i></a></span>
+                <p>Made possible by the work of <a href=https://github.com/rampatra/wedding-website>rampatra</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/jquery.flexslider-min.js"></script>
+<script src="js/jquery.mb.YTPlayer.min.js"></script>
+<script src="node_modules/waypoints/lib/jquery.waypoints.min.js"></script>
+<script src="js/vendor/ouical.js"></script>
+<script src="js/scripts.min.js"></script>
+
+</body>
+</html>
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Josh & Jess take form of Joshica!</title>
+    <meta name="description" content="We would like to invite you to our big day.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="Josh & Jess are getting Married!">
+    <meta property="og:description" content="We would like to invite you to our big day.">
+    <meta property="og:image" content="img/hero-min.jpg">
+    <meta property="og:type" content="website">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="css/queries.css">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+
+</head>
+<body id="top">
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<section class="hero">
+    <section class="navigation">
+        <header>
+            <div class="header-content">
+                <div class="logo"><a href="#"><img src="img/logo.png" alt="Logo"></a></div>
+                <div class="header-nav">
+                    <nav>
+                        <ul class="primary-nav">
+                            <li><a href="#intro">How we met</a></li>
+                            <li><a href="#events">The Big Day</a></li>
+                            <li><a href="#eng-pics">Engagement</a></li>
+                            <li><a href="#gifts">In lieu of Gifts...</a></li>
+                        </ul>
+                        <ul class="member-actions">
+                            <li><a href="#map" class="login">Venue</a></li>
+                            <li><a href="#hotels" class="login">Accomodations</a></li>
+                            <li><a href="#rsvp" class="btn-white btn-small">RSVP</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="navicon">
+                    <a class="nav-toggle" href="#"><span></span></a>
+                </div>
+            </div>
+        </header>
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="hero-content text-center">
+                    <!--<h1>Ram and Antara</h1>-->
+                    <img src="img/logo-lg.png">
+                    <!--<p class="intro">Ram & Antara are getting hitched!</p>-->
+                    <!--<a href="#" class="btn btn-fill btn-large btn-margin-right">Scroll Down</a> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 hidden-xs"></div>
+            <div class="col-sm-4 hidden-xs text-center"><a href="#rsvp"
+                                                           class="btn btn-accent btn-large rsvp-btn">RSVP</a></div>
+            <div class="col-sm-4 hidden-xs"></div>
+        </div>
+    </div>
+    <div class="down-arrow floating-arrow"><a href="#invitation"><i class="fa fa-angle-down"></i></a></div>
+</section>
+
+<section id="invitation" class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>We're getting marriaged!</h3>
+                <p>The big day is the 29<sup>th</sup> of May 2022 and we would like you to be a part of
+                    it.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="header">How we met</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/split_01.png"  class="wp1"></div>
+            <div class="col-md-6">
+                <p>Jess: 
+                </p>
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/split_02.png" class="wp2"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/split_01.png" class="wp8"></div>
+            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/split_02.png" class="wp9"></div>
+        </div>
+    </div>
+</section>
+
+<section class="events section-padding" id="events">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="header">Events</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12 leftcol">
+                <div class="wp3">
+                    <h5>Ceremony <span class="time">TBD</span></h5>
+                    <p>The part with the words</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12 rightcol">
+                <div class="wp4">
+                    <h5>Reception <span class="time">TBD</span></h5>
+                    <p>The part with the drinkydoos and the dances</p>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="row section-padding">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <a class="btn btn-accent btn-small" data-toggle="modal" data-target="#dc-modal">
+                    <i class="fa fa-barcode"></i>&nbsp;&nbsp;Dress code
+                </a>
+            </div>
+        </div> -->
+        <!--<div class="row">
+            <div class="col-xs-12 section-border section-padding">
+            </div>
+        </div>-->
+    </div>
+
+    <div id="dc-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    </button>
+                    <h3 class="text-center section-padding">Maybe I'll use this for something?</h3>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+</section>
+
+
+<section id="eng-pics" class="section-padding">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="header">Engagement Photos</h3>
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-md-2">
+            <a class="fancybox" rel="group" href="gallery/fulls/IMG_4680.jpg" class="image">
+                <img src="gallery/thumbs/IMG_4680.jpg" alt=""/></a>
+            </a>
+        </div>
+        <div class="col-md-2">
+            <a class="fancybox" rel="group" href="gallery/fulls/IMG_4713.jpg" class="image">
+                <img src="gallery/thumbs/IMG_4713.jpg" alt=""/></a>
+            </a>
+        </div>
+        <div class="col-md-2">
+            <a class="fancybox" rel="group" href="gallery/fulls/IMG_4760.jpg" class="image">
+                <img src="gallery/thumbs/IMG_4760.jpg" alt=""/></a>
+            </a>
+        </div>
+        <div class="col-md-2">
+            <a class="fancybox" rel="group" href="gallery/fulls/IMG_4848.jpg" class="image">
+                <img src="gallery/thumbs/IMG_4848.jpg" alt=""/></a>
+            </a>
+        </div>
+        <div class="col-md-2">
+            <a class="fancybox" rel="group" href="gallery/fulls/IMG_4985.jpg" class="image">
+                <img src="gallery/thumbs/IMG_4985.jpg" alt=""/></a>
+            </a>
+        </div>
+        <div class="col-md-2">
+            <a class="fancybox" rel="group" href="gallery/fulls/IMG_4873.jpg" class="image">
+                <img src="gallery/thumbs/IMG_4873.jpg" alt=""/></a>
+            </a>
+        </div>
+        <div class="col-md-2">
+            <a class="fancybox" rel="group" href="gallery/fulls/IMG_4945.jpg" class="image">
+                <img src="gallery/thumbs/IMG_4945.jpg" alt=""/></a>
+            </a>
+        </div>
+        <div class="col-md-2">
+            <a class="fancybox" rel="group" href="gallery/fulls/IMG_4960.jpg" class="image">
+                <img src="gallery/thumbs/IMG_4960.jpg" alt=""/></a>
+            </a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row hidden-lg hidden-md hidden-xs">
+            <div class="col-xs-12 section-border section-padding"></div>
+        </div>
+    </div>
+    <!--<div class="row">
+        <div class="col-md-12">
+            <div class="diamond floating-logo">
+                <img src="img/sketch-logo.png" alt="Sketch Logo">
+                <div class="ring"></div>
+            </div>
+        </div>
+    </div>-->
+</section>
+
+
+<section id="gifts" class="events section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="header">In Lieu of Gifts...</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    We have more than we could want, so although we accept gifts, we kindly ask that you consider instead, donating to one of the following charities:
+                    <ul class="w3-ul w3-hoverable">
+                        <li><a href="https://secure.gcfb.org/site/Donation2?2500.donation=form1&df_id=2500&mfc_pref=T">Gleaners Community Food Bank</a></li>
+                        <li><a href="https://action.aclu.org/give/make-gift-honor-someone-special-aclu-foundation-michigan">ACLU Michigan</a></li>
+                        <li><a href="https://www.charitywater.org/donate">charity: water</a></li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+</section>
+
+
+<section id="video-bg" class="hidden-sm hidden-xs">
+    <video id="v0" tabindex="0", autobuffer preload>
+        <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src="img/addisonOaks.mp4"></source>
+    </video>
+    <div id="bgndVideo" >    
+        <script>
+
+    
+        var frameNumber = 0, // start video at frame 0
+        // lower numbers = faster playback
+        playbackConst = 1000, 
+        // get page height from video duration
+        // select video element         
+        vid = document.getElementById('v0'); 
+        // var vid = $('#v0')[0]; // jquery optio
+        var clientHeight = document.documentElement.clientHeight;
+
+
+    // Use requestAnimationFrame for smooth playback
+    function scrollPlay(){  
+    var relPos = Math.min(Math.max((clientHeight - vid.getBoundingClientRect().y)/clientHeight, 0),1)
+    if (isNaN(relPos)) relPos = 0;
+    var frameNumber  = relPos  * vid.duration;
     vid.currentTime  = frameNumber;
     window.requestAnimationFrame(scrollPlay);
     }
