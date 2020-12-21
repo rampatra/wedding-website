@@ -44,20 +44,24 @@ body {
   //fix for iOS
 }
 .player {
-  height: 450px;
+  height: 50vh;
   overflow: hidden;
   position: relative; /* requires for to position video properly */
   z-index: -2;
+  background-color: black;
+  
 }
 
 video {
   position: absolute;
   left: 0;
+  top: 0;
   width: 100%;
   z-index: -1;
   display: block;
   object-fit: cover; 
   margin: 0 auto;
+  background-color: black;
 }
 
 *:focus {
@@ -788,7 +792,7 @@ Engagement Pics
 Embed video
 ========================================================================== */
 #video-bg {
-  height: 450px;
+  height: 50vh;
 }
 #video-content {
   width: 100%;
@@ -798,6 +802,8 @@ Embed video
   background: rgba(17, 17, 17, 0.5);
   text-align: center;
   z-index: 1;
+  display: block;
+  object-fit: cover; 
 }
 #video-content h5 {
   color: #ffffff;
