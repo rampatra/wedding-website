@@ -115,8 +115,7 @@
         <div class="row">
             <div class="col-md-3 hidden-sm hidden-xs"><img src="img/split_01.png"  class="wp1"></div>
             <div class="col-md-6">
-                <p>
-                    It started out as awkward UNO games...
+                <p>Jess: 
                 </p>
             </div>
             <div class="col-md-3 hidden-sm hidden-xs"><img src="img/split_02.png" class="wp2"></div>
@@ -265,12 +264,35 @@
 
 
 <section id="video-bg" class="hidden-sm hidden-xs">
-    <div id="bgndVideo" class="player"
-         data-property="{videoURL:'https://youtu.be/VfGpjI3jTQA',containment:'#video-bg',autoPlay:true, mute:true, showControls:false, startAt:2.2, stopAt:3.5, opacity:1}">
-    </div>
-    <div id="video-content">
-        <h5>Addison Oaks - Buhl Estate</h5>
-    </div>
+    <video id="v0" tabindex="0", autobuffer preload>
+        <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src="img/addisonOaks.mp4"></source>
+    </video>
+    <div id="bgndVideo" >    
+        <script>
+
+    
+        var frameNumber = 0, // start video at frame 0
+        // lower numbers = faster playback
+        playbackConst = 1000, 
+        // get page height from video duration
+        // select video element         
+        vid = document.getElementById('v0'); 
+        // var vid = $('#v0')[0]; // jquery optio
+        var clientHeight = document.documentElement.clientHeight;
+
+
+    // Use requestAnimationFrame for smooth playback
+    function scrollPlay(){  
+        
+    var frameNumber  = Math.min(Math.max((clientHeight - vid.getBoundingClientRect().y)/clientHeight, 0),1)  * vid.duration;
+    vid.currentTime  = frameNumber;
+    window.requestAnimationFrame(scrollPlay);
+    }
+
+    window.requestAnimationFrame(scrollPlay);
+    
+    </script>
+</div>
 </section>
 
 <section id="map" class="section-padding">
