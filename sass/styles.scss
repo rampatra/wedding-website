@@ -162,7 +162,7 @@ Animations
 /* ==========================================================================
 Waypoinsts
 ========================================================================== */
-.wp1, .wp2, .wp3, .wp4, .wp5, .wp6, .wp7, .wp8, .wp9 {
+.wp1, .wp2, .wp3, .wp4, .wp5, .wp6, .wp7, .wp8, .wp9, .wp10, .wp11 {
   visibility: hidden
 }
 .wp8, .wp9 {
@@ -555,6 +555,25 @@ Features-stack
   .leftcol {
     padding-right: 100px;
     border-right: solid 1px $keyline-color;
+  }
+  .rightcol {
+    padding-left: 100px;
+  }
+
+  .time {
+    font-size: 13px;
+    font-style: italic;
+    text-transform: lowercase;
+    color: $txt-primary;
+  }
+}
+
+/* ==========================================================================
+.announcements
+========================================================================== */
+.announcements {
+  .leftcol {
+    padding-right: 100px;
   }
   .rightcol {
     padding-left: 100px;
