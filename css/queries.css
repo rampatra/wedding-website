@@ -225,7 +225,17 @@
     .events .rightcol {
         padding: 0 20px;
     }
+
+    .announcements .leftcol {
+        padding: 0 15px;
+        margin-bottom: 15px;
+        border-right: none;
+    }
     
+    .announcements .rightcol {
+        padding: 0 20px;
+    }
+
     #eng-pics .img-wrap {
         border-radius: 0;
     }
