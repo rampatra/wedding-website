@@ -227,13 +227,9 @@
     }
 
     .announcements .leftcol {
-        padding: 0 15px;
-        margin-bottom: 15px;
-        border-right: none;
-    }
-    
-    .announcements .rightcol {
-        padding: 0 20px;
+        display: inline-block;
+        width: 75%;
+        margin-bottom: 30px;
     }
 
     #eng-pics .img-wrap {
