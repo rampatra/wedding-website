@@ -168,12 +168,13 @@ $(document).ready(function () {
     }
 
     var queryInputUzruna = $.urlParam('uzruna');
-    if (queryInputUzruna) {
-      updateUzruna(decodeURIComponent(queryInputUzruna));
-      hidePlusOneDropdown(decodeURIComponent(queryInputUzruna));
-    } else {
-        uzruna.innerHTML = pamatteksts;
-    }
+    //// TODO:  if (queryInputUzruna) {
+    //   updateUzruna(decodeURIComponent(queryInputUzruna));
+    //   hidePlusOneDropdown(decodeURIComponent(queryInputUzruna));
+    // } else {
+    //     uzruna.innerHTML = pamatteksts;
+    // }
+    uzruna.innerHTML = 'Gadīsim uz kāzām vēl pēc gada :(';
     var queryInputCode = $.urlParam('kods');
     if (queryInputCode) {
       document.getElementById('invite_code').value = (decodeURIComponent(queryInputCode));
