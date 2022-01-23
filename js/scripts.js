@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     /***************** Waypoints ******************/
 
     $('.wp1').waypoint(function () {
@@ -168,13 +167,12 @@ $(document).ready(function () {
     }
 
     var queryInputUzruna = $.urlParam('uzruna');
-    //// TODO:  if (queryInputUzruna) {
-    //   updateUzruna(decodeURIComponent(queryInputUzruna));
-    //   hidePlusOneDropdown(decodeURIComponent(queryInputUzruna));
-    // } else {
-    //     uzruna.innerHTML = pamatteksts;
-    // }
-    uzruna.innerHTML = 'Gadīsim uz kāzām vēl pēc gada :(';
+    if (queryInputUzruna) {
+      updateUzruna(decodeURIComponent(queryInputUzruna));
+      hidePlusOneDropdown(decodeURIComponent(queryInputUzruna));
+    } else {
+        uzruna.innerHTML = pamatteksts;
+    }
     var queryInputCode = $.urlParam('kods');
     if (queryInputCode) {
       document.getElementById('invite_code').value = (decodeURIComponent(queryInputCode));
@@ -233,17 +231,17 @@ $(document).ready(function () {
             title: "Ginta un Santas kāzas",
 
             // Event start date
-            start: new Date('Jul 10, 2021 14:00'),
+            start: new Date('Aug 6, 2022 14:00'),
 
             // Event duration (IN MINUTES)
             // duration: 120,
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('Jul 11, 2021 16:30'),
+            end: new Date('Aug 7, 2022 16:30'),
 
             // Event Address
-            address: 'Lokstenes svētnīca, pēc tam Bebru nams, Daugmale',
+            address: 'Lokstenes svētnīca, pēc tam Ezernieki, Indrānu pagasts',
 
             // Event Description
             description: "Mīļi gaidīti mūsu kāzās. Neskaidrību gadījumā sazinieties ar Santu vai Gintu. Tel. nr. +371 26701355"
@@ -318,13 +316,13 @@ $(document).ready(function () {
 // Google map
 function initMaps() {
     initMap('map-canvas', {lat: 56.598900, lng: 25.655900}, "Pārceltuve uz svētnīcu");
-    initMap('map-canvas-wedding', {lat: 56.820777, lng: 24.473452}, null);
+    initMap('map-canvas-wedding', {lat: 56.811758, lng: 26.566291}, "Atpūtas un tūrisma centrs \"Ezernieki\"");
 }
 
 function initMap(elementId, location, title) {
     var map = new google.maps.Map(document.getElementById(elementId), {
         zoom: 15,
-        center: location,
+        center: {lat: location.lat - 0.002000, lng: location.lng},
         scrollwheel: false
     });
 
