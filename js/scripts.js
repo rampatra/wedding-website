@@ -184,17 +184,17 @@ $(document).ready(function () {
         },
         data: {
             // Event title
-            title: "Ram and Antara's Wedding",
+            title: "BiTo's Wedding",
 
             // Event start date
-            start: new Date('Nov 27, 2017 10:00'),
+            start: new Date('Jun 04, 2022 10:00'),
 
             // Event duration (IN MINUTES)
             // duration: 120,
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('Nov 29, 2017 00:00'),
+            end: new Date('Jun 19, 2022 00:00'),
 
             // Event Address
             address: 'ITC Fortune Park Hotel, Kolkata',
@@ -212,11 +212,11 @@ $(document).ready(function () {
         e.preventDefault();
         var data = $(this).serialize();
 
-        $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
+        $('#alert-wrapper').html(alert_markup('info', '<strong>Vui lòng đợi!</strong> Tin nhắn đang được lưu lại.'));
 
-        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
-            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
+        if (MD5($('#invite_code').val()) !== 'efc0f291fd511e42d7e8d44a5bf826dc'
+            && MD5($('#invite_code').val()) !== '2020dbdf7b17bc05817e7b5dd3e13f25') {
+            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Invite code không đúng.'));
         } else {
             $.post('https://script.google.com/macros/s/AKfycbzUqz44wOat0DiGjRV1gUnRf4HRqlRARWggjvHKWvqniP7eVDG-/exec', data)
                 .done(function (data) {
@@ -230,7 +230,7 @@ $(document).ready(function () {
                 })
                 .fail(function (data) {
                     console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Oh!</strong> Có một vấn đề xảy ra từ phía máy chủ. Tạm bỏ qua bạn nhé. '));
                 });
         }
     });
