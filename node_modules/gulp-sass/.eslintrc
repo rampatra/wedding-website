@@ -1,0 +1,12 @@
+root: true
+
+env:
+  mocha: true
+  node: true
+
+rules:
+  max-len:
+    - 2
+    - 120
+
+extends: "airbnb-base"
