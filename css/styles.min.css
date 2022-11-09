@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,400italic,300italic,700,700italic);@import url(https://fonts.googleapis.com/css?family=Nunito:400,300,700);p{font-size:15px;line-height:29px;color:rgba(28,54,83,0.6);padding-bottom:20px}
 h1{font-size:60px}
 h2{font-size:40px;font-weight:300;color:#3D4351}
-h3{color:#EE4B2B;font-size:18px;font-weight:24px;text-transform:uppercase;letter-spacing:3px;line-height:24px}
+h3{color:#EE4B2B;font-size:18px;font-weight:24px;text-transform:uppercase;letter-spacing:3px;line-height:24px;}
 h4{font-size:18px}
 h5{font-size:15px;color:#3D4351;text-transform:uppercase;font-weight:500}
 .btn{font-size:13px;border:solid 2px;-moz-border-radius:40px;-webkit-border-radius:40px;border-radius:40px;display:inline-block;text-transform:uppercase}
