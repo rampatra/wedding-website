@@ -21,8 +21,9 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-uglify": "^3.0.2"
+    "gulp-sass": "^5.0.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.25.0"
   },
   "dependencies": {
     "animate.css": "^3.7.2",
