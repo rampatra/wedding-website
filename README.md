@@ -15,10 +15,11 @@ _See [wedding.rampatra.com](http://wedding.rampatra.com/) for a demo. Use invite
    data.
 
 # Getting Started
-1. `$ cd wedding-website` - go inside the project directory
-2. `$ npm install` - install dependencies _(optional)_
-3. `$ gulp` - compile sass to css, minify js, etc. _(optional)_
-4. That's it, open `index.html` on your browser by just double-clicking on the file.
+1. `$ git clone https://github.com/rampatra/wedding-website.git` - clone this project to your computer
+2. `$ cd wedding-website` - go inside the project directory
+3. `$ npm install` - install dependencies _(optional)_
+4. `$ gulp` - compile sass to css, minify js, etc. _(optional)_
+5. That's it, open `index.html` file on your browser by just double-clicking on it.
 
 # Documentation
 I have written a 
