@@ -27,7 +27,7 @@ I have written a
 customize each of them according to your needs.
 
 # About Me
-Hello, my name is Ram. I am a Lead Software Engineer at [Mastercard R&D Labs](https://www.mastercard.com/). I enjoy making teeny tiny applications in
+Hello, my name is Ram. I am an Engineering Manager at [Mastercard R&D Labs](https://www.mastercard.com/). I enjoy making teeny tiny applications in
 my leisure time and this is one of them. Now that my wedding is over, I am open-sourcing the project. Hope you like it!
 
 Lastly, if you use a Mac then you may also love [Presentify](https://presentify.compzets.com/). Give it a whirl and let me know your thoughts.
