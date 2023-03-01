@@ -43,7 +43,7 @@
         // load js files from CDN if local node_modules fail
         function loadJsFromCDN(js) {
             if (js === 'waypoints.js') {
-                document.write('<script src="https://github.com/imakewebthings/waypoints/blob/4.0.1/lib/jquery.waypoints.min.js"><\/script>');
+                document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"><\/script>');
             } else if (js === 'jquery.js') {
                 document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>');
             }
