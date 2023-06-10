@@ -54,6 +54,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery.fancybox.css">
     <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/ie.css">
     <link rel="stylesheet" href="css/styles.min.css">
     <link rel="stylesheet" href="css/queries.css">
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" onerror="loadCssFromCDN('animate.css')">
@@ -78,11 +79,12 @@
                             <li><a href="#instagram">Instagram</a></li>
                             <li><a href="#eng-pics">Engagement</a></li>
                             <li class="hidden-sm hidden-xs"><a href="#video-bg">Glimpse of the city</a></li>
+                            <li id="google_translate_element"></li>
                         </ul>
                         <ul class="member-actions">
                             <li><a href="#map" class="login">Venue</a></li>
                             <li><a href="#rsvp" class="btn-white btn-small">RSVP</a></li>
-                        </ul>
+                        </ul>                      
                     </nav>
                 </div>
                 <div class="navicon">
@@ -522,6 +524,20 @@
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-46465113-4', 'auto');
     ga('send', 'pageview');
+</script>
+<script type="text/javascript"
+            src=
+"https://translate.google.com/translate_a/element.js?
+cb=googleTranslateElementInit">
+    </script>
+
+<script>
+    function googleTranslateElementInit(){
+    new google.translate.TranslateElement(
+        {pageLanguage: 'en'},
+        'google_translate_element'
+    );
+}
 </script>
 </body>
 </html>
