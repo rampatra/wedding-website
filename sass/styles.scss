@@ -247,17 +247,31 @@ Navigation
   transition: all 300ms ease-in-out;
 }
 
+.white-text {
+  font-size: large;
+  color: white;
+  background-color: rgba(grey, .5);
+}
+.large-text {
+  font-size: xx-large;
+  color: white;
+  font-weight: 700;
+}
+
 /* ==========================================================================
 Hero
 ========================================================================== */
 .hero {
   min-height: 750px;
-  background: url('../img/hero-min.jpg') center center;
+  background: url('../img/hero-min.jpeg') center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   position: relative;
+
+  //SAVE THE DATE ONLY
+  height: 100vh;
 
   /*.rsvp-btn {
     position: absolute;
