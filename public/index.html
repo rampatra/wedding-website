@@ -42,9 +42,13 @@
 
         // load js files from CDN if local node_modules fail
         function loadJsFromCDN(js) {
+            console.error('hello1')
+            window.alert('hi')
             if (js === 'waypoints.js') {
+                console.error('hello1')
                 document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"><\/script>');
             } else if (js === 'jquery.js') {
+                console.error('hello1')
                 document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>');
             }
         }
@@ -56,8 +60,8 @@
     <link rel="stylesheet" href="css/flexslider.css">
     <link rel="stylesheet" href="css/styles.min.css">
     <link rel="stylesheet" href="css/queries.css">
-    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" onerror="loadCssFromCDN('animate.css')">
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" onerror="loadCssFromCDN('font-awesome.css')">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 <body id="top">
@@ -136,7 +140,7 @@
             <div class="col-md-3 hidden-sm hidden-xs"><img src="img/IMG_2317.jpg" class="wp1"></div>
             <div class="col-md-6">
                 <p>
-                    I first saw Antara in the Fall of 2008 when we started our undergrad. I was instantly attracted to
+                    ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZI first saw Antara in the Fall of 2008 when we started our undergrad. I was instantly attracted to
                     her but was far too nervous to speak to her. I had told my friend I liked her and news had traveled
                     fast and she soon found out. Her first reaction was "Who is Ram?" and she began searching for me in
                     the class. She started to take notice of me and no matter how boring the lecture was, we never
@@ -497,8 +501,8 @@
         </div>
     </div>
 </footer>
-<script src="js/vendor/jquery-1.11.2.min.js" onerror="loadJsFromCDN('jquery.js')"></script>
-<script src="node_modules/waypoints/lib/jquery.waypoints.min.js" onerror="loadJsFromCDN('waypoints.js')"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
 <script src="js/jquery.fancybox.pack.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
 <script src="js/jquery.flexslider-min.js"></script>
@@ -506,7 +510,7 @@
 <script src="js/vendor/ouical.js"></script>
 <script src="js/scripts.min.js"></script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlPw3GQYI3faa_9mRE6plWuM7xNEmrwH0&callback=initMap"></script>
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBo1B7bEKT2E1wIE8SK6XXxvnKvh4dIpDc&callback=initMap"></script>
 <!-- Google Analytics -->
 <script>
     (function (i, s, o, g, r, a, m) {
@@ -525,3 +529,6 @@
 </script>
 </body>
 </html>
+
+
+<!-- TODO add restriction to gmaps API key once I have the offical domain name  -->
