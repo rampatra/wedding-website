@@ -20,6 +20,7 @@ _See [wedding.rampatra.com](http://wedding.rampatra.com/) for a demo. Use invite
 3. `$ npm install` - install dependencies
 4. `$ gulp` - compile sass to css, minify js, etc.
 5. That's it, open `index.html` file on your browser by just double-clicking on it.
+6. Deploy via `$ firebase deploy --only hosting`
 
 # Documentation
 I have written a 

@@ -10,7 +10,7 @@ gulp.task('sass', function () {
     return gulp.src('./public/sass/styles.scss')
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(rename({basename: 'styles.min'}))
-        .pipe(gulp.dest('./css'));
+        .pipe(gulp.dest('public/css'));
 });
 
 // watch changes in scss files and run sass task
@@ -23,7 +23,7 @@ gulp.task('minify-js', function () {
     return gulp.src('./public/js/scripts.js')
         .pipe(uglify())
         .pipe(rename({basename: 'scripts.min'}))
-        .pipe(gulp.dest('./js'));
+        .pipe(gulp.dest('public/js'));
 });
 
 // default task
