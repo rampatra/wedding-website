@@ -37,3 +37,4 @@ typings/
 .sass-cache/
 *.css.map
 .firebaserc
+.firebase
