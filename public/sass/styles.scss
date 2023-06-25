@@ -569,6 +569,23 @@ Features-stack
 }
 
 /* ==========================================================================
+.travel
+========================================================================== */
+.travel {
+  .centercol {
+    border-right: solid 1px $keyline-color;
+    border-left: solid 1px $keyline-color;
+  }
+
+  .time {
+    font-size: 13px;
+    font-style: italic;
+    text-transform: lowercase;
+    color: $txt-primary;
+  }
+}
+
+/* ==========================================================================
 .blog
 ========================================================================== */
 .blog {
@@ -940,7 +957,7 @@ FAQ
     align-items: center;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
-    justify-content: space-between;
+    justify-content: center;
 }
 .faq-accordian .card .card-header h6 span {
     font-size: 1.5rem;
