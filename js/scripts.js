@@ -184,10 +184,10 @@ $(document).ready(function () {
         },
         data: {
             // Event title
-            title: "Ram and Antara's Wedding",
+            title: "Brent and Kylie's Wedding",
 
             // Event start date
-            start: new Date('Nov 27, 2017 10:00'),
+            start: new Date('Sep 30, 2023 3:30'),
 
             // Event duration (IN MINUTES)
             // duration: 120,
@@ -204,7 +204,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#add-to-cal').html(myCalendar);
+    // $('#add-to-cal').html(myCalendar);
 
 
     /********************** RSVP **********************/
@@ -214,11 +214,11 @@ $(document).ready(function () {
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
-        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
-            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
-        } else {
-            $.post('https://script.google.com/macros/s/AKfycbyo0rEknln8LedEP3bkONsfOh776IR5lFidLhJFQ6jdvRiH4dKvHZmtoIybvnxpxYr2cA/exec', data)
+        // if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
+        //     && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
+        //     $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
+        // } else {
+            $.post('https://script.google.com/macros/s/AKfycbwI3Wh08HCJrAHIulPEtQjrMPgxA8t7t0-4_J1AUQQWgYw3y6F2i3HPPcY-xyDjT5iK/exec', data)
                 .done(function (data) {
                     console.log(data);
                     if (data.result === "error") {
@@ -232,7 +232,7 @@ $(document).ready(function () {
                     console.log(data);
                     $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
                 });
-        }
+        // }
     });
 
 });
