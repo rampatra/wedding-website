@@ -252,7 +252,7 @@ Hero
 ========================================================================== */
 .hero {
   min-height: 750px;
-  background: url('../img/hero-min.jpg') center center;
+  background: url('../img/hero-min.jpeg') center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -558,6 +558,23 @@ Features-stack
   }
   .rightcol {
     padding-left: 100px;
+  }
+
+  .time {
+    font-size: 13px;
+    font-style: italic;
+    text-transform: lowercase;
+    color: $txt-primary;
+  }
+}
+
+/* ==========================================================================
+.travel
+========================================================================== */
+.travel {
+  .centercol {
+    border-right: solid 1px $keyline-color;
+    border-left: solid 1px $keyline-color;
   }
 
   .time {
@@ -898,4 +915,63 @@ body.modal-open {
 }
 .modal-body {
   padding:25px;
+}
+
+
+
+/* ==========================================================================
+FAQ
+========================================================================== */
+.faq_area {
+    position: relative;
+    z-index: 1;
+}
+
+.faq-accordian {
+    position: relative;
+    z-index: 1;
+}
+.faq-accordian .card {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1.5rem;
+}
+.faq-accordian .card:last-child {
+    margin-bottom: 0;
+}
+.faq-accordian .card .card-header {
+    background-color: #ffffff;
+    padding: 0;
+    border-bottom-color: #ebebeb;
+}
+.faq-accordian .card .card-header h6 {
+    cursor: pointer;
+    padding: 1.75rem 2rem;
+    color: #3f43fd;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: center;
+}
+.faq-accordian .card .card-header h6 span {
+    font-size: 1.5rem;
+}
+.faq-accordian .card .card-header h6.collapsed {
+    color: #070a57;
+}
+.faq-accordian .card .card-header h6.collapsed span {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+.faq-accordian .card .card-body {
+    padding: 1.75rem 2rem;
+}
+.faq-accordian .card .card-body p:last-child {
+    margin-bottom: 0;
 }
