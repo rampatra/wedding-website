@@ -1,0 +1,30 @@
+
+update maps api key when get new domain name ( I did this for the "new maps API key only, see if it works)
+add to calander event button
+relatiopnshop timeline section? 
+trivia section? 
+
+google firebase A record val 199.36.158.100
+
+
+Sections
+
+1. Home/welcome
+2. About us
+3. Event details
+4. Transportation
+5. Accomodations
+6. registry
+7. FAQ
+8. photos
+9. contact
+
+
+
+
+wedding colors 
+
+purple  #430792
+green   #254d42
+magenta #970246
+yellow  #F1B205
