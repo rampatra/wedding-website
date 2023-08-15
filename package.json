@@ -26,8 +26,8 @@
     "sass": "^1.25.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.0",
     "animate.css": "^3.7.2",
-    "font-awesome": "^4.7.0",
     "waypoints": "^4.0.1"
   }
 }

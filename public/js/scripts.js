@@ -241,30 +241,24 @@ $(document).ready(function () {
 
 // Google map
 function initMap() {
-    var location = {lat: 22.5932759, lng: 88.27027720000001};
+    var church = {lat: 40.4263873, lng: -79.9864019};
+    var ballroom = {lat: 40.4377254, lng: -79.9894711};
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
-        center: location,
+        center: church,
         scrollwheel: false
     });
 
-    var marker = new google.maps.Marker({
-        position: location,
-        map: map
-    });
-}
-
-function initBBSRMap() {
-    var la_fiesta = {lat: 20.305826, lng: 85.85480189999998};
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 15,
-        center: la_fiesta,
-        scrollwheel: false
+    var church = new google.maps.Marker({
+        position: church,
+        map: map,
+        label: 'St Adelbert Church'
     });
 
-    var marker = new google.maps.Marker({
-        position: la_fiesta,
-        map: map
+    var ballroom = new google.maps.Marker({
+        position: ballroom,
+        map: map,
+        label: 'Ballroom'
     });
 }
 

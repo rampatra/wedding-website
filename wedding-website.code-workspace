@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"emeraldwalk.runonsave": {
+
+			"commands": [
+				{
+					"match": ".*",
+					"cmd": "gulp"
+				},
+				{
+					"match": ".*",
+					"cmd": "firebase deploy --only hosting"
+				}
+			]
+		}
+	}
+}
