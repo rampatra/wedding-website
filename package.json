@@ -28,6 +28,8 @@
   "dependencies": {
     "animate.css": "^3.7.2",
     "font-awesome": "^4.7.0",
+    "gulp-typescript": "^2.12.2",
+    "typescript": "^5.2.2",
     "waypoints": "^4.0.1"
   }
 }
