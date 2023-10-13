@@ -4,6 +4,15 @@ html {
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%
 }
+
+::-webkit-scrollbar{ /*Hides scrollbar on chromium and mozilla browsers*/
+    width:0;
+    scrollbar-width:none;
+}
+*{
+    scrollbar-width: none;
+}
+
 html,
 body {
     overflow-x: hidden;
