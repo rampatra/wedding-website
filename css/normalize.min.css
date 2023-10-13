@@ -7,7 +7,6 @@ html {
 
 ::-webkit-scrollbar{ /*Hides scrollbar on chromium and mozilla browsers*/
     width:0;
-    scrollbar-width:none;
 }
 *{
     scrollbar-width: none;
