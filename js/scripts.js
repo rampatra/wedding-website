@@ -184,23 +184,23 @@ $(document).ready(function () {
         },
         data: {
             // Event title
-            title: "Ram and Antara's Wedding",
+            title: "密綺與廷岳的婚禮",
 
             // Event start date
-            start: new Date('Nov 27, 2017 10:00'),
+            start: new Date('Apr 13, 2024 11:00'),
 
             // Event duration (IN MINUTES)
             // duration: 120,
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('Nov 29, 2017 00:00'),
+            end: new Date('Apr 13, 2024 15:30'),
 
             // Event Address
-            address: 'ITC Fortune Park Hotel, Kolkata',
+            address: '台北市中山區敬業四路168號, 維多利亞酒店',
 
             // Event Description
-            description: "We can't wait to see you on our big day. For any queries or issues, please contact Mr. Amit Roy at +91 9876543210."
+            description: "期待與你們相見！"
         }
     });
 
@@ -212,13 +212,12 @@ $(document).ready(function () {
         e.preventDefault();
         var data = $(this).serialize();
 
-        $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
+        $('#alert-wrapper').html(alert_markup('info', '<strong>請等一下!</strong> 資料上傳中...'));
 
-        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
-            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
+        if (MD5($('#invite_code').val()) !== '9bdb60bff5bbb04c8ca38ff39d81efa5') {
+            $('#alert-wrapper').html(alert_markup('danger', '<strong>抱歉!</strong> 你的驗證碼不正確唷！'));
         } else {
-            $.post('https://script.google.com/macros/s/AKfycbyo0rEknln8LedEP3bkONsfOh776IR5lFidLhJFQ6jdvRiH4dKvHZmtoIybvnxpxYr2cA/exec', data)
+            $.post('https://script.google.com/macros/s/AKfycbzIVgSkECZtLVZ_M4Mh-M1ZO8jZhtqQruyahiXUQWDdLEHBqLeiWrHRoIQSAboFpp1g/exec', data)
                 .done(function (data) {
                     console.log(data);
                     if (data.result === "error") {
@@ -230,7 +229,7 @@ $(document).ready(function () {
                 })
                 .fail(function (data) {
                     console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+                    $('#alert-wrapper').html(alert_markup('danger', '<strong>抱歉！</strong> 請再刷新重試'));
                 });
         }
     });
@@ -241,7 +240,7 @@ $(document).ready(function () {
 
 // Google map
 function initMap() {
-    var location = {lat: 22.5932759, lng: 88.27027720000001};
+    var location = {lat: 25.081043, lng: 121.55800};
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
         center: location,
@@ -255,7 +254,7 @@ function initMap() {
 }
 
 function initBBSRMap() {
-    var la_fiesta = {lat: 20.305826, lng: 85.85480189999998};
+    var la_fiesta = {lat: 25.081043, lng: 121.55800};
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
         center: la_fiesta,

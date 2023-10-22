@@ -251,8 +251,8 @@ Navigation
 Hero
 ========================================================================== */
 .hero {
-  min-height: 750px;
-  background: url('../img/hero-min.jpg') center center;
+  min-height: 760px;
+  background: url('../img/h&m/IMG_1176.JPG') center 30%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -281,7 +281,7 @@ Hero
     padding-top: 40%;
   }
   .hero-content img {
-    width: 55%;
+    width: 15%;
     margin-bottom: 12%;
   }
 }
@@ -318,7 +318,7 @@ header {
     display: inline-block;
   }
   .logo img {
-    height: 19px;
+    height: 30px;
   }
   ul.primary-nav {
     margin: 0 0 0 75px;
@@ -656,7 +656,7 @@ Instagram
 /* ==========================================================================
 Engagement Pics
 ========================================================================== */
-#eng-pics {
+#eng-pics,#travel-pics {
   img {
     width: 100%;
     height: auto;
@@ -726,7 +726,10 @@ Engagement Pics
 Embed video
 ========================================================================== */
 #video-bg {
-  height: 300px;
+  height: 600px;
+}
+#video-bg-2 {
+  height: 600px;
 }
 #video-content {
   width: 100%;
