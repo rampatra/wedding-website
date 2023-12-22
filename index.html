@@ -434,7 +434,8 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <h3>What are you waiting for?</h3>
-                <p>We would greatly appreciate if you could RSVP before 1st of November '17</p>
+                <p>We would greatly appreciate if you could RSVP before 1st of November '17<br>
+                Grown up kids? Perhaps count them as adults. The meal of the kids might be different.</p>
                 <form id="rsvp-form" class="rsvp-form"
                       action=""
                       method="POST">
@@ -457,12 +458,22 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0"
+                                <i class="fa fa-users"></i><input type="number" name="extra_adults" class="" min="0"
                                                                   max="4"
-                                                                  placeholder="Husband/Wife or kids"
+                                                                  placeholder="Extra adults"
                                                                   required>
                             </div>
                         </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-users"></i><input type="number" name="extra_kids" class="" min="0"
+                                                                  max="5"
+                                                                  placeholder="Kids"
+                                                                  required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
                                 <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
