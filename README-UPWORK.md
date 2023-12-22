@@ -1,5 +1,10 @@
+# Web page
+
+https://docs.google.com/spreadsheets/d/13xKfCfW6DaBWlHnGFiS9QpoBpNLyUJLfTG8SP98J-RM/edit?usp=sharing
 
 # details TODO, one per section
+
+timestamp, email, name, adults, kids, extra, invite_code	
 
 # Code for RSVP
 
