@@ -101,6 +101,8 @@ $(document).ready(function () {
                 $('header .navicon').css({
                     "top": "34px",
                 });
+                // Add this line to change font color when fixed
+                $('header a').css('color', $black-color); // Or any other dark color that suits
             } else {
                 $('section.navigation').removeClass('fixed');
                 $('header').css({
@@ -113,9 +115,12 @@ $(document).ready(function () {
                 $('header .navicon').css({
                     "top": "48px",
                 });
+                // Add this line to revert font color
+                $('header a').css('color', $txt-light); // Reverting back to original color
             }
         });
     });
+
     /***************** Smooth Scrolling ******************/
 
     $(function () {

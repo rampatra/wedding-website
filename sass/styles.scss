@@ -293,7 +293,9 @@ Hero
 }
 .fixed {
   position: fixed;
+  // Hector: restore color
   background-color: rgba(55, 36, 40, .88);
+  // background-color: rgba(134, 191, 230, .88);
   z-index: 999;
   width: 100%;
 }
@@ -345,8 +347,7 @@ header {
       display: inline;
 
       a {
-        // color: $txt-light;
-        color: $black-color;
+        color: $txt-light;
 
         &:hover {
           color: $accent-color;
