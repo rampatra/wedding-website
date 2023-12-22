@@ -345,7 +345,8 @@ header {
       display: inline;
 
       a {
-        color: $txt-light;
+        // color: $txt-light;
+        color: $black-color;
 
         &:hover {
           color: $accent-color;
