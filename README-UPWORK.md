@@ -2,7 +2,7 @@
 
 https://docs.google.com/spreadsheets/d/13xKfCfW6DaBWlHnGFiS9QpoBpNLyUJLfTG8SP98J-RM/edit?usp=sharing
 
-# details TODO, one per section
+# Arslan Task list
 
 1. To change the Tab icon go to the head section and find below line:
 ```html
