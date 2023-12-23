@@ -4,7 +4,27 @@ https://docs.google.com/spreadsheets/d/13xKfCfW6DaBWlHnGFiS9QpoBpNLyUJLfTG8SP98J
 
 # details TODO, one per section
 
+1. To change the Tab icon go to the head section and find below line:
+```html
+<link rel="icon" type="image/png" sizes="32x32" href="img-hs/hs-wedding-logo-white-192x203.png">
+```
+Replace the href with the exact path to the image.
+
 timestamp, email, name, adults, kids, extra, invite_code	
+
+2. To change the Header Logo go to the first section and find below line:
+```html
+<img style="width: 200px;" src="img-hs/hs-wedding-logo-white-800x946.png">
+```
+Replace the src with the exact path to the image.
+
+3. To change the Carousel Logo go to the Section containing the class "hero" and find below line:
+```html
+<div class="logo"><a href="#"><img src="img-hs/hs-wedding-logo-white-146x154.png" alt="Logo"></a></div>
+```
+Replace the src with the exact path to the image.
+
+timestamp, email, name, adults, kids, extra, invite_code
 
 # Code for RSVP
 
