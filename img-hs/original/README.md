@@ -1,2 +1,1 @@
-Original arts.
-Do not use in website.
+Original arts. Do not use in website.
