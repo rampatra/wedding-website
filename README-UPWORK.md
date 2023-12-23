@@ -23,6 +23,8 @@ Replace the src with the exact path to the image.
 <div class="logo"><a href="#"><img src="img-hs/hs-wedding-logo-white-146x154.png" alt="Logo"></a></div>
 ```
 Replace the src with the exact path to the image.
+#
+Note: I have added the style tag inside of the img tag for you so that in future if you wanted to change the logo or wanted to change the size you can do from here.
 
 timestamp, email, name, adults, kids, extra, invite_code
 
