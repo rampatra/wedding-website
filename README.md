@@ -4,9 +4,6 @@ _See [wedding.rampatra.com](http://wedding.rampatra.com/) for a demo. Use invite
 
 # Chace
 - From desktop test
-user: amplify-wedding
-key: AKIAW6XQT526QGIWLTFP
-secret: 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
 
 # Highlights
 1. Slick and fully __responsive__ design.
