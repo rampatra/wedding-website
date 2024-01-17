@@ -30,10 +30,10 @@ customize each of them according to your needs.
 Hello, my name is Ram. I am an Engineering Manager at [Mastercard R&D Labs](https://www.mastercard.com/). I enjoy making teeny tiny applications in
 my leisure time and this is one of them. Now that my wedding is over, I am open-sourcing the project. Hope you like it!
 
-Lastly, if you use a Mac then you may also love [Presentify](https://presentify.compzets.com/). Give it a whirl and let me know your thoughts.
+Lastly, if you use a Mac then you may also love [Presentify](https://presentify.compzets.com/), and [ToDoBar](https://todobar.compzets.com/). Give it a whirl and let me know your thoughts.
 
 # Contribute
-Firstly, a big thanks 🙏🏻 for the overwhelming response on [HackerNews](https://news.ycombinator.com/item?id=18556787) and [Reddit](https://www.reddit.com/r/opensource/comments/a1bx4h/i_am_open_sourcing_my_wedding_website_on_my_first/). If you would like to contribute to this project, you can do so by creating a [PR](https://help.github.com/articles/about-pull-requests/); and to support my work, you can click on one of the links under the Sponsors section or the button below.
+Firstly, a big thanks 🙏🏻 for the overwhelming response on [HackerNews](https://news.ycombinator.com/item?id=18556787), and [Reddit](https://www.reddit.com/r/opensource/comments/a1bx4h/i_am_open_sourcing_my_wedding_website_on_my_first/). If you would like to contribute to this project, you can do so by creating a [PR](https://help.github.com/articles/about-pull-requests/); and to support my work, you can click on one of the links under the Sponsors section or the button below.
 
 <a href="https://www.buymeacoffee.com/rampatra" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
