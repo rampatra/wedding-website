@@ -749,23 +749,47 @@ Embed video
 /* ==========================================================================
 Google map
 ========================================================================== */
-#map-canvas {
+#map-canvas-1 {
   height: 500px;
   width: 100%;
 }
-#map-content-wrapper {
+#map-content-wrapper-1 {
   position: relative;
   margin-top: -502px;
   margin-bottom: 150px;
 }
-#map-content {
+#map-content-1 {
   margin-top: 40px;
   padding: 50px 60px;
   background: #fff;
   -webkit-transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
   transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
 }
-#btn-show-content {
+#btn-show-content-1 {
+  padding: 20px;
+  background: #fff;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
+  transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
+}
+#map-canvas-2 {
+  height: 500px;
+  width: 100%;
+}
+#map-content-wrapper-2 {
+  position: relative;
+  margin-top: -502px;
+  margin-bottom: 150px;
+}
+#map-content-2 {
+  margin-top: 40px;
+  padding: 50px 60px;
+  background: #fff;
+  -webkit-transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
+  transition: opacity 0.5s, visibility 0.6s, margin-top 0.5s;
+}
+#btn-show-content-2 {
   padding: 20px;
   background: #fff;
   cursor: pointer;

@@ -1,6 +1,6 @@
 {
   "name": "wedding-website",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "A wedding website with loads of features.",
   "main": "npmfile.js",
   "scripts": {
@@ -8,16 +8,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:rampatra/wedding-website.git"
+    "url": "https://github.com/EmmaPj18/wedding-website.git"
   },
   "keywords": [
     "wedding",
     "template",
     "website template"
   ],
-  "author": "Ram Patra",
+  "author": "Emmanuel Polanco Jimenez",
   "license": "GPL-3.0",
-  "homepage": "https://github.com/rampatra/wedding-website",
+  "homepage": "https://github.com/EmmaPj18/wedding-website",
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-rename": "^1.4.0",

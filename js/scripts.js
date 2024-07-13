@@ -166,13 +166,21 @@ $(document).ready(function () {
 
 
     /********************** Toggle Map Content **********************/
-    $('#btn-show-map').click(function () {
-        $('#map-content').toggleClass('toggle-map-content');
-        $('#btn-show-content').toggleClass('toggle-map-content');
+    $('#btn-show-map-1').click(function () {
+        $('#map-content-1').toggleClass('toggle-map-content');
+        $('#btn-show-content-1').toggleClass('toggle-map-content');
     });
-    $('#btn-show-content').click(function () {
-        $('#map-content').toggleClass('toggle-map-content');
-        $('#btn-show-content').toggleClass('toggle-map-content');
+    $('#btn-show-content-1').click(function () {
+        $('#map-content-1').toggleClass('toggle-map-content');
+        $('#btn-show-content-1').toggleClass('toggle-map-content');
+    });
+    $('#btn-show-map-2').click(function () {
+        $('#map-content-2').toggleClass('toggle-map-content');
+        $('#btn-show-content-2').toggleClass('toggle-map-content');
+    });
+    $('#btn-show-content-2').click(function () {
+        $('#map-content-2').toggleClass('toggle-map-content');
+        $('#btn-show-content-2').toggleClass('toggle-map-content');
     });
 
     /********************** Add to Calendar **********************/
@@ -240,31 +248,29 @@ $(document).ready(function () {
 /********************** Extras **********************/
 
 // Google map
-function initMap() {
-    var location = {lat: 22.5932759, lng: 88.27027720000001};
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
+function initMaps() {
+    var iglesia = {lat: 18.448613362959783, lng: -69.9559930306625};// 18.448613362959783, -69.9559930306625 
+    var mapIglesia = new google.maps.Map(document.getElementById('map-canvas-1'), {
         zoom: 15,
-        center: location,
+        center: iglesia,
+        scrollwheel: false
+    });
+
+    var markerIglesia = new google.maps.Marker({
+        position: iglesia,
+        map: mapIglesia
+    });
+
+    var fiesta = {lat: 18.481334096725785, lng: -69.9254175874525}; //18.481334096725785, -69.9254175874525
+    var mapFiesta = new google.maps.Map(document.getElementById('map-canvas-2'), {
+        zoom: 15,
+        center: fiesta,
         scrollwheel: false
     });
 
     var marker = new google.maps.Marker({
-        position: location,
-        map: map
-    });
-}
-
-function initBBSRMap() {
-    var la_fiesta = {lat: 20.305826, lng: 85.85480189999998};
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 15,
-        center: la_fiesta,
-        scrollwheel: false
-    });
-
-    var marker = new google.maps.Marker({
-        position: la_fiesta,
-        map: map
+        position: fiesta,
+        map: mapFiesta
     });
 }
 
