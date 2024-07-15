@@ -29,6 +29,7 @@
   "dependencies": {
     "animate.css": "^3.7.2",
     "font-awesome": "^4.7.0",
+    "googleapis": "^140.0.1",
     "waypoints": "^4.0.1"
   }
 }

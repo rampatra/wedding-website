@@ -317,23 +317,29 @@
 
 </section>
 
-<section id="instagram" class="section-padding">
+<section id="photo-upload" class="section-padding">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h3>A picture is worth a thousand words!</h3>
-                <p>Help us capture the moment, tag your photos with the hashtag
-                    <a href="https://instagram.com/explore/tags/ramandantara/" target="_blank">#RamAndAntara</a>
-                </p>
+                <h3 class="header">We Want Your Photos!</h3>
+                <p>Got any fun photos of us? We'd love to see them, and add them to the wedding slideshow!</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <!-- Upload section -->
+                    <div class="mb-3 text-center">
+                        <label for="formFileMultiple" class="form-label">Upload your photos here</label>
+                        <input class="form-control" type="file" id="formFileMultiple" multiple>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="submit-btn-container text-center">
+                <button type="button" class="btn btn-secondary" id="submitBtn" style="display: none;">Submit</button>
             </div>
         </div>
-        <div class="row section-border wp7">
-            <div class="col-md-4 col-md-offset-4">
-                <img src="img/iphone_instagram.jpg">
-            </div>
-        </div>
-    </div>
 </section>
+
 
 <section id="eng-pics" class="section-padding">
     <div class="container-fluid">
@@ -511,6 +517,64 @@
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-46465113-4', 'auto');
     ga('send', 'pageview');
+</script>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const fileInput = document.getElementById('formFileMultiple');
+        const submitBtn = document.getElementById('submitBtn');
+
+        fileInput.addEventListener('change', function() {
+        if (fileInput.files.length > 0) {
+        submitBtn.style.display = 'block'; // Show the submit button
+        } else {
+        submitBtn.style.display = 'none'; // Hide the submit button
+        }
+        });
+        });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const fileInput = document.getElementById('formFileMultiple');
+        const submitBtn = document.getElementById('submitBtn');
+
+        fileInput.addEventListener('change', function() {
+            if (fileInput.files.length > 0) {
+                submitBtn.style.display = 'block'; // Show the submit button
+            } else {
+                submitBtn.style.display = 'none'; // Hide the submit button
+            }
+        });
+
+        submitBtn.addEventListener('click', async function() {
+            const files = fileInput.files;
+            const endpoint = 'https://hooks.zapier.com/hooks/catch/FAKEURL/'; // Replace with your Zapier webhook URL
+
+            for (const file of files) {
+                const formData = new FormData();
+                formData.append('file', file);
+
+                try {
+                    const response = await fetch(endpoint, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json',
+                        },
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Error: ${response.statusText}`);
+                    }
+
+                    const result = await response.json();
+                    console.log('File uploaded successfully', result);
+                } catch (error) {
+                    console.error('Upload error', error);
+                }
+            }
+        });
+    });
 </script>
 </body>
 </html>
