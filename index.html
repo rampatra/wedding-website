@@ -541,15 +541,24 @@
         const loadingSpinner = document.getElementById('loadingSpinner'); // Get the spinner element
 
         const maxConcurrentUploads = 100; // Limit to 3 concurrent uploads
+        console.log('Spinner element:', loadingSpinner);
+
+        // Ensure loading spinner is actually present
+        if (!loadingSpinner) {
+            console.error('Loading spinner element not found!');
+        } else {
+            console.log('Spinner should be visible when uploading starts.');
+        }
 
         fileInput.addEventListener('change', function() {
             if (fileInput.files.length > 0) {
                 submitBtn.style.display = 'block'; // Show the submit button
+                console.log('Submit button shown.');
             } else {
                 submitBtn.style.display = 'none'; // Hide the submit button
+                console.log('Submit button hidden.');
             }
         });
-
         submitBtn.addEventListener('click', async function() {
             const files = Array.from(fileInput.files);
             const endpoint = 'https://us-central1-personal-apis-408200.cloudfunctions.net/upload_to_drive';
