@@ -23,7 +23,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="manifest.json">
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-
+    <link rel="stylesheet" href="css/styles.min.css">
     <script>
         // load css files from CDN if local node_modules fail
         function loadCssFromCDN(css) {
@@ -355,21 +355,36 @@
 
 </section>
 
-<section id="instagram" class="section-padding">
+<section id="photo-upload" class="section-padding">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h3>A picture is worth a thousand words!</h3>
-
+                <h3 class="header">We Want Your Photos!</h3>
+                <p>Got any fun photos of us? We'd love to see them, and add them to the wedding slideshow!</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <!-- Upload section -->
+                    <div class="mb-3 text-center">
+                        <label for="formFileMultiple" class="form-label">Upload your photos here</label>
+                        <input class="form-control" type="file" id="formFileMultiple" multiple>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="submit-btn-container text-center">
+                <button type="button" class="btn btn-secondary" id="submitBtn" style="display: none;">Submit</button>
+            </div>
+            <div class="submit-message text-center" id="submitMessage" style="display: none; margin-top: 20px;">
+                <!-- Success or error message will appear here -->
+            </div>
+            <div id="loadingSpinner" style="display: none;">
+                <div class="spinner"></div>
             </div>
         </div>
-<!--        <div class="row section-border wp7">-->
-<!--            <div class="col-md-4 col-md-offset-4">-->
-<!--                <img src="img/iphone_instagram.jpg">-->
-<!--            </div>-->
-<!--        </div>-->
-    </div>
+
 </section>
+
 
 <section id="eng-pics" class="section-padding">
     <div class="container-fluid">
@@ -456,15 +471,15 @@
     </div>-->
 </section>
 
-<section id="video-bg" class="hidden-sm hidden-xs">
-    <div id="bgndVideo" class="player"
-         data-property="{videoURL:'https://youtu.be/watch?v=qz4HncDlgU0',containment:'#video-bg',autoPlay:true, mute:true, showControls:false, startAt:80, stopAt:259, opacity:1}">
-    </div>
-    <div id="video-content">
-        <h5>Mendocino</h5>
-        <p>California</p>
-    </div>
-</section>
+<!--<section id="video-bg" class="hidden-sm hidden-xs">-->
+<!--    <div id="bgndVideo" class="player"-->
+<!--         data-property="{videoURL:'https://youtu.be/9giqL1H6yRs',containment:'#video-bg',autoPlay:true, mute:true, showControls:false, startAt:80, stopAt:259, opacity:1}">-->
+<!--    </div>-->
+<!--    <div id="video-content">-->
+<!--        <h5>Kolkata</h5>-->
+<!--        <p>City of joy</p>-->
+<!--    </div>-->
+<!--</section>-->
 
 
 <footer>
@@ -502,6 +517,112 @@
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-46465113-4', 'auto');
     ga('send', 'pageview');
+</script>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const fileInput = document.getElementById('formFileMultiple');
+        const submitBtn = document.getElementById('submitBtn');
+
+        fileInput.addEventListener('change', function() {
+        if (fileInput.files.length > 0) {
+        submitBtn.style.display = 'block'; // Show the submit button
+        } else {
+        submitBtn.style.display = 'none'; // Hide the submit button
+        }
+        });
+        });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const fileInput = document.getElementById('formFileMultiple');
+        const submitBtn = document.getElementById('submitBtn');
+        const submitMessage = document.getElementById('submitMessage');
+        const loadingSpinner = document.getElementById('loadingSpinner'); // Get the spinner element
+
+        const maxConcurrentUploads = 100; // Limit to 3 concurrent uploads
+
+        fileInput.addEventListener('change', function() {
+            if (fileInput.files.length > 0) {
+                submitBtn.style.display = 'block'; // Show the submit button
+            } else {
+                submitBtn.style.display = 'none'; // Hide the submit button
+            }
+        });
+
+        submitBtn.addEventListener('click', async function() {
+            const files = Array.from(fileInput.files);
+            const endpoint = 'https://us-central1-personal-apis-408200.cloudfunctions.net/upload_to_drive';
+
+            // Show the loading spinner
+            loadingSpinner.style.display = 'block';
+
+            let success = true;
+            let index = 0;
+
+            async function uploadNextBatch() {
+                const batch = files.slice(index, index + maxConcurrentUploads);
+                index += maxConcurrentUploads;
+
+                await Promise.all(
+                    batch.map(async (file) => {
+                        try {
+                            const formData = new FormData();
+                            formData.append('file', file);
+
+                            const response = await fetch(endpoint, {
+                                method: 'POST',
+                                body: formData,
+                            });
+
+                            if (!response.ok) {
+                                throw new Error(`Error: ${response.statusText}`);
+                            }
+
+                            // Check if the response is JSON
+                            const contentType = response.headers.get('content-type');
+                            if (contentType && contentType.includes('application/json')) {
+                                const result = await response.json();
+                                console.log('File uploaded successfully', result);
+                            } else {
+                                const text = await response.text();
+                                console.error('Unexpected response format:', text);
+                                throw new Error('Server did not return JSON');
+                            }
+                        } catch (error) {
+                            console.error('Upload error', error);
+                            success = false;
+                        }
+                    })
+                );
+
+                if (index < files.length) {
+                    await uploadNextBatch();
+                }
+            }
+
+            try {
+                await uploadNextBatch();
+
+                if (success) {
+                    submitMessage.style.display = 'block';
+                    submitMessage.textContent = 'Thank you for sharing your memories with us!';
+                    submitMessage.style.color = 'green';
+
+                    // Clear the file input
+                    fileInput.value = '';
+                    submitBtn.style.display = 'none';
+                } else {
+                    submitMessage.style.display = 'block';
+                    submitMessage.textContent = 'There was an error submitting your files. Please try again.';
+                    submitMessage.style.color = 'red';
+                }
+            } finally {
+                // Hide the loading spinner
+                loadingSpinner.style.display = 'none';
+            }
+        });
+    });
 </script>
 </body>
 </html>

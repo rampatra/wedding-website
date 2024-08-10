@@ -12,6 +12,11 @@
 /* ==========================================================================
 Global Styles
 ========================================================================== */
+.submit-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .group:after {
   content: "";
   display: table;
@@ -108,6 +113,40 @@ section .header {
 /* ==========================================================================
 Animations
 ========================================================================== */
+// Variables
+$spinner-size: 120px;
+$spinner-border-size: 16px;
+$spinner-color: #3498db;
+$spinner-border-color: #f3f3f3;
+
+// Mixins
+@mixin center-element {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+// Spinner Styles
+#loadingSpinner {
+  @include center-element;
+
+  .spinner {
+    width: $spinner-size;
+    height: $spinner-size;
+    border: $spinner-border-size solid $spinner-border-color;
+    border-radius: 50%;
+    border-top: $spinner-border-size solid $spinner-color;
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+}
+
 .pulse2 {
   animation-name: pulse2;
   animation-duration: 1s;
