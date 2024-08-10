@@ -12,10 +12,33 @@
 /* ==========================================================================
 Global Styles
 ========================================================================== */
+.upload-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%; /* Ensures it takes up full width of its parent */
+  padding-left: 20px; /* Add padding to the left */
+  padding-right: 20px; /* Add padding to the right */
+  box-sizing: border-box; /* Ensures padding doesn't affect the overall width */
+}
+
 .submit-btn-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px; /* Adjust the max width as needed */
+}
+
+.submit-btn-container label {
+  margin-bottom: 10px; /* Add some space between the label and the input */
+}
+
+.submit-btn-container input[type="file"] {
+  text-align: center;
+  width: 100%;
 }
 .group:after {
   content: "";
