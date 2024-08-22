@@ -61,6 +61,7 @@
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" onerror="loadCssFromCDN('animate.css')">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" onerror="loadCssFromCDN('font-awesome.css')">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
 </head>
 <body id="top">
 <!--[if lt IE 8]>
@@ -83,12 +84,11 @@
                             <li><a href="#intro">How we met</a></li>
                             <li><a href="#events">Events</a></li>
                             <li><a href="#photo-upload">Photo Upload</a></li>
-                            <li><a href="#eng-pics">Engagement</a></li>
-                            <li class="hidden-sm hidden-xs"><a href="#video-bg">Glimpse of the city</a></li>
+                            <li><a href="#eng-pics">Us</a></li>
                         </ul>
                         <ul class="member-actions">
                             <li><a href="#map" class="login">Venue</a></li>
-                            <li><a href="#rsvp" class="btn-white btn-small">RSVP</a></li>
+                            <li><a href="#rsvp2" class="btn-white btn-small">RSVP</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -111,7 +111,7 @@
         </div>
         <div class="row">
             <div class="col-sm-4 hidden-xs"></div>
-            <div class="col-sm-4 hidden-xs text-center" style="margin-top: 20px; margin-bottom: 10rem"><a href="#rsvp"
+            <div class="col-sm-4 hidden-xs text-center" style="margin-top: 20px; margin-bottom: 10rem"><a href="#rsvp2"
                                                            class="btn btn-accent btn-large rsvp-btn">RSVP</a></div>
             <div class="col-sm-4 hidden-xs"></div>
         </div>
@@ -124,87 +124,26 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h3>We are getting married</h3>
-                <div><p>Please save the date for June 21st, 2025</p></div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!--RSVP Section-->
-<section class="rsvp text-center" id="rsvp" style="background: #b3c7db">
-
-    <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
-                    </button>
-                    <div class="section-padding">
-                        <h3>Thank you!</h3>
-                        <p>We invite you to celebrate or marriage with us!</p>
-                        <div id="add-to-cal"></div>
-                    </div>
+                <p>Please save the date for <strong>June 21st, 2025</strong> in beautiful <strong>Mendocino, CA</strong></p>
+                <div title="Add to Calendar" class="addeventatc">
+                    Add to Calendar
+                    <span class="start">06/21/2025 04:00 PM</span>
+                    <span class="end">06/22/2025 10:00 AM</span>
+                    <span class="timezone">America/Los_Angeles</span>
+                    <span class="title">Lindsey and Travis get married <span style="color: red;">❤</span></span>
+                    <span class="description">Celebrate with us in beautiful Mendocino CA</span>
+                    <span class="location">8475 North CA-1, Little River, CA 95456</span>
                 </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h3>What are you waiting for?</h3>
-                <p>Sorry! This isn't open yet. Come back shortly!</p>
-<!--                <form id="rsvp-form" class="rsvp-form"-->
-<!--                      action=""-->
-<!--                      method="POST">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-md-6 col-sm-6">-->
-<!--                            <div class="form-input-group">-->
-<!--                                <i class="fa fa-envelope"></i><input type="email" name="email" class=""-->
-<!--                                                                     placeholder="Your email"-->
-<!--                                                                     required>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="col-md-6 col-sm-6">-->
-<!--                            <div class="form-input-group">-->
-<!--                                <i class="fa fa-user"></i><input name="name" class=""-->
-<!--                                                                 placeholder="Your name"-->
-<!--                                                                 required>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-md-6 col-sm-6">-->
-<!--                            <div class="form-input-group">-->
-<!--                                <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0"-->
-<!--                                                                  max="4"-->
-<!--                                                                  placeholder="Husband/Wife or kids"-->
-<!--                                                                  required>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="col-md-6 col-sm-6">-->
-<!--                            <div class="form-input-group">-->
-<!--                                <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"-->
-<!--                                                                class="" min="0"-->
-<!--                                                                placeholder="Invite code"-->
-<!--                                                                required>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-md-12" id="alert-wrapper"></div>-->
-<!--                    </div>-->
-<!--                    <button class="btn-fill rsvp-btn">-->
-<!--                        Yes,-->
-<!--                        that's me!-->
-<!--                    </button>-->
-<!--                </form>-->
             </div>
+<!--            Add a calendar add here-->
+
         </div>
     </div>
 </section>
+
  <!-- add a divider line here -->
-<hr>
+
 <section id="intro">
     <div class="container">
         <div class="row">
@@ -304,7 +243,8 @@
                     <p>Where we'll wish you goodbye with coffee, pastries, and love.</p>
                 </div>
             </div>
-        </div>        <div class="row section-padding">
+        </div>
+        <div class="row section-padding">
             <div class="col-md-4 col-md-offset-4 text-center">
                 <a class="btn btn-accent btn-small" data-toggle="modal" data-target="#dc-modal">
                     <i class="fa fa-barcode"></i>&nbsp;&nbsp;Dress code
@@ -325,17 +265,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
                     </button>
                     <h3 class="text-center section-padding">Ugh... dress codes?</h3>
-<!--                    <h5>Welcome Party <span class="time">Friday 1PM - 5PM</span></h5>-->
-<!--                    <p>-->
-<!--                        <strong>Casual Fighting Gear</strong>-->
-<!--                        <br>-->
-<!--                        Ladies can wear something-->
-<!--                        <a href="https://www.pinterest.com/ramswarooppatra/mehndi-dress-for-women/">comfortable for-->
-<!--                        combat</a>-->
-<!--                        and gentlemen can wear-->
-<!--                        their <a href="https://www.pinterest.com/ramswarooppatra/mehndi-dress-for-men/">most comfortable-->
-<!--                    kilts</a> with pants or pyjamas along with an optional shawl.-->
-<!--                    </p>-->
+
                     <h5>Wedding <span class="time">Saturday 4PM - 11AM</span></h5>
                     <p>
                         <strong>Semi-formal summerwear</strong>
@@ -376,6 +306,61 @@
                 <div class="spinner"></div>
             </div>
         </div>
+
+</section>
+
+
+<section class="rsvp text-center section-padding" id="rsvp2" style="background-color: #b3c7db">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h3>What are you waiting for?</h3>
+                <div>
+                    <a id="preRsvpButton" class="pre-rsvp-btn btn-accent btn-small" data-toggle="modal" data-target="#pre-rsvp-modal">
+                        PRE-RSVP
+                    </a>
+                </div>
+                <div id="pre-rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                                </button>
+                                <!--                                 a quick hello to the loved guest so they know that this is a PRE rsvp so we can account for guests at side events -->
+                                <h3>This is NOT the final RSVP</h3>
+                                <p>We are so excited to have you join us for our wedding! Please fill out the form below to let us know if you will be attending the Welcome Dinner and if you will be staying in the area. We can't wait to celebrate with you!</p>
+                                <form id="pre-rsvp-form" class="pre-rsvp-form" action="" method="POST">
+                                    <!--                                    make the first name last name next to each other -->
+                                    <label for="firstName">Party Name:</label>
+                                    <input type="text" id="firstName" name="firstName"><br><br>
+
+                                    <label for="attendWedding">Will you be able to attend the wedding?</label><br>
+                                    <input type="radio" id="attendYes" name="attendDinner" value="Yes"> Yes<br>
+                                    <input type="radio" id="attendNo" name="attendDinner" value="No"> No<br><br>
+
+                                    <label for="attendDinner">Will your party attend the Welcome Dinner?</label><br>
+                                    <input type="radio" id="attendYes" name="attendDinner" value="Yes"> Yes<br>
+                                    <input type="radio" id="attendNo" name="attendDinner" value="No"> No<br><br>
+
+                                    <label for="stayArea">Will your party be staying in the area?</label><br>
+                                    <input type="radio" id="stayYes" name="stayArea" value="Yes"> Yes<br>
+                                    <input type="radio" id="stayNo" name="stayArea" value="No"> No<br>
+                                    <input type="radio" id="stayNotSure" name="stayArea" value="Not Sure"> Not Sure<br><br>
+
+                                    <label for="shuttleService">Would you use a shuttle service if available?</label><br>
+                                    <input type="radio" id="shuttleYes" name="shuttleService" value="Yes"> Yes<br>
+                                    <input type="radio" id="shuttleNo" name="shuttleService" value="No"> No<br>
+                                    <input type="radio" id="shuttleNotSure" name="shuttleService" value="Not Sure"> Not Sure<br><br>
+
+                                    <button type="submit">Submit Pre-RSVP</button>
+                                </form>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+            </div>
+        </div>
+    </div>
 
 </section>
 
@@ -466,15 +451,6 @@
     </div>-->
 </section>
 
-<!--<section id="video-bg" class="hidden-sm hidden-xs">-->
-<!--    <div id="bgndVideo" class="player"-->
-<!--         data-property="{videoURL:'https://youtu.be/9giqL1H6yRs',containment:'#video-bg',autoPlay:true, mute:true, showControls:false, startAt:80, stopAt:259, opacity:1}">-->
-<!--    </div>-->
-<!--    <div id="video-content">-->
-<!--        <h5>Kolkata</h5>-->
-<!--        <p>City of joy</p>-->
-<!--    </div>-->
-<!--</section>-->
 
 
 <footer>

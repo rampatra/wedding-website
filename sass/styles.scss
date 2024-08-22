@@ -23,6 +23,15 @@ Global Styles
   box-sizing: border-box; /* Ensures padding doesn't affect the overall width */
 }
 
+`/* New class that extends the existing .btn class */
+.pre-rsvp-btn {
+  @extend .btn;
+  background-color: #4377af; /* Set your desired background color */
+  color: #fff; /* Ensure text color contrasts with background */
+  border-color: #4377af; /* Match border color with background */
+  padding: 5px 10px; /* Small button padding */
+  font-size: 14px; /* Small button font size */
+}
 .submit-btn-container {
   display: flex;
   justify-content: center;
@@ -132,6 +141,22 @@ section .header {
   text-transform: capitalize;
   background-color: #000;
   border-radius: 4px;
+}
+/* ==========================================================================
+Pre-rsvp stuff
+========================================================================== */
+.pre-rsvp-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; /* Center the form horizontally */
+  max-width: 500px; /* Optional: Set a max width for the form */
+  padding: 20px; /* Optional: Add padding for spacing */
+}
+.form-input-container {
+  max-width: 300px; /* Adjust the max width as needed */
+  margin: 0 auto; /* Center the input containers */
 }
 /* ==========================================================================
 Animations
