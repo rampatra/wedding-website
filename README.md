@@ -1,11 +1,15 @@
 # todo:
-- [ ] Replace the maps feature a more bland "Travel" section that includes a link to the venue on google maps + a list of nearby hotels 
-- [ ] Add images of us 
+- [x] Add images of us 
+- [ ] add brains to pre-rsvp form
 - [ ] Add a countdown timer
 - [ ] Edit our story
-- [ ] Add a photo upload applet for guests to upload photos
+- [x] Add a photo upload applet for guests to upload photos
 - [ ] update RSVP to use our preferred style with a modal form that autocompletes their party and lets them rsvp for all events at once
-- [ ] Change image to text that reads "Lindsey + Travis \n 2025" in nice cursive font that appears dynamically on the page (hard)
+- [x] Change image to text that reads "Lindsey + Travis \n 2025" in nice cursive font that appears dynamically on the page (hard)
+- [ ] Make the "venue" button do something?
+- [ ] less room between calendar and how we met 
+- [ ] Logo under pre-rsvp form
+
 
 # Wedding Website
 A beautiful, feature rich, device friendly wedding website.  

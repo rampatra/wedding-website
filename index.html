@@ -123,9 +123,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h3>We are getting married</h3>
-
-                <p>Please save the date for <strong>June 21st, 2025</strong> in beautiful <strong>Mendocino, CA</strong></p>
+                <h3>Please save the date for June 21st, 2025 in Mendocino, CA</h3>
+                <br>
                 <div title="Add to Calendar" class="addeventatc">
                     Add to Calendar
                     <span class="start">06/21/2025 04:00 PM</span>
@@ -326,32 +325,28 @@
                             <div class="modal-body">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
                                 </button>
-                                <!--                                 a quick hello to the loved guest so they know that this is a PRE rsvp so we can account for guests at side events -->
-                                <h3>This is NOT the final RSVP</h3>
-                                <p>We are so excited to have you join us for our wedding! Please fill out the form below to let us know if you will be attending the Welcome Dinner and if you will be staying in the area. We can't wait to celebrate with you!</p>
+                                <h3>Help us plan!</h3>
+                                <p>We are so excited to have you join us for our wedding! <br>Please fill out the form below to let us know what events you will likely attend. Your invitation will hold the official invite link!</p>
                                 <form id="pre-rsvp-form" class="pre-rsvp-form" action="" method="POST">
-                                    <!--                                    make the first name last name next to each other -->
-                                    <label for="firstName">Party Name:</label>
+                                    <label for="firstName">First and Last Names:</label>
                                     <input type="text" id="firstName" name="firstName"><br><br>
 
-                                    <label for="attendWedding">Will you be able to attend the wedding?</label><br>
+                                    <label for="attendWedding">Will your party be able to attend the wedding?</label><br>
                                     <input type="radio" id="attendYes" name="attendDinner" value="Yes"> Yes<br>
                                     <input type="radio" id="attendNo" name="attendDinner" value="No"> No<br><br>
 
-                                    <label for="attendDinner">Will your party attend the Welcome Dinner?</label><br>
+                                    <label for="attendDinner">Will your party likely attend the Welcome Dinner?</label><br>
                                     <input type="radio" id="attendYes" name="attendDinner" value="Yes"> Yes<br>
                                     <input type="radio" id="attendNo" name="attendDinner" value="No"> No<br><br>
 
-                                    <label for="stayArea">Will your party be staying in the area?</label><br>
+                                    <label for="stayArea">Will your party likely stay in the area?</label><br>
                                     <input type="radio" id="stayYes" name="stayArea" value="Yes"> Yes<br>
                                     <input type="radio" id="stayNo" name="stayArea" value="No"> No<br>
-                                    <input type="radio" id="stayNotSure" name="stayArea" value="Not Sure"> Not Sure<br><br>
 
-                                    <label for="shuttleService">Would you use a shuttle service if available?</label><br>
+                                    <label for="shuttleService">Would your party likely use a shuttle service if provided?</label><br>
                                     <input type="radio" id="shuttleYes" name="shuttleService" value="Yes"> Yes<br>
                                     <input type="radio" id="shuttleNo" name="shuttleService" value="No"> No<br>
-                                    <input type="radio" id="shuttleNotSure" name="shuttleService" value="Not Sure"> Not Sure<br><br>
-
+                                    <br><br>
                                     <button type="submit">Submit Pre-RSVP</button>
                                 </form>
                             </div>
