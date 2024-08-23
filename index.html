@@ -26,32 +26,8 @@
     <link rel="stylesheet" href="css/styles.min.css">
     <script src="https://kit.fontawesome.com/07a7aa3346.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <script>
-        // load css files from CDN if local node_modules fail
-        function loadCssFromCDN(css) {
-            // create new link tag
-            const link = document.createElement('link');
-            if (css === 'animate.css') {
-                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css';
-            } else if (css === 'font-awesome.css') {
-                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
-            }
-            link.rel = 'stylesheet';
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;700&family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 
-            // add link tag to head section
-            document.getElementsByTagName('head')[0].appendChild(link);
-        }
-
-        // load js files from CDN if
-        // local node_modules fail
-        function loadJsFromCDN(js) {
-            if (js === 'waypoints.js') {
-                document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"><\/script>');
-            } else if (js === 'jquery.js') {
-                document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>');
-            }
-        }
-    </script>
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery.fancybox.css">
@@ -60,8 +36,8 @@
     <link rel="stylesheet" href="css/queries.css">
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" onerror="loadCssFromCDN('animate.css')">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" onerror="loadCssFromCDN('font-awesome.css')">
-    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+
 </head>
 <body id="top">
 <!--[if lt IE 8]>
@@ -102,10 +78,8 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="hero-content text-center">
-                    <!--<h1>Ram and Antara</h1>-->
                     <img alt="this is an image" style="margin-top: -25rem" src="img/logo-lg.png">
-                    <!--<p class="intro">Ram & Antara are getting hitched!</p>-->
-                    <!--<a href="#" class="btn btn-fill btn-large btn-margin-right">Scroll Down</a> -->
+
                 </div>
             </div>
         </div>
@@ -121,29 +95,32 @@
 
 <section id="invitation" class="section-padding">
     <div class="container">
+
         <div class="row">
             <div class="col-md-12 text-center">
-                <h3>Please save the date for June 21st, 2025 in Mendocino, CA</h3>
-                <br>
-                <div title="Add to Calendar" class="addeventatc">
-                    Add to Calendar
-                    <span class="start">06/21/2025 04:00 PM</span>
-                    <span class="end">06/22/2025 10:00 AM</span>
-                    <span class="timezone">America/Los_Angeles</span>
-                    <span class="title">Lindsey and Travis get married <span style="color: red;">❤</span></span>
-                    <span class="description">Celebrate with us in beautiful Mendocino CA</span>
-                    <span class="location">8475 North CA-1, Little River, CA 95456</span>
+                <script src="https://cdn.logwork.com/widget/countdown.js"></script>
+                <a href="https://logwork.com/countdown-timer"
+                   class="countdown-timer"
+                   data-timezone="America/Los_Angeles"
+                   data-date="2025-06-21 16:00"
+                   data-background="#b3c7db"
+                   data-digitscolor="#ffffff"
+                   style="width: 100%; max-width: 500px; display: block; margin: 0 auto; text-align: center;">
+                    &#8203;
+                </a>
+                <div class="col-md-12 text-center">
+                    <span class="big-text"><strong>June 21st, 2025</strong>!</span>
                 </div>
             </div>
-<!--            Add a calendar add here-->
-
         </div>
     </div>
 </section>
 
- <!-- add a divider line here -->
+<div class="logo-placeholder" style="display: flex; justify-content: center; align-items: center; margin: 0 auto;">
+    <img src="img/logo-lg-no-text.png" alt="Logo without text">
+</div>
 
-<section id="intro">
+<section id="intro" style="padding-top: 10px">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
@@ -154,51 +131,20 @@
             <div class="col-md-2 hidden-sm hidden-xs"><img src="" class="wp1"></div>
             <div class="col-md-7">
                 <p>
-                    Lindsey and Travis met sometime during their undergrad at CSU Monterey Bay, but thats not the most helpful statistic.
-                    It doesnt help you understand how they crossed that magic line that goes from aquantences to friends to soulmates.
-                    So lets start a little later at a better known event in time. The first dinner that Travis and Lindsey shared was her 18th
-                    birthday in 2013. Two of lindsey's friends needed a ride Lindsey was gracious enough to let Travis tag along.***
-                    They met, they enjoyed each others company, and they parted ways.<br> The timing wasn't right yet.<br>
-                    <br><br>
-                    In 2014, Travis got the chance to go surfing with Lindsey, He jumped on it! And at the end of the
-                    night, he worked up the courage to ask for her number, and she said yes!*
-                    <br><br>
-                    They continued to grow closer. Slowly dancing towards that inevitable future that would be their
-                    falling-in-love, but they took the time to truely become friends first. In summer of 2016,
-                    Travis and Lindsey decided that it was time to take that jump and give the o'd dating dating thing
-                    a shot. It was instantly a hit and they were inseperable.
-                    <br><br>
-                    "You're going to love me, you know" Lindsey once told Travis inside her apartment on ____ str.
-                    and moves. Travis landed in San Jose, and Lindsey was in Santa Cruz.
-                    Travis said "maybe", but the signs where already there.** They continued to share birthdays, graduations,
-                    During covid, they graduated with their masters, and Lindsey moved to San Carlos where Travis soon
-                    followed.
-                    <br><br>
-                    Here are a few of the highlights of their adventures together:
-                    -> During an early date, Travis taught Lindsey how to longboard, something they spent a lot
-                    of time doing together around the streets of CSUMB. A less fun fact is that he forgot to tell her
-                    how to stop before sending her down a hill. The SpongeBob band aids were worth it.
-                    -> @Lindsey whatcha feeling here? :)
-                    <br><br>
-                    Then on February 10th, 2024 Travis and Lindsey went on a pici-nic at the beach. They took a basket
-                    to the coast
-                    full of fruits, meats, cheeses, and honey. They sat and ate and watched the ocean before exploring a hidden beach.
-                    While Lindsey was metal detecting, she found a mysterious box. She opened it to discover a bouquet of
-                    memories and a ring. She said yes, and now we'd like to invite you to celebrate with us.
+                    We first met during our freshman year at CSU Monterey Bay, just two college kids figuring things out. At first, we were just casual acquaintances, running into each other on campus, at parties, and through mutual friends. Little did we know, those chance encounters were just the beginning of our story.
                     <br>
                     <br>
-                    Love, Travis and Lindsey
+                    In 2014, Travis came up with the perfect excuse to get Lindsey’s number—he joined Lindsey and their friend for surfing in Santa Cruz, claiming he needed more friends in the area. Smooth move, right? It worked! What started as a friendly hangout soon turned into a solid friendship. We spent more and more time together, realizing we just clicked. During the summer of 2016, our friendship emerged into something more and we began dating, making the rest history.
                     <br>
                     <br>
+                    Since then, life has been an amazing adventure with each other by our sides. There’s not a day we dont laugh together, show up for the other, and support each other through the big and small. We’re best friends that have grown up so much during our time together. We have so much fun together, whether we’re roasting each other, going on trips and adventures, or just doing life together. Our story is still unfolding, and we're thrilled to have you with us as we enter our next chapter!
                     <br>
-                    <i>*Travis had mentioned that he was new to town (Santa Cruz) and Lindsey later confessed that at the time
-                        He had asked she was thinking, "Awww its sad he doesn't have any friends, I'll be his friend!"</i>
                     <br>
-                    <i>**At their first date,
-                        (the movie was Antman) Lindsey was an hour late (she offered to cancel, but he said no. He was clearly, at this point, smitten)</i>
+                    Love,
                     <br>
-                    <i>***It also helped Travis had the only car</i>
                 </p>
+                <p class="fancy-cursive" style="font-size: 24pt">Lindsey and Travis</p>
+
             </div>
             <div class="col-md-2 hidden-sm hidden-xs"><img src="img/us_swoop.png" class="wp2"></div>
         </div>
@@ -280,17 +226,17 @@
 
 </section>
 
-<section id="photo-upload" class="section-padding">
+<section id="photo-upload" class="section-padding" style="padding-bottom: 10px">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 text-center">
-                <h3 class="header">We Want Your Photos!</h3>
-                <p>Got any fun photos of us? We'd love to see them, and add them to the wedding slideshow!</p>
+            <div class="col-md-12 text-center" style="padding-bottom: 10px">
+                <h3 class="header">Do You Have Any Photos With Us?</h3>
+                <p>If you do, we'd love to see them, and add them to the wedding slideshow!</p>
             </div>
             <div class="upload-container">
                     <!-- Upload section -->
                     <div class="mb-3 text-center">
-                        <label for="formFileMultiple" class="form-label">Upload your photos here</label>
+                        <label for="formFileMultiple" class="form-label"></label>
                         <input class="form-control" type="file" id="formFileMultiple" multiple>
                     </div>
             </div>
@@ -309,7 +255,7 @@
 </section>
 
 
-<section class="rsvp text-center section-padding" id="rsvp2" style="background-color: #b3c7db">
+<section class="rsvp text-center section-padding" id="rsvp2" style="background-color: #b3c7db; padding-bottom: 30px">
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
@@ -323,8 +269,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-body">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
-                                </button>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span></button>
                                 <h3>Help us plan!</h3>
                                 <p>We are so excited to have you join us for our wedding! <br>Please fill out the form below to let us know what events you will likely attend. Your invitation will hold the official invite link!</p>
                                 <form id="pre-rsvp-form" class="pre-rsvp-form" action="" method="POST">
@@ -332,20 +277,31 @@
                                     <input type="text" id="firstName" name="firstName"><br><br>
 
                                     <label for="attendWedding">Will your party be able to attend the wedding?</label><br>
-                                    <input type="radio" id="attendYes" name="attendDinner" value="Yes"> Yes<br>
-                                    <input type="radio" id="attendNo" name="attendDinner" value="No"> No<br><br>
+                                    <div class="radio-group">
+                                        <input type="radio" id="attendYes" name="attendWedding" value="Yes"> <label for="attendYes">Yes</label>
+                                        <input type="radio" id="attendNo" name="attendWedding" value="No"> <label for="attendNo">No</label>
+                                    </div>
+                                    <br>
 
                                     <label for="attendDinner">Will your party likely attend the Welcome Dinner?</label><br>
-                                    <input type="radio" id="attendYes" name="attendDinner" value="Yes"> Yes<br>
-                                    <input type="radio" id="attendNo" name="attendDinner" value="No"> No<br><br>
+                                    <div class="radio-group">
+                                        <input type="radio" id="attendYes" name="attendDinner" value="Yes"> <label for="attendYes">Yes</label>
+                                        <input type="radio" id="attendNo" name="attendDinner" value="No"> <label for="attendNo">No</label>
+                                    </div>
+                                    <br>
 
                                     <label for="stayArea">Will your party likely stay in the area?</label><br>
-                                    <input type="radio" id="stayYes" name="stayArea" value="Yes"> Yes<br>
-                                    <input type="radio" id="stayNo" name="stayArea" value="No"> No<br>
+                                    <div class="radio-group">
+                                        <input type="radio" id="stayYes" name="stayArea" value="Yes"> <label for="stayYes">Yes</label>
+                                        <input type="radio" id="stayNo" name="stayArea" value="No"> <label for="stayNo">No</label>
+                                    </div>
+                                    <br>
 
                                     <label for="shuttleService">Would your party likely use a shuttle service if provided?</label><br>
-                                    <input type="radio" id="shuttleYes" name="shuttleService" value="Yes"> Yes<br>
-                                    <input type="radio" id="shuttleNo" name="shuttleService" value="No"> No<br>
+                                    <div class="radio-group">
+                                        <input type="radio" id="shuttleYes" name="shuttleService" value="Yes"> <label for="shuttleYes">Yes</label>
+                                        <input type="radio" id="shuttleNo" name="shuttleService" value="No"> <label for="shuttleNo">No</label>
+                                    </div>
                                     <br><br>
                                     <button type="submit">Submit Pre-RSVP</button>
                                 </form>
@@ -458,6 +414,11 @@
         </div>
     </div>
 </footer>
+<script src="js/vendor/jquery-1.11.2.min.js" onerror="loadJsFromCDN('jquery.js')"></script>
+<script src="node_modules/waypoints/lib/jquery.waypoints.min.js" onerror="loadJsFromCDN('waypoints.js')"></script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/scripts.min.js"></script>
 <script src="js/vendor/jquery-1.11.2.min.js" onerror="loadJsFromCDN('jquery.js')"></script>
 <script src="node_modules/waypoints/lib/jquery.waypoints.min.js" onerror="loadJsFromCDN('waypoints.js')"></script>
 <script src="js/jquery.fancybox.pack.js"></script>

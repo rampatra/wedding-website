@@ -1,17 +1,42 @@
 // Google Fonts
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
-@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,400italic,300italic,700,700italic);
-@import url(https://fonts.googleapis.com/css?family=Nunito:400,300,700);
-// Imports
-//@import "compass";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,300,400italic,300italic,700,700italic');
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,300,700');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;700&family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap');
+
+// Partials Imports
 @import "partials/typography";
 @import "partials/buttons";
 @import "partials/colors";
 @import "partials/layout";
 
-/* ==========================================================================
-Global Styles
-========================================================================== */
+// Font Variables
+$font-script: 'Cormorant Garamond', cursive;
+$font-serif: 'Playfair Display', serif;
+$font-special: 'Allura', serif;
+$font-body: 'Cormorant Garamond', serif;
+// Global Styles
+body {
+  font-family: $font-body;
+  font-weight: $light;
+  color: $txt-primary;
+  -webkit-text-size-adjust: 100%;
+  background-color: #b3c7db; // Ensure proper color
+}
+
+h1, h2, h3 {
+  font-family: $font-script;
+}
+
+h4, h5, h6 {
+  font-family: $font-serif;
+}
+.fancy-cursive {
+  font-family: 'Great Vibes', cursive;
+}
+.special-text {
+  font-family: $font-special;
+}
 .upload-container {
   display: flex;
   justify-content: center;
@@ -22,8 +47,11 @@ Global Styles
   padding-right: 20px; /* Add padding to the right */
   box-sizing: border-box; /* Ensures padding doesn't affect the overall width */
 }
-
-`/* New class that extends the existing .btn class */
+.big-text {
+  font-size: xxx-large; /* Adjust the size as needed */
+  font-weight: bold;
+}
+/* New class that extends the existing .btn class */
 .pre-rsvp-btn {
   @extend .btn;
   background-color: #4377af; /* Set your desired background color */
@@ -31,6 +59,18 @@ Global Styles
   border-color: #4377af; /* Match border color with background */
   padding: 5px 10px; /* Small button padding */
   font-size: 14px; /* Small button font size */
+}
+.radio-group {
+  display: flex;
+  align-items: center;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 5px;
+}
+
+.radio-group label {
+  margin-right: 15px; /* Adjust the space between options */
 }
 .submit-btn-container {
   display: flex;
@@ -73,14 +113,7 @@ a:hover, a:focus {
   color: $accent-color-hover;
   text-decoration: none;
 }
-body {
-  font-family: $sans-serif;
-  font-weight: $light;
-  color: $txt-primary;
-  -webkit-text-size-adjust: 100%;
-  background-color: #b3c7db
-  //fix for iOS
-}
+
 *:focus {
   outline: none !important;
 }
@@ -92,7 +125,7 @@ ul li {
   list-style: none;
 }
 section .header {
-  padding-bottom: 30px;
+  padding-bottom: 15px;
 }
 .section-padding {
   padding: $section-padding;
@@ -142,6 +175,22 @@ section .header {
   background-color: #000;
   border-radius: 4px;
 }
+/* ==========================================================================
+Countdown Timer
+========================================================================== */
+/* Adjust the overall size of the countdown timer */
+//.countdown-timer {
+//  font-size: 0.5em; /* Adjust the font size to make the text smaller */
+//  display: inline-block;
+//  transform: scale(0.1); /* Scale down the entire timer */
+//  transform-origin: top center;
+//  text-align: center;
+//}
+//
+///* Adjust specific parts of the countdown timer if needed */
+//.countdown-timer div {
+//  font-size: 0.5em; /* Further adjust the size of individual elements if necessary */
+//}
 /* ==========================================================================
 Pre-rsvp stuff
 ========================================================================== */
