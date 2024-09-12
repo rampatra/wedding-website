@@ -19,7 +19,7 @@
   "license": "GPL-3.0",
   "homepage": "https://github.com/rampatra/wedding-website",
   "devDependencies": {
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^5.0.0",
     "gulp-uglify": "^3.0.2",
