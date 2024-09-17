@@ -259,11 +259,10 @@ Hero
   background-size: cover;
   position: relative;
 
-  /*.rsvp-btn {
-    position: absolute;
-    bottom: 100px;
-    left: 50%;
-  }*/
+  .rsvp-btn {
+    position: relative;
+    bottom: 130px;
+  }
   .down-arrow a {
     color: $txt-light;
   }
