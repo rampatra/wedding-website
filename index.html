@@ -88,6 +88,7 @@
                             <li><a href="#events_id">Events</a></li>
                             <li><a href="#photo-upload">Photo Upload</a></li>
                             <li><a href="#eng-pics">Us</a></li>
+                            <li><a href="#rsvp2">Pre-RSVP</a></li> <!-- New Menu Item -->
                         </ul>
                         <ul class="member-actions">
 <!--                            <li><a href="#map" class="login">Venue</a></li>-->
@@ -97,6 +98,18 @@
                 </div>
                 <div class="navicon">
                     <a class="nav-toggle" href="#"><span></span></a>
+                    <div id="menuModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <ul class="modal-menu">
+                                <li><a href="#intro">Our Story</a></li>
+                                <li><a href="#events_id">Events</a></li>
+                                <li><a href="#photo-upload">Photo Upload</a></li>
+                                <li><a href="#eng-pics">Us</a></li>
+                                <li><a href="#rsvp2">Pre-RSVP</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
@@ -501,6 +514,51 @@
     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
     ga('create', 'UA-46465113-4', 'auto');
     ga('send', 'pageview');
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const navToggle = document.querySelector('.nav-toggle');
+    const modal = document.getElementById('menuModal');
+    const closeBtn = document.querySelector('.close');
+    const modalButtons = document.querySelectorAll('.modal-menu li a'); // Select all buttons in the modal
+
+    function openModal() {
+        modal.style.display = 'block';
+        centerModal();
+    }
+
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    function centerModal() {
+        const modalContent = modal.querySelector('.modal-content');
+        const windowHeight = window.innerHeight;
+        const modalHeight = modalContent.offsetHeight;
+        const top = Math.max((windowHeight - modalHeight) / 2, 0);
+        modalContent.style.marginTop = `${top}px`;
+    }
+
+    navToggle.addEventListener('click', function (event) {
+        event.preventDefault();
+        openModal();
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+
+    window.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    modalButtons.forEach(button => {
+        button.addEventListener('click', closeModal);
+    });
+
+    window.addEventListener('resize', centerModal);
+});
 </script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {

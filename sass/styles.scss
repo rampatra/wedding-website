@@ -388,6 +388,59 @@ Navigation
 }
 
 /* ==========================================================================
+Model
+========================================================================== */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.modal-menu li {
+  margin: 10px 0;
+}
+
+.modal-menu li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+}
+
+/* ==========================================================================
 Hero
 ========================================================================== */
 .hero {
@@ -440,7 +493,7 @@ Hero
 }
 .navigation {
   transition: all 300ms ease-in-out;
-  position: fixed;
+  position: relative;
   width: 100%;
   z-index: 999;
 }
