@@ -755,6 +755,41 @@ Features-stack
 }
 
 /* ==========================================================================
+.faq-section
+========================================================================== */
+.faq-section {
+  // other existing styles remain the same
+}
+
+.faq-heading {
+  font-family: $font-special; // Change to a more elegant script font
+  font-size: 36px;
+  font-weight: 400; // Normal weight for better readability
+  color: $txt-primary;
+  margin-bottom: 20px;
+}
+
+.faq-question {
+  font-family: $font-serif; // Use 'Playfair Display' for a classic feel
+  font-size: 24px;
+  font-weight: 700;
+  color: $txt-secondary;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid $keyline-color;
+  padding-bottom: 10px;
+}
+
+.faq-answer {
+  font-family: $font-body; // Keep it simple and readable with 'Cormorant Garamond'
+  font-size: 18px;
+  font-style: italic; // Optional for a softer look
+  color: $txt-primary;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+/* ==========================================================================
 .events
 ========================================================================== */
 .events {
