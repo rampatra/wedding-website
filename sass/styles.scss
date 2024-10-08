@@ -782,15 +782,16 @@ Features-stack
 }
 
 .faq-question {
-  font-family: $font-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: $txt-secondary;
-  margin-top: 0; // No extra margin needed here
+  font-family: 'Playfair Display', serif; // Choose a new font here
+  font-size: 1.5em; // Adjust size as needed
+  font-weight: bold;
+  color: #2e6da4; // Change the color if desired
+  text-align: center;
+  margin-top: 20px;
   margin-bottom: 10px;
   border-bottom: 1px solid $keyline-color;
   padding-bottom: 10px;
-  max-width: 600px;
+  text-transform: uppercase; // Remove this if you want to keep normal casing
 }
 
 .faq-answer {
