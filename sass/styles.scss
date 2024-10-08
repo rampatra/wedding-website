@@ -758,6 +758,7 @@ Features-stack
 .faq-section
 ========================================================================== */
 // FAQ Section Styling
+
 .faq-section {
   display: flex;
   flex-direction: column;
@@ -789,9 +790,11 @@ Features-stack
   margin-bottom: 10px;
   border-bottom: 1px solid $keyline-color;
   padding-bottom: 10px;
+  max-width: 600px;
 }
 
 .faq-answer {
+  max-width: 600px;
   font-family: $font-body;
   font-size: 18px;
   color: $txt-primary;
