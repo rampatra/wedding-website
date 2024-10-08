@@ -84,13 +84,11 @@
                 <div class="header-nav">
                     <nav>
                         <ul class="primary-nav">
+                            <li><a href="#rsvp2" style="color: black;">Pre-RSVP</a></li> <!-- New Menu Item -->
                             <li><a href="#intro" style="color: black;">Our Story</a></li>
                             <li><a href="#events_id" style="color: black;">Events</a></li>
                             <li><a href="#photo-upload" style="color: black;">Photo Upload</a></li>
-                            <li><a href="#eng-pics" style="color: black;">Us</a></li>
-                            <li><a href="#rsvp2" style="color: black;">Pre-RSVP</a></li> <!-- New Menu Item -->
-                            <li><a href="travel.html" style="color: black;">Travel</a></li>
-                            <li><a href="faq.html" style="color: black;">FAQ</a></li>
+                            <li><a href="#eng-pics" style="color: black;">Engagement Photos</a></li>
                         </ul>
                         <ul class="member-actions">
 <!--                            <li><a href="#map" class="login">Venue</a></li>-->
@@ -104,13 +102,11 @@
                         <div class="modal-content">
                             <span class="close">&times;</span>
                             <ul class="modal-menu">
+                                <li><a href="#rsvp2">Pre-RSVP</a></li>
                                 <li><a href="#intro">Our Story</a></li>
                                 <li><a href="#events_id">Events</a></li>
                                 <li><a href="#photo-upload">Photo Upload</a></li>
-                                <li><a href="#eng-pics">Us</a></li>
-                                <li><a href="#rsvp2">Pre-RSVP</a></li>
-                                <li><a href="travel.html">Travel</a></li>
-                                <li><a href="faq.html">FAQ</a></li>
+                                <li><a href="#eng-pics">Engagement Photos</a></li>
                             </ul>
                         </div>
                     </div>
@@ -161,8 +157,89 @@
     </div>
 </section>
 
+<section class="rsvp text-center section-padding" id="rsvp2" style="background-color: #b3c7db; padding-bottom: 30px">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h3>What are you waiting for?</h3>
+                <div>
+                    <a id="preRsvpButton" class="pre-rsvp-btn btn-accent btn-small" data-toggle="modal"
+                       data-target="#pre-rsvp-modal">
+                        PRE-RSVP
+                    </a>
+                </div>
+                <div id="pre-rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                                </button>
+                                <h3>Help us plan!</h3>
+                                <p>We are so excited to have you join us for our wedding! <br>Please fill out the form
+                                    below to let us know what events you will likely attend. Your invitation will hold
+                                    the official invite link!</p>
+                                <form id="pre-rsvp-form" class="pre-rsvp-form" action="" method="POST">
+                                    <label for="firstName">First and Last Name(s) on Envelope:</label>
+                                    <input type="text" id="firstName" name="firstName" required><br><br>
+
+                                    <label for="attendWedding">Will your party be able to attend the
+                                        wedding?</label><br>
+                                    <div class="radio-group">
+                                        <input type="radio" id="attendYes" name="attendWedding" value="Yes" required>
+                                        <label for="attendYes">Yes</label>
+                                        <input type="radio" id="attendNo" name="attendWedding" value="No" required>
+                                        <label for="attendNo">No</label>
+                                    </div>
+                                    <br>
+
+                                    <label for="attendDinner">Will your party likely attend the Welcome
+                                        Dinner?</label><br>
+                                    <div class="radio-group">
+                                        <input type="radio" id="attendYes" name="attendDinner" value="Yes" required>
+                                        <label for="attendYes">Yes</label>
+                                        <input type="radio" id="attendNo" name="attendDinner" value="No" required>
+                                        <label for="attendNo">No</label>
+                                    </div>
+                                    <br>
+
+                                    <label for="stayArea">Will your party likely stay in the area?</label><br>
+                                    <div class="radio-group">
+                                        <input type="radio" id="stayYes" name="stayArea" value="Yes" required> <label
+                                            for="stayYes">Yes</label>
+                                        <input type="radio" id="stayNo" name="stayArea" value="No" required> <label
+                                            for="stayNo">No</label>
+                                    </div>
+                                    <br>
+
+                                    <label for="shuttleService">Would your party likely use a shuttle service if
+                                        provided?</label><br>
+                                    <div class="radio-group">
+                                        <input type="radio" id="shuttleYes" name="shuttleService" value="Yes" required>
+                                        <label for="shuttleYes">Yes</label>
+                                        <input type="radio" id="shuttleNo" name="shuttleService" value="No" required>
+                                        <label for="shuttleNo">No</label>
+                                    </div>
+                                    <br><br>
+                                    <button type="submit">Submit Pre-RSVP</button>
+                                </form>
+                                <div class="submit-message text-center" id="submitMessage" style="display: none; margin-top: 20px;">
+                                    <!-- Submit message will be displayed here -->
+                                </div>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
 <div class="logo-placeholder" style="display: flex; justify-content: center; align-items: center; margin: 0 auto;">
-    <img src="img/logo-lg-no-text.png" alt="Logo without text">
+<!--    flip the photo on X axis-->
+    <img src="img/logo-lg-no-text.png" alt="Logo without text" style="transform: scaleY(-1);">
 </div>
 
 <section id="intro" style="padding-top: 10px">
@@ -311,84 +388,6 @@
 
 </section>
 
-
-<section class="rsvp text-center section-padding" id="rsvp2" style="background-color: #b3c7db; padding-bottom: 30px">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <h3>What are you waiting for?</h3>
-                <div>
-                    <a id="preRsvpButton" class="pre-rsvp-btn btn-accent btn-small" data-toggle="modal"
-                       data-target="#pre-rsvp-modal">
-                        PRE-RSVP
-                    </a>
-                </div>
-                <div id="pre-rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
-                                </button>
-                                <h3>Help us plan!</h3>
-                                <p>We are so excited to have you join us for our wedding! <br>Please fill out the form
-                                    below to let us know what events you will likely attend. Your invitation will hold
-                                    the official invite link!</p>
-                                <form id="pre-rsvp-form" class="pre-rsvp-form" action="" method="POST">
-                                    <label for="firstName">First and Last Name(s) on Envelope:</label>
-                                    <input type="text" id="firstName" name="firstName" required><br><br>
-
-                                    <label for="attendWedding">Will your party be able to attend the
-                                        wedding?</label><br>
-                                    <div class="radio-group">
-                                        <input type="radio" id="attendYes" name="attendWedding" value="Yes" required>
-                                        <label for="attendYes">Yes</label>
-                                        <input type="radio" id="attendNo" name="attendWedding" value="No" required>
-                                        <label for="attendNo">No</label>
-                                    </div>
-                                    <br>
-
-                                    <label for="attendDinner">Will your party likely attend the Welcome
-                                        Dinner?</label><br>
-                                    <div class="radio-group">
-                                        <input type="radio" id="attendYes" name="attendDinner" value="Yes" required>
-                                        <label for="attendYes">Yes</label>
-                                        <input type="radio" id="attendNo" name="attendDinner" value="No" required>
-                                        <label for="attendNo">No</label>
-                                    </div>
-                                    <br>
-
-                                    <label for="stayArea">Will your party likely stay in the area?</label><br>
-                                    <div class="radio-group">
-                                        <input type="radio" id="stayYes" name="stayArea" value="Yes" required> <label
-                                            for="stayYes">Yes</label>
-                                        <input type="radio" id="stayNo" name="stayArea" value="No" required> <label
-                                            for="stayNo">No</label>
-                                    </div>
-                                    <br>
-
-                                    <label for="shuttleService">Would your party likely use a shuttle service if
-                                        provided?</label><br>
-                                    <div class="radio-group">
-                                        <input type="radio" id="shuttleYes" name="shuttleService" value="Yes" required>
-                                        <label for="shuttleYes">Yes</label>
-                                        <input type="radio" id="shuttleNo" name="shuttleService" value="No" required>
-                                        <label for="shuttleNo">No</label>
-                                    </div>
-                                    <br><br>
-                                    <button type="submit">Submit Pre-RSVP</button>
-                                </form>
-                                <div class="submit-message text-center" id="submitMessage" style="display: none; margin-top: 20px;">
-                                    <!-- Submit message will be displayed here -->
-                                </div>
-                            </div>
-                        </div><!-- /.modal-content -->
-                    </div><!-- /.modal-dialog -->
-                </div><!-- /.modal -->
-            </div>
-        </div>
-    </div>
-
-</section>
 
 
 <section id="eng-pics" class="section-padding">
