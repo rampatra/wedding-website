@@ -755,6 +755,55 @@ Features-stack
 }
 
 /* ==========================================================================
+.faq-section
+========================================================================== */
+// FAQ Section Styling
+
+.faq-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 40px; // Add spacing between FAQ items
+}
+
+.faq-heading {
+  font-family: $font-special; // Adjust as needed
+  font-size: 36px;
+  font-weight: 400;
+  color: $txt-primary;
+  margin-bottom: 40px;
+}
+
+.faq-question {
+  font-family: 'Playfair Display', serif; // Choose a new font here
+  font-size: 1.5em; // Adjust size as needed
+  font-weight: bold;
+  color: #2e6da4; // Change the color if desired
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid $keyline-color;
+  padding-bottom: 10px;
+  text-transform: uppercase; // Remove this if you want to keep normal casing
+}
+
+.faq-answer {
+  max-width: 600px;
+  font-family: $font-body;
+  font-size: 18px;
+  color: $txt-primary;
+  padding-top: 10px; // Space between question and answer
+  padding-bottom: 0;
+  text-align: center;
+}
+/* ==========================================================================
 .events
 ========================================================================== */
 .events {

@@ -1,0 +1,186 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>FAQs</title>
+    <meta name="description" content="We would like to invite you to our big day.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;700&family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <script src="https://kit.fontawesome.com/07a7aa3346.js" crossorigin="anonymous"></script>
+    <script>
+        // load css files from CDN if local node_modules fail
+        function loadCssFromCDN(css) {
+            // create new link tag
+            const link = document.createElement('link');
+            if (css === 'animate.css') {
+                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css';
+            } else if (css === 'font-awesome.css') {
+                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+            }
+            link.rel = 'stylesheet';
+
+            // add link tag to head section
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+        // load js files from CDN if
+        // local node_modules fail
+        function loadJsFromCDN(js) {
+            if (js === 'waypoints.js') {
+                document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"><\/script>');
+            } else if (js === 'jquery.js') {
+                document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>');
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;700&family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap"
+          rel="stylesheet">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="css/queries.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: Arial, sans-serif;
+            color: white;
+            /*background: url('img/eng_pics/EDDD2339-6EFD-4847-ACE7-BDB15602212E_1_105_c.jpeg') no-repeat fixed left;*/
+            /*background: url('img/eng_pics/version_2_long_to_short.jpeg') no-repeat fixed left;*/
+            background-size: cover;
+        }
+
+
+        /*!* Aligning FAQ content to the left *!*/
+        /*.faq-section {*/
+        /*    display: flex;*/
+        /*    align-items: center;*/
+        /*    justify-content: flex-start;*/
+        /*    padding-left: 50px;*/
+        /*    height: 100vh;*/
+        /*    margin-top: 60px; !* Adjusts for the header height *!*/
+        /*}*/
+
+        /*.faq-content {*/
+        /*    max-width: 600px;*/
+        /*    padding: 20px;*/
+        /*    border-radius: 8px;*/
+        /*    overflow-y: auto;*/
+        /*    !*max-height: 80vh;*!*/
+        /*}*/
+
+        /*!* Text color customization *!*/
+        /*h1, h2 {*/
+        /*    margin: 0 0 10px;*/
+        /*    color: #2e6da4;*/
+        /*}*/
+
+        /*p {*/
+        /*    margin: 0 0 20px;*/
+        /*    color: #5bc0de;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<!-- Navigation Section -->
+
+<section class="navigation">
+    <header>
+        <div class="header-content">
+            <div class="logo"><a href="index.html"><img src="img/logo.png" alt="Logo"></a></div>
+            <div class="header-nav">
+                <nav>
+                    <ul class="primary-nav">
+                        <li><a href="index.html" style="color: black">Home</a></li>
+                        <li><a href="travel.html" style="color: black">Travel</a></li>
+                    </ul>
+                    <ul class="member-actions">
+                        <li><a href="#rsvp2" class="btn-white btn-small">RSVP</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="navicon">
+            <a class="nav-toggle" href="index.html"><span></span></a>
+            <div id="menuModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <ul class="modal-menu">
+                        <li><a href="#rsvp2">Pre-RSVP</a></li>
+                        <li><a href="#intro">Our Story</a></li>
+                        <li><a href="#events_id">Events</a></li>
+                        <li><a href="#photo-upload">Photo Upload</a></li>
+                        <li><a href="#eng-pics">Engagement Photos</a></li>
+                        <li><a href="travel.html">Travel</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+</section>
+
+
+<!-- FAQ Section -->
+<!-- FAQ Section -->
+<section class="faq-section">
+    <!-- Flip the logo on the y-axis -->
+    <div class="logo-placeholder" style="width: 100%; display: flex; justify-content: center; align-items: center; margin: 0 auto;">
+        <!--    flip the photo on X axis-->
+        <img src="img/logo-lg-no-text.png" alt="Logo without text" style="transform: scaleY(-1);">
+    </div>
+
+    <h2 class="faq-heading">Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+        <h3 class="faq-question">Are kids welcome?</h3>
+        <p class="faq-answer">While we love kids, we are making this day adult only. Take the night off and get ready for an awesome time!</p>
+    </div>
+
+    <div class="faq-item">
+        <h3 class="faq-question">Shuttle Service?</h3>
+        <p class="faq-answer">A shuttle service will be provided; come back later for more information on timelines and pick up locations.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3 class="faq-question">Have dietary restrictions?</h3>
+        <p class="faq-answer">Don’t worry, we’re creating a menu that caters to most dietary restrictions and allergies.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3 class="faq-question">Will the wedding be indoors or outdoors?</h3>
+        <p class="faq-answer">Both! The ceremony, cocktail hour, and dinner will be held outside, and we will move inside for dancing. Don’t worry, we will have blankets and heaters in case they’re needed for the outdoor portion.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3 class="faq-question">Can I take photos during the ceremony?</h3>
+        <p class="faq-answer">Nope! We want to see your beautiful face while we walk down the aisle, not the back of your phone. We will give a designated time during the ceremony for you to take a photo, but otherwise, we ask that you refrain from taking photos during the ceremony.</p>
+    </div>
+</section>
+
+<!-- Footer (optional) -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center content">
+                <p>Crafted by Travis with lots of <span class="fa fa-heart pulse2"></span> for Lindsey</p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
