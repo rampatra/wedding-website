@@ -1,10 +1,181 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>FAQs</title>
+    <meta name="description" content="We would like to invite you to our big day.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;700&family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <script src="https://kit.fontawesome.com/07a7aa3346.js" crossorigin="anonymous"></script>
+    <script>
+        // load css files from CDN if local node_modules fail
+        function loadCssFromCDN(css) {
+            // create new link tag
+            const link = document.createElement('link');
+            if (css === 'animate.css') {
+                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css';
+            } else if (css === 'font-awesome.css') {
+                link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+            }
+            link.rel = 'stylesheet';
+
+            // add link tag to head section
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+        // load js files from CDN if
+        // local node_modules fail
+        function loadJsFromCDN(js) {
+            if (js === 'waypoints.js') {
+                document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"><\/script>');
+            } else if (js === 'jquery.js') {
+                document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>');
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;700&family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap"
+          rel="stylesheet">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="css/queries.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            /*font-family: Arial, sans-serif;*/
+            color: white;
+            background-size: cover;
+        }
+
+    </style>
 </head>
 <body>
+<!-- Navigation Section -->
 
+<section class="navigation">
+    <header>
+        <div class="header-content">
+            <div class="logo"><a href="index.html"><img src="img/logo.png" alt="Logo"></a></div>
+            <div class="header-nav">
+                <nav>
+                    <ul class="primary-nav">
+                        <li><a href="index.html" style="color: black">Home</a></li>
+                        <li><a href="faq.html" style="color: black">FAQ</a></li>
+                    </ul>
+                    <ul class="member-actions">
+                        <li><a href="index.html#rsvp2" class="btn-white btn-small">RSVP</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="navicon">
+            <a class="nav-toggle" href="index.html"><span></span></a>
+            <div id="menuModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <ul class="modal-menu">
+                        <li><a href="index.html#rsvp2">Pre-RSVP</a></li>
+                        <li><a href="index.html#intro">Our Story</a></li>
+                        <li><a href="index.html#events_id">Events</a></li>
+                        <li><a href="index.html#photo-upload">Photo Upload</a></li>
+                        <li><a href="index.html#eng-pics">Engagement Photos</a></li>
+                        <li><a href="travel.html">Travel</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+</section>
+
+
+<!-- FAQ Section -->
+<!-- FAQ Section -->
+<section class="faq-section">
+    <div class="logo-placeholder" style="width: 100%; display: flex; justify-content: center; align-items: center; margin: 0 auto;">
+        <img src="img/logo-lg-no-text.png" alt="Logo without text" style="transform: scaleY(-1);">
+    </div>
+
+    <h2 class="faq-heading">Travel and Stay</h2>
+
+    <!-- Holiday Inn Express Section -->
+    <div class="faq-item">
+        <h3 class="faq-question">
+            <a href="https://www.ihg.com/holidayinnexpress/hotels/us/en/fort-bragg/fobca/hoteldetail" style="color: #2e6da4" target="_blank" rel="noopener noreferrer">
+                Holiday Inn Express, Fort Bragg
+            </a>
+        </h3>
+        <p class="faq-answer">
+            We’ve saved a place for you! Book by calling the front desk and tell them you’re with Lindsey and Travis’ room block!
+            This hotel is located 10.2 miles and approximately 13 minutes from our venue. Shuttle service will be provided to and from the wedding.<br>
+            Available until May 15, 2025
+        </p>
+        <p class="faq-answer" style="align-content: center;"><a style="color: #2e6da4" href="tel:+17079641100">(707) 964-1100</a></p>
+    </div>
+
+    <!-- Alternative Stays Section -->
+    <div class="faq-item">
+        <h3 class="faq-question">Alternative Stays</h3>
+        <p class="faq-answer">
+            Hotels are few in this area, but we recommend checking out one of the many local bed and breakfasts in downtown Mendocino!<br>
+            Check out <a href="https://www.airbnb.com/s/mendocino--CA/homes?tab_id=home_tab&refinement_paths%5B%5D=%2Fhomes&query=mendocino%2C%20CA&place_id=ChIJzZQ7J6zXx4ARZz1x0gZ2Z1Y&source=structured_search_input_header&search_type=autocomplete_click" style="color: #2e6da4" target="_blank" rel="noopener noreferrer">Airbnb</a> for more options.
+        </p>
+    </div>
+
+    <!-- Nearest Airports Section -->
+    <div class="faq-item">
+        <h3 class="faq-question">Nearest Airports</h3>
+
+        <!-- Charles M. Schulz Sonoma County Airport -->
+        <h4><b style="color: #84755e">Charles M. Schulz Sonoma County Airport</b></h4>
+        <p class="faq-answer">
+            Technically speaking, this is the closest airport to Mendocino. It’s located in Santa Rosa, about 100 miles and two hours away from Mendocino. It’s a small airport that only serves a handful of cities, including <a href="http://www.sonomacountyairport.org/" style="color: #2e6da4" target="_blank" rel="noopener noreferrer">Denver, Dallas, Minneapolis, Los Angeles, Orange County, Phoenix, Portland, San Francisco, San Diego, Seattle, and Las Vegas</a>. They might not have a lot of flight options, but if you’re coming from one of these locations, then it’s definitely the way to go!
+        </p>
+
+        <!-- Oakland International Airport -->
+        <h4><b style="color: #84755e">Oakland International Airport (OAK)</b></h4>
+        <p class="faq-answer">
+            Located on the East side of the San Francisco Bay, <a href="https://www.oaklandairport.com/" style="color: #2e6da4" target="_blank" rel="noopener noreferrer">OAK</a> is nearly 200 miles and three and a half hours away from Mendocino. This international airport has flights available from just about anywhere you may be joining us from.
+        </p>
+
+        <!-- San Francisco International Airport -->
+        <h4><b style="color: #84755e">San Francisco International Airport (SFO)</b></h4>
+        <p class="faq-answer">
+            Located just south of San Francisco, <a href="https://www.flysfo.com/" style="color: #2e6da4" target="_blank" rel="noopener noreferrer">SFO</a> is nearly 200 miles and three and a half hours away from Mendocino. This international airport has flights available from just about anywhere you may be joining us from.
+        </p>
+
+        <!-- San Jose Mineta International Airport -->
+        <h4><b style="color: #84755e">San Jose Mineta International Airport (SJC)</b></h4>
+        <p class="faq-answer">
+            Located in Travis’ hometown (and many of yours), <a href="https://www.flysanjose.com/" style="color: #2e6da4" target="_blank" rel="noopener noreferrer">SJC</a> is roughly 215 miles and three hours and forty-five minutes away from Mendocino. This international airport has flights available from just about anywhere you may be joining us from.
+        </p>
+    </div>
+</section>
+
+<!-- Footer (optional) -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center content">
+                <p>Crafted by Travis with lots of <span class="fa fa-heart pulse2"></span> for Lindsey</p>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

@@ -770,7 +770,7 @@ Features-stack
 }
 
 .faq-item {
-  margin-bottom: 40px; // Add spacing between FAQ items
+  margin-bottom: 5px; // Add spacing between FAQ items
 }
 
 .faq-heading {
@@ -778,7 +778,7 @@ Features-stack
   font-size: 36px;
   font-weight: 400;
   color: $txt-primary;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
 .faq-question {
@@ -823,6 +823,13 @@ Features-stack
   }
 }
 
+/* ==========================================================================
+.collapsible
+========================================================================== */
+.caret {
+  transition: transform 0.3s ease;
+  margin-right: 8px;
+}
 /* ==========================================================================
 .blog
 ========================================================================== */
