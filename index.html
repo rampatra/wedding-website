@@ -48,16 +48,6 @@
                 document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"><\/script>');
             }
         }
-
-        // Google map
-        async function initMap() {
-            const { Map } = await google.maps.importLibrary("maps");
-
-            map = new Map(document.getElementById("map"), {
-                center: { lat: -34.397, lng: 150.644 },
-                zoom: 8,
-            });
-        }
     </script>
 
     <link rel="stylesheet" href="css/normalize.min.css">
@@ -388,8 +378,9 @@
                         </div>
                         <div class="col-md-6">
                             <h5>Skipton Taxi's</h5>
-                            <p><i class="fa fa-mobile"></i> <a href="tel://01756 701122">01756 701122</a><br>
-                                <i class="fa fa-mobile"></i> <a href="tel://+917123456789">idk yet</a></p>
+                            <p><i class="fa fa-mobile"></i> <a href="tel://01756 701122">01756 701122</a></p>
+                            <h5>Aire Cabs</h5>
+                            <p><i class="fa fa-mobile"></i> <a href="tel://01756 799999">01756 799999</a></p>
                         </div>
                     </div>
                     <div class="row text-center">
@@ -481,6 +472,34 @@
         </div>
     </div>
 </section>
+<script>
+    /********************** RSVP **********************/
+    $('#rsvp-form').on('submit', function (e) {
+        e.preventDefault();
+        var data = $(this).serialize();
+
+        $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
+
+        if ($('#invite_code').val() !== '61125') {
+            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
+        } else {
+            $.post('https://script.google.com/macros/s/AKfycbzJVKC49VAPVdwh_1hITT95gsN76DIpFvMQGGNXpAK_xrfb1igWkuvALC7bFXl3ccWJSg/exec', data)
+                .done(function (data) {
+                    console.log(data);
+                    if (data.result === "error") {
+                        $('#alert-wrapper').html(alert_markup('danger', data.message));
+                    } else {
+                        $('#alert-wrapper').html('');
+                        $('#rsvp-modal').modal('show');
+                    }
+                })
+                .fail(function (data) {
+                    console.log(data);
+                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+                });
+        }
+    });
+</script>
 
 <footer>
     <div class="container">
