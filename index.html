@@ -647,83 +647,86 @@ document.addEventListener('DOMContentLoaded', function () {
                 const guestSection = document.createElement("div");
                 guestSection.classList.add("guest-section");
 
-                guestSection.innerHTML = `
-                <h4>RSVP for ${guest["First Name"] || ""} ${guest["Last Name"] || ""}</h4>
+                // Add the Row Number as a custom attribute
+                guestSection.setAttribute("data-row-number", guest["Row Number"]); // Add this line here
 
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Welcome Party</label>
-                    <div class="col-sm-10">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" id="welcomeParty${index}Yes" name="welcomeParty${index}" value="Yes" ${
+                guestSection.innerHTML = `
+            <h4>RSVP for ${guest["First Name"] || ""} ${guest["Last Name"] || ""}</h4>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Welcome Party</label>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="welcomeParty${index}Yes" name="welcomeParty${index}" value="Yes" ${
                     guest["Welcome Party"] === "Yes" ? "checked" : ""
                 } required>
-                            <label class="form-check-label" for="welcomeParty${index}Yes">Yes</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" id="welcomeParty${index}No" name="welcomeParty${index}" value="No" ${
+                        <label class="form-check-label" for="welcomeParty${index}Yes">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="welcomeParty${index}No" name="welcomeParty${index}" value="No" ${
                     guest["Welcome Party"] === "No" ? "checked" : ""
                 } required>
-                            <label class="form-check-label" for="welcomeParty${index}No">No</label>
-                        </div>
+                        <label class="form-check-label" for="welcomeParty${index}No">No</label>
                     </div>
                 </div>
+            </div>
 
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Wedding</label>
-                    <div class="col-sm-10">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" id="wedding${index}Yes" name="wedding${index}" value="Yes" ${
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Wedding</label>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="wedding${index}Yes" name="wedding${index}" value="Yes" ${
                     guest["Wedding"] === "Yes" ? "checked" : ""
                 } required>
-                            <label class="form-check-label" for="wedding${index}Yes">Yes</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" id="wedding${index}No" name="wedding${index}" value="No" ${
+                        <label class="form-check-label" for="wedding${index}Yes">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="wedding${index}No" name="wedding${index}" value="No" ${
                     guest["Wedding"] === "No" ? "checked" : ""
                 } required>
-                            <label class="form-check-label" for="wedding${index}No">No</label>
-                        </div>
+                        <label class="form-check-label" for="wedding${index}No">No</label>
                     </div>
                 </div>
+            </div>
 
-                <div class="form-group row">
-                    <label class="col-sm-2 col-form-label">Goodbye Brunch</label>
-                    <div class="col-sm-10">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" id="goodbyeBrunch${index}Yes" name="goodbyeBrunch${index}" value="Yes" ${
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Goodbye Brunch</label>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="goodbyeBrunch${index}Yes" name="goodbyeBrunch${index}" value="Yes" ${
                     guest["Goodbye Brunch"] === "Yes" ? "checked" : ""
                 } required>
-                            <label class="form-check-label" for="goodbyeBrunch${index}Yes">Yes</label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" id="goodbyeBrunch${index}No" name="goodbyeBrunch${index}" value="No" ${
+                        <label class="form-check-label" for="goodbyeBrunch${index}Yes">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="goodbyeBrunch${index}No" name="goodbyeBrunch${index}" value="No" ${
                     guest["Goodbye Brunch"] === "No" ? "checked" : ""
                 } required>
-                            <label class="form-check-label" for="goodbyeBrunch${index}No">No</label>
-                        </div>
+                        <label class="form-check-label" for="goodbyeBrunch${index}No">No</label>
                     </div>
                 </div>
+            </div>
 
-                <div class="form-group row">
-                    <label for="mealChoice${index}" class="col-sm-2 col-form-label">Meal Choice</label>
-                    <div class="col-sm-10">
-                        <select class="form-control" id="mealChoice${index}" name="mealChoice${index}" required>
-                            <option value="" disabled ${
+            <div class="form-group row">
+                <label for="mealChoice${index}" class="col-sm-2 col-form-label">Meal Choice</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="mealChoice${index}" name="mealChoice${index}" required>
+                        <option value="" disabled ${
                     !guest["Meal Selection"] ? "selected" : ""
                 }>Select a meal</option>
-                            <option value="chicken" ${
+                        <option value="chicken" ${
                     guest["Meal Selection"] === "chicken" ? "selected" : ""
                 }>Chicken</option>
-                            <option value="fish" ${
+                        <option value="fish" ${
                     guest["Meal Selection"] === "fish" ? "selected" : ""
                 }>Fish</option>
-                            <option value="vegetarian" ${
+                        <option value="vegetarian" ${
                     guest["Meal Selection"] === "vegetarian" ? "selected" : ""
                 }>Vegetarian</option>
-                        </select>
-                    </div>
+                    </select>
                 </div>
-            `;
+            </div>
+        `;
 
                 dynamicRsvp.appendChild(guestSection);
             });
@@ -732,11 +735,71 @@ document.addEventListener('DOMContentLoaded', function () {
             const finalSubmitButton = document.createElement("div");
             finalSubmitButton.classList.add("form-group", "row", "text-center");
             finalSubmitButton.innerHTML = `
-            <div class="col-sm-12">
-                <button type="submit" class="btn btn-success btn-lg">Submit RSVP</button>
-            </div>
-        `;
+        <div class="col-sm-12">
+            <button type="button" id="finalSubmit" class="btn btn-success btn-lg">Submit RSVP</button>
+        </div>
+    `;
             dynamicRsvp.appendChild(finalSubmitButton);
+
+            // Handle final submission
+            document.getElementById("finalSubmit").addEventListener("click", handleFinalSubmit);
+        }
+
+        function mapKeysForSecondCall(guest) {
+            return {
+                first: guest["First Name"],
+                last: guest["Last Name"],
+                row_number_from_prev: guest["row_number"], // Mapping 'row_number' to 'row_number_from_prev'
+                welcome_party: guest["Welcome Party"] === "Yes" ? "Yes" : "No", // Convert to "Yes" or "No"
+                brunch: guest["Goodbye Brunch"] === "Yes" ? "Yes" : "No", // Convert to "Yes" or "No"
+                ceremony: guest["Wedding"] === "Yes" ? "Yes" : "No", // Convert to "Yes" or "No"
+                allergies: guest["Allergies"] || null, // Assuming allergies are optional
+                meal_preference: guest["Meal Selection"] || null,
+            };
+        }
+
+        async function handleFinalSubmit() {
+            const guests = Array.from(document.querySelectorAll(".guest-section")).map((section, index) => {
+                const rowNumber = section.getAttribute("data-row-number");
+
+                return {
+                    row_number: rowNumber, // Pass "Row Number" as "row_number" to the API
+                    "First Name": section.querySelector(`h4`).textContent.split(" ")[2],
+                    "Last Name": section.querySelector(`h4`).textContent.split(" ")[3],
+                    "Welcome Party": section.querySelector(`input[name="welcomeParty${index}"]:checked`)?.value || "No",
+                    "Wedding": section.querySelector(`input[name="wedding${index}"]:checked`)?.value || "No",
+                    "Goodbye Brunch": section.querySelector(`input[name="goodbyeBrunch${index}"]:checked`)?.value || "No",
+                    "Meal Selection": section.querySelector(`select[name="mealChoice${index}"]`)?.value || null,
+                };
+            });
+
+            // Submit each guest's data individually
+            for (const guest of guests) {
+                try {
+                    // Map keys to the format expected by the second API
+                    const mappedGuest = mapKeysForSecondCall(guest);
+
+                    const response = await fetch("https://hook.us1.make.com/8y6oj5hfas1ap2sqccrrr5dfrhhco9fp", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(mappedGuest),
+                    });
+
+                    if (response.ok) {
+                        console.log(`Guest submitted successfully:`, mappedGuest);
+                    } else {
+                        console.error(`Error submitting guest:`, mappedGuest);
+                        alert(`There was an error submitting RSVP for ${guest["First Name"]} ${guest["Last Name"]}. Please try again.`);
+                    }
+                } catch (error) {
+                    console.error(`Unexpected error submitting guest:`, error);
+                    alert(`An unexpected error occurred while submitting RSVP for ${guest["First Name"]} ${guest["Last Name"]}. Please try again.`);
+                }
+            }
+
+            alert("All guests processed. Please check for any error messages.");
         }
 
         function showError(message) {
