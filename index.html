@@ -600,8 +600,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const formData = new FormData(form);
             const searchParams = {
-                first: formData.get("first"),
-                last: formData.get("last"),
+                first: formData.get("first").trim(),
+                last: formData.get("last").trim(),
             };
 
             try {
@@ -648,7 +648,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 guestSection.classList.add("guest-section");
 
                 // Add the Row Number as a custom attribute
-                guestSection.setAttribute("data-row-number", guest["Row Number"]); // Add this line here
+                guestSection.setAttribute("data-row-number", guest["Row Number"]);
 
                 guestSection.innerHTML = `
             <h4>RSVP for ${guest["First Name"] || ""} ${guest["Last Name"] || ""}</h4>
@@ -657,15 +657,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 <label class="col-sm-2 col-form-label">Welcome Party</label>
                 <div class="col-sm-10">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="welcomeParty${index}Yes" name="welcomeParty${index}" value="Yes" ${
-                    guest["Welcome Party"] === "Yes" ? "checked" : ""
-                } required>
+                        <input class="form-check-input" type="radio" id="welcomeParty${index}Yes" name="welcomeParty${index}" value="Yes" ${guest["Welcome Party"] === "Yes" ? "checked" : ""} required>
                         <label class="form-check-label" for="welcomeParty${index}Yes">Yes</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="welcomeParty${index}No" name="welcomeParty${index}" value="No" ${
-                    guest["Welcome Party"] === "No" ? "checked" : ""
-                } required>
+                        <input class="form-check-input" type="radio" id="welcomeParty${index}No" name="welcomeParty${index}" value="No" ${guest["Welcome Party"] === "No" ? "checked" : ""} required>
                         <label class="form-check-label" for="welcomeParty${index}No">No</label>
                     </div>
                 </div>
@@ -675,15 +671,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 <label class="col-sm-2 col-form-label">Wedding</label>
                 <div class="col-sm-10">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="wedding${index}Yes" name="wedding${index}" value="Yes" ${
-                    guest["Wedding"] === "Yes" ? "checked" : ""
-                } required>
+                        <input class="form-check-input" type="radio" id="wedding${index}Yes" name="wedding${index}" value="Yes" ${guest["Wedding"] === "Yes" ? "checked" : ""} required>
                         <label class="form-check-label" for="wedding${index}Yes">Yes</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="wedding${index}No" name="wedding${index}" value="No" ${
-                    guest["Wedding"] === "No" ? "checked" : ""
-                } required>
+                        <input class="form-check-input" type="radio" id="wedding${index}No" name="wedding${index}" value="No" ${guest["Wedding"] === "No" ? "checked" : ""} required>
                         <label class="form-check-label" for="wedding${index}No">No</label>
                     </div>
                 </div>
@@ -693,37 +685,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 <label class="col-sm-2 col-form-label">Goodbye Brunch</label>
                 <div class="col-sm-10">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="goodbyeBrunch${index}Yes" name="goodbyeBrunch${index}" value="Yes" ${
-                    guest["Goodbye Brunch"] === "Yes" ? "checked" : ""
-                } required>
+                        <input class="form-check-input" type="radio" id="goodbyeBrunch${index}Yes" name="goodbyeBrunch${index}" value="Yes" ${guest["Goodbye Brunch"] === "Yes" ? "checked" : ""} required>
                         <label class="form-check-label" for="goodbyeBrunch${index}Yes">Yes</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="goodbyeBrunch${index}No" name="goodbyeBrunch${index}" value="No" ${
-                    guest["Goodbye Brunch"] === "No" ? "checked" : ""
-                } required>
+                        <input class="form-check-input" type="radio" id="goodbyeBrunch${index}No" name="goodbyeBrunch${index}" value="No" ${guest["Goodbye Brunch"] === "No" ? "checked" : ""} required>
                         <label class="form-check-label" for="goodbyeBrunch${index}No">No</label>
                     </div>
                 </div>
             </div>
 
             <div class="form-group row">
-                <label for="mealChoice${index}" class="col-sm-2 col-form-label">Meal Choice</label>
+                <label for="dietaryRestrictions${index}" class="col-sm-2 col-form-label">Dietary Restrictions</label>
                 <div class="col-sm-10">
-                    <select class="form-control" id="mealChoice${index}" name="mealChoice${index}" required>
-                        <option value="" disabled ${
-                    !guest["Meal Selection"] ? "selected" : ""
-                }>Select a meal</option>
-                        <option value="chicken" ${
-                    guest["Meal Selection"] === "chicken" ? "selected" : ""
-                }>Chicken</option>
-                        <option value="fish" ${
-                    guest["Meal Selection"] === "fish" ? "selected" : ""
-                }>Fish</option>
-                        <option value="vegetarian" ${
-                    guest["Meal Selection"] === "vegetarian" ? "selected" : ""
-                }>Vegetarian</option>
-                    </select>
+                    <input type="text" class="form-control" id="dietaryRestrictions${index}" name="dietaryRestrictions${index}" placeholder="Please specify any dietary restrictions" value="${guest["Dietary Restrictions"] || ""}" required>
                 </div>
             </div>
         `;
@@ -770,6 +745,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     "Wedding": section.querySelector(`input[name="wedding${index}"]:checked`)?.value || "No",
                     "Goodbye Brunch": section.querySelector(`input[name="goodbyeBrunch${index}"]:checked`)?.value || "No",
                     "Meal Selection": section.querySelector(`select[name="mealChoice${index}"]`)?.value || null,
+                    "Allergies": section.querySelector(`input[name="dietaryRestrictions${index}"]`)?.value || null,
                 };
             });
 
