@@ -651,10 +651,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 guestSection.setAttribute("data-row-number", guest["Row Number"]);
 
                 guestSection.innerHTML = `
-            <h4>RSVP for ${guest["First Name"] || ""} ${guest["Last Name"] || ""}</h4>
+           <h4>RSVP for ${guest["First Name"] || ""} ${guest["Last Name"] || ""}</h4>
 
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Welcome Party</label>
+            <div class="form-group row mb-3">
+                <label class="col-sm-2 col-form-label text-primary font-weight-bold">
+                    Welcome Party
+                </label>
                 <div class="col-sm-10">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" id="welcomeParty${index}Yes" name="welcomeParty${index}" value="Yes" ${guest["Welcome Party"] === "Yes" ? "checked" : ""} required>
@@ -667,8 +669,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             </div>
 
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Wedding</label>
+            <div class="form-group row mb-3">
+                <label class="col-sm-2 col-form-label text-primary font-weight-bold">
+                    Wedding
+                </label>
                 <div class="col-sm-10">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" id="wedding${index}Yes" name="wedding${index}" value="Yes" ${guest["Wedding"] === "Yes" ? "checked" : ""} required>
@@ -681,8 +685,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             </div>
 
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label">Goodbye Brunch</label>
+            <div class="form-group row mb-3">
+                <label class="col-sm-2 col-form-label text-primary font-weight-bold">
+                    Goodbye Brunch
+                </label>
                 <div class="col-sm-10">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" id="goodbyeBrunch${index}Yes" name="goodbyeBrunch${index}" value="Yes" ${guest["Goodbye Brunch"] === "Yes" ? "checked" : ""} required>
@@ -695,10 +701,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             </div>
 
-            <div class="form-group row">
-                <label for="dietaryRestrictions${index}" class="col-sm-2 col-form-label">Dietary Restrictions</label>
+            <div class="form-group row align-items-center mb-3">
+                <label for="dietaryRestrictions${index}" class="col-sm-2 col-form-label text-primary font-weight-bold">
+                    Dietary Restrictions
+                </label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="dietaryRestrictions${index}" name="dietaryRestrictions${index}" placeholder="Please specify any dietary restrictions" value="${guest["Dietary Restrictions"] || ""}" required>
+                    <input type="text"
+                           class="form-control rounded-pill border-info shadow-sm"
+                           id="dietaryRestrictions${index}"
+                           name="dietaryRestrictions${index}"
+                           placeholder="Please specify any dietary restrictions"
+                           value="${guest["Allergies"] || ""}"
+                           style="margin-left: 20px;">
                 </div>
             </div>
         `;
