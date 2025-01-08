@@ -6,14 +6,14 @@
 
     .intro-content {
         display: inline-block;
-        width: 70%;
+        width: 10%;
     }
 
 }
 
 @media screen and (max-width: 1024px) {
     .hero .hero-content {
-        padding-top: 50%;
+        padding-top: 60%;
     }
 }
 
@@ -30,7 +30,7 @@
 
     .header-nav {
         position: fixed;
-        background-color: #000;
+        background-color: #fff;
         width: 100%;
         height: 100%;
         top: 0;
@@ -65,10 +65,10 @@
     }
 
     nav ul li a {
-        color: #fff;
-        font-size: 25px;
-        text-transform: uppercase;
-        font-weight: 600;
+        color: #000000;
+        font-size: 15px;
+        text-transform: lowercase;
+        font-weight: 1000;
         -moz-transition: all 300ms ease-in-out;
         -o-transition: all 300ms ease-in-out;
         -webkit-transition: all 300ms ease-in-out;
@@ -183,7 +183,7 @@
 
     .intro-content {
         display: inline-block;
-        width: 75%;
+        width: 50%;
         margin-bottom: 30px;
     }
 
@@ -240,7 +240,7 @@
     }
 
     .rsvp {
-        padding-top: 40px;
+        padding-top: 10px;
     }
 
     footer .social-share {
@@ -258,7 +258,7 @@
     }
 
     #eng-pics .img-wrap i {
-        font-size: 25px;
+        font-size: 100px;
         position: absolute;
         width: 25px;
         height: 25px;
@@ -275,7 +275,7 @@
 
     footer ul.footer-group li a {
         font-size: 13px;
-        text-transform: uppercase;
+        text-transform: lowercase;
         padding: 20px 0;
         display: block;
         border-bottom: dashed 1px #4E566C;
@@ -311,7 +311,7 @@
     }
 
     .hero h1 {
-        font-size: 50px;
+        font-size: 100px;
     }
 
     .btn-margin-right {
@@ -331,7 +331,7 @@
         height: 1002px;
         background: url("../img/ipad-device.png") no-repeat center center;
         z-index: 1;
-        background-size: 40%;
+        background-size: 10%;
     }
 
     .features .iphone-wrap {
@@ -363,4 +363,15 @@
     .rsvp {
         padding-top: 20px;
     }
+}
+.font1{
+    font-weight: 500;
+}
+.heading{
+    color: black! important;
+    font-weight: 400;
+    font-size: 100;
+}
+.main-heading{
+    font-weight: 700;
 }
