@@ -1,17 +1,97 @@
 // Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,300,400italic,300italic,700,700italic');
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,300,700');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;700&family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap');
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
 @import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,400italic,300italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=Nunito:400,300,700);
-// Imports
-//@import "compass";
+@import url(https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;700&family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap);
+// Partials Imports
 @import "partials/typography";
 @import "partials/buttons";
 @import "partials/colors";
 @import "partials/layout";
 
-/* ==========================================================================
-Global Styles
-========================================================================== */
+// Font Variables
+$font-script: 'Cormorant Garamond', cursive;
+$font-serif: 'Playfair Display', serif;
+$font-special: 'Allura', serif;
+$font-body: 'Cormorant Garamond', serif;
+// Global Styles
+body {
+  font-family: $font-body;
+  font-weight: $light;
+  color: $txt-primary;
+  -webkit-text-size-adjust: 100%;
+  background-color: #b3c7db; // Ensure proper color
+}
+
+h1, h2, h3 {
+  font-family: $font-script;
+}
+
+h4, h5, h6 {
+  font-family: $font-serif;
+}
+.fancy-cursive {
+  font-family: 'Great Vibes', cursive;
+}
+.special-text {
+  font-family: 'Cormorant Garamond', serif;
+}
+.upload-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%; /* Ensures it takes up full width of its parent */
+  padding-left: 20px; /* Add padding to the left */
+  padding-right: 20px; /* Add padding to the right */
+  box-sizing: border-box; /* Ensures padding doesn't affect the overall width */
+}
+.big-text {
+  font-size: xxx-large; /* Adjust the size as needed */
+  font-weight: bold;
+}
+/* New class that extends the existing .btn class */
+.pre-rsvp-btn {
+  @extend .btn;
+  background-color: #4377af; /* Set your desired background color */
+  color: #fff; /* Ensure text color contrasts with background */
+  border-color: #4377af; /* Match border color with background */
+  padding: 5px 10px; /* Small button padding */
+  font-size: 14px; /* Small button font size */
+}
+.radio-group {
+  display: flex;
+  align-items: center;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 5px;
+}
+
+.radio-group label {
+  margin-right: 15px; /* Adjust the space between options */
+}
+.submit-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px; /* Adjust the max width as needed */
+}
+
+.submit-btn-container label {
+  margin-bottom: 10px; /* Add some space between the label and the input */
+}
+
+.submit-btn-container input[type="file"] {
+  text-align: center;
+  width: 100%;
+}
 .group:after {
   content: "";
   display: table;
@@ -36,13 +116,7 @@ a:hover, a:focus {
   color: $accent-color-hover;
   text-decoration: none;
 }
-body {
-  font-family: $sans-serif;
-  font-weight: $light;
-  color: $txt-primary;
-  -webkit-text-size-adjust: 100%;
-  //fix for iOS
-}
+
 *:focus {
   outline: none !important;
 }
@@ -54,7 +128,7 @@ ul li {
   list-style: none;
 }
 section .header {
-  padding-bottom: 30px;
+  padding-bottom: 15px;
 }
 .section-padding {
   padding: $section-padding;
@@ -105,8 +179,74 @@ section .header {
   border-radius: 4px;
 }
 /* ==========================================================================
+Countdown Timer
+========================================================================== */
+/* Adjust the overall size of the countdown timer */
+//.countdown-timer {
+//  font-size: 0.5em; /* Adjust the font size to make the text smaller */
+//  display: inline-block;
+//  transform: scale(0.1); /* Scale down the entire timer */
+//  transform-origin: top center;
+//  text-align: center;
+//}
+//
+///* Adjust specific parts of the countdown timer if needed */
+//.countdown-timer div {
+//  font-size: 0.5em; /* Further adjust the size of individual elements if necessary */
+//}
+/* ==========================================================================
+Pre-rsvp stuff
+========================================================================== */
+.pre-rsvp-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; /* Center the form horizontally */
+  max-width: 500px; /* Optional: Set a max width for the form */
+  padding: 20px; /* Optional: Add padding for spacing */
+}
+.form-input-container {
+  max-width: 300px; /* Adjust the max width as needed */
+  margin: 0 auto; /* Center the input containers */
+}
+/* ==========================================================================
 Animations
 ========================================================================== */
+// Variables
+$spinner-size: 120px;
+$spinner-border-size: 16px;
+$spinner-color: #3498db;
+$spinner-border-color: #f3f3f3;
+
+// Mixins
+@mixin center-element {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+// Spinner Styles
+#loadingSpinner {
+  @include center-element;
+
+  .spinner {
+    width: $spinner-size;
+    height: $spinner-size;
+    border: $spinner-border-size solid $spinner-border-color;
+    border-radius: 50%;
+    border-top: $spinner-border-size solid $spinner-color;
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+}
+
 .pulse2 {
   animation-name: pulse2;
   animation-duration: 1s;
@@ -248,22 +388,81 @@ Navigation
 }
 
 /* ==========================================================================
+Model
+========================================================================== */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.modal-menu li {
+  margin: 10px 0;
+}
+
+.modal-menu li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+}
+
+/* ==========================================================================
 Hero
 ========================================================================== */
 .hero {
-  min-height: 750px;
-  background: url('../img/hero-min.jpg') center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   position: relative;
+  min-height: 750px;
+  overflow: hidden;
+
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   /*.rsvp-btn {
     position: absolute;
     bottom: 100px;
     left: 50%;
   }*/
+
   .down-arrow a {
     color: $txt-light;
   }
@@ -279,6 +478,13 @@ Hero
   }
   .hero-content {
     padding-top: 40%;
+    padding-bottom: 20px;
+    max-width: 100%;
+    max-height: 100%;
+    min-height: 20%;
+    overflow: hidden;
+
+
   }
   .hero-content img {
     width: 55%;
@@ -287,7 +493,7 @@ Hero
 }
 .navigation {
   transition: all 300ms ease-in-out;
-  position: fixed;
+  position: relative;
   width: 100%;
   z-index: 999;
 }
@@ -548,6 +754,55 @@ Features-stack
   }
 }
 
+/* ==========================================================================
+.faq-section
+========================================================================== */
+// FAQ Section Styling
+
+.faq-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 40px; // Add spacing between FAQ items
+}
+
+.faq-heading {
+  font-family: $font-special; // Adjust as needed
+  font-size: 36px;
+  font-weight: 400;
+  color: $txt-primary;
+  margin-bottom: 40px;
+}
+
+.faq-question {
+  font-family: 'Playfair Display', serif; // Choose a new font here
+  font-size: 1.5em; // Adjust size as needed
+  font-weight: bold;
+  color: #2e6da4; // Change the color if desired
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid $keyline-color;
+  padding-bottom: 10px;
+  text-transform: uppercase; // Remove this if you want to keep normal casing
+}
+
+.faq-answer {
+  max-width: 600px;
+  font-family: $font-body;
+  font-size: 18px;
+  color: $txt-primary;
+  padding-top: 10px; // Space between question and answer
+  padding-bottom: 0;
+  text-align: center;
+}
 /* ==========================================================================
 .events
 ========================================================================== */
@@ -870,7 +1125,8 @@ footer {
     width: 50px;
     height: 50px;
     border: 1px solid $keyline-color;
-    background: #fff;
+    background: #b3c7db;
+
   }
   .to-top-wrapper .to-top {
     display: block;
