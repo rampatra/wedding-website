@@ -184,23 +184,22 @@ $(document).ready(function () {
         },
         data: {
             // Event title
-            title: "Ram and Antara's Wedding",
+            title: "Travis & Lindsey's Wedding",
 
             // Event start date
-            start: new Date('Nov 27, 2017 10:00'),
+            start: new Date('June 21, 2025 17:00'),
 
             // Event duration (IN MINUTES)
             // duration: 120,
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('Nov 29, 2017 00:00'),
-
+            end: new Date('June 21, 2025 22:00'),
             // Event Address
-            address: 'ITC Fortune Park Hotel, Kolkata',
+            address: '8475 North CA-1, Little River, CA 95456',
 
             // Event Description
-            description: "We can't wait to see you on our big day. For any queries or issues, please contact Mr. Amit Roy at +91 9876543210."
+            description: "We can't wait to see you on our big day. For any queries or issues, please contact Travis Barton at (408) 826-2999"
         }
     });
 
@@ -208,6 +207,7 @@ $(document).ready(function () {
 
 
     /********************** RSVP **********************/
+    /* replace this with a zapier integration */
     $('#rsvp-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
@@ -237,11 +237,13 @@ $(document).ready(function () {
 
 });
 
+
+
 /********************** Extras **********************/
 
 // Google map
-function initMap() {
-    var location = {lat: 22.5932759, lng: 88.27027720000001};
+function initMap() { // 39.280920154628745, -123.79108663359153
+    var location = {lat: 39.280920154628745, lng: -123.79108663359153};
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
         center: location,
@@ -254,8 +256,30 @@ function initMap() {
     });
 }
 
+// JavaScript
+// function initMaps() {
+//     // Create the wedding venue map
+//     var venueMap = new google.maps.Map(document.getElementById('venueMap'), {
+//         zoom: 10,
+//         center: {lat: -34.397, lng: 150.644} // Replace with the coordinates of the wedding venue
+//     });
+//
+//     // Add a marker for the wedding venue
+//     new google.maps.Marker({
+//         position: {lat: -34.397, lng: 150.644}, // Replace with the coordinates of the wedding venue
+//         map: venueMap
+//     });
+//
+//     // Create the recommended housing map
+//     var housingMap = new google.maps.Map(document.getElementById('housingMap'), {
+//         zoom: 10,
+//         center: {lat: -34.397, lng: 150.644} // Replace with the coordinates of the recommended housing
+//     });
+// }
+    // Add markers for the recommended housing
+
 function initBBSRMap() {
-    var la_fiesta = {lat: 20.305826, lng: 85.85480189999998};
+    var la_fiesta = {lat: 39.280920154628745, lng: -123.79108663359153};
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
         center: la_fiesta,

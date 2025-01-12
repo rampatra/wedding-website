@@ -41,6 +41,7 @@ body {
   font-weight: $light;
   color: $txt-primary;
   -webkit-text-size-adjust: 100%;
+  background-color: #b3c7db
   //fix for iOS
 }
 *:focus {
@@ -251,19 +252,25 @@ Navigation
 Hero
 ========================================================================== */
 .hero {
-  min-height: 750px;
-  background: url('../img/hero-min.jpg') center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   position: relative;
+  min-height: 750px;
+  overflow: hidden;
+
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   /*.rsvp-btn {
     position: absolute;
     bottom: 100px;
     left: 50%;
   }*/
+
   .down-arrow a {
     color: $txt-light;
   }
@@ -279,6 +286,13 @@ Hero
   }
   .hero-content {
     padding-top: 40%;
+    padding-bottom: 20px;
+    max-width: 100%;
+    max-height: 100%;
+    min-height: 20%;
+    overflow: hidden;
+
+
   }
   .hero-content img {
     width: 55%;
@@ -870,7 +884,8 @@ footer {
     width: 50px;
     height: 50px;
     border: 1px solid $keyline-color;
-    background: #fff;
+    background: #b3c7db;
+
   }
   .to-top-wrapper .to-top {
     display: block;

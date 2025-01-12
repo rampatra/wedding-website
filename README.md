@@ -1,3 +1,12 @@
+# todo:
+- [ ] Replace the maps feature a more bland "Travel" section that includes a link to the venue on google maps + a list of nearby hotels 
+- [ ] Add images of us 
+- [ ] Add a countdown timer
+- [ ] Edit our story
+- [ ] Add a photo upload applet for guests to upload photos
+- [ ] update RSVP to use our preferred style with a modal form that autocompletes their party and lets them rsvp for all events at once
+- [ ] Change image to text that reads "Lindsey + Travis \n 2025" in nice cursive font that appears dynamically on the page (hard)
+
 # Wedding Website
 A beautiful, feature rich, device friendly wedding website.  
 _See [wedding.rampatra.com](http://wedding.rampatra.com/) for a demo. Use invite code `271117` to RSVP._
@@ -38,3 +47,5 @@ Firstly, a big thanks 🙏🏻 for the overwhelming response on [HackerNews](htt
 <a href="https://www.buymeacoffee.com/rampatra" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
 _P.S. For any queries or concerns, you can reach out to me on [Twitter](https://twitter.com/ram__patra). I'll try my best to help._
+
+
