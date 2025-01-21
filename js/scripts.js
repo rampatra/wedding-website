@@ -184,7 +184,7 @@ $(document).ready(function () {
         },
         data: {
             // Event title
-            title: "James & Becky's Wedding",
+            title: "Becky and James Wedding",
 
             // Event start date
             start: new Date('Nov 6, 2025 13:00'),
@@ -200,7 +200,7 @@ $(document).ready(function () {
             address: 'Tithe Barn, Bolton Abbey, Skipton, BD23 6EX',
 
             // Event Description
-            description: "We can't wait to see you on our big day. For any queries or issues, please contact James Wilson on +44 7415 700445."
+            description: "We can't wait to see you on our big day. For any queries or issues, please contact James on 07415 700445."
         }
     });
 
@@ -215,7 +215,7 @@ $(document).ready(function () {
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
         if (MD5($('#invite_code').val()) !== 'cc485beea0bdcdb7ad2fa1e7213bd4eb'
-            && MD5($('#invite_code').val()) !== '9e20abcf5889d4c8745cb43ce925e49e') {
+            || MD5($('#invite_code').val()) !== '9e20abcf5889d4c8745cb43ce925e49e') {
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
         } else {
             $.post('https://script.google.com/macros/s/AKfycbxsbbxhiA_AdoZ-fqHvfbjsf_UEikZpmhSi7tBksWcrwGqXK-IAclUue84mfU5Dey20BA/exec', data)

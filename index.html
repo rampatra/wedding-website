@@ -286,7 +286,7 @@
 -->
 <section id="video-bg" class="hidden-sm hidden-xs">
     <div id="bgndVideo" class="player"
-         data-property="{videoURL:'https://www.youtube.com/watch?v=YXUuRWJFcMk&ab_channel=UnifiedFilms',containment:'#video-bg',autoPlay:true, mute:true, showControls:false, startAt:80, stopAt:259, opacity:1}">
+         data-property="{videoURL:'https://www.youtube.com/watch?v=ZHS3sM4tXcQ&ab_channel=TheVoid',containment:'#video-bg',autoPlay:true, mute:true, showControls:false, startAt:80, stopAt:259, opacity:1}">
     </div>
     <div id="video-content">
         <h5>Tithe Barn</h5>
@@ -326,13 +326,6 @@
                         </div>
                     </div>
                     <div class="row text-center">
-                        <!--
-                        <div class="col-md-6" style="padding: 5px;">
-                            <a class="btn btn-fill btn-small"
-                               href="https://m.uber.com/ul/?action=setPickup&client_id=Yh7Dl6SjB56RY2JuuZF8ttVa6ryFV78W&pickup=my_location&dropoff[formatted_address]=Fortune%20Park%20Panchwati%20-%20Hotels%20in%20Kolkata%2C%20Howrah%2C%20West%20Bengal%2C%20India&dropoff[latitude]=22.593276&dropoff[longitude]=88.270277"><i
-                                    class="fa fa-taxi"></i>&nbsp;&nbsp;Book Uber</a>
-                        </div>
-                    -->
                         <div class="col-md-12" style="padding: 5px;">
                             <a class="btn btn-accent btn-small" id="btn-show-map"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Show
                                 map</a>
@@ -345,8 +338,51 @@
 </section>
 
 <section id="hotels" class="events section-padding">
-    <div class="text-center">
-        <h3>Where to stay?</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="header">Where to stay?</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="wp3">
+                    <h5>The Devonshire Arms Hotel & Spa (0.8 miles)</h5>
+                    <p><a href="https://devonshirehotels.co.uk/devonshire-arms-hotel-spa/" target="_blank">devonshirearms.co.uk</a><br>
+                        <i class="fa fa-mobile"></i> <a href="tel://01756 718100">01756 718100</a></p>
+                </div>
+                <div class="wp3">
+                    <h5>The Riverside Hotel (5.6 miles)</h5>
+                    <p><a href="https://ilkley-riversidehotel.com/" target="_blank">ilkley-riversidehotel.com</a><br>
+                        <i class="fa fa-mobile"></i> <a href="tel://01943 607338">01943 607338</a></p>
+                </div>
+                <div class="wp3">
+                    <h5>The Devonshire Fell Hotel (5.8 miles)</h5>
+                    <p><a href="https://devonshirehotels.co.uk/devonshire-fell-burnsall/" target="_blank">devonshirefell.co.uk</a><br>
+                        <i class="fa fa-mobile"></i> <a href="tel://01756 729000">01756 729000</a></p>
+                </div>
+                <div class="wp3">
+                    <h5>Herriots Hotel (6.9 miles)</h5>
+                    <p><a href="https://www.herriotsforleisure.co.uk/" target="_blank">herriotsforleisure.co.uk</a><br>
+                        <i class="fa fa-mobile"></i> <a href="tel://01756 792781">01756 792781</a></p>
+                </div>
+                <div class="wp3">
+                    <h5>Travelodge Skipton (7.9 miles)</h5>
+                    <p><a href="https://www.travelodge.co.uk/hotels/176/Skipton-hotel?WT.tsrc=GHA_Organic&utm_campaign=GHA_Skipton&utm_medium=GHA_Organic&utm_source=google" target="_blank">travelodge.co.uk</a><br>
+                        <i class="fa fa-mobile"></i> <a href="tel://08719 846177">08719 846177</a></p>
+                </div>
+                <div class="wp3">
+                    <h5>The Coniston Hotel Country Estate & Spa (13.2 miles)</h5>
+                    <p><a href="https://theconistonhotel.com/" target="_blank">theconistonhotel.com</a><br>
+                        <i class="fa fa-mobile"></i> <a href="tel://01756 748080">01756 748080</a></p>
+                </div>
+                <div class="wp3">
+                    <h5>Premier Inn, Skipton (15.4 miles)</h5>
+                    <p><a href="https://www.premierinn.com/gb/en/hotels/england/north-yorkshire/skipton/skipton-north-gargrave.html" target="_blank">premierinn.com</a><br>
+                        <i class="fa fa-mobile"></i> <a href="tel://0871 5278980">0871 5278980</a></p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -372,7 +408,7 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <h3>What are you waiting for?</h3>
-                <p>We would greatly appreciate if you could RSVP before 1st of November '17</p>
+                <p>We would greatly appreciate if you could RSVP before a date</p>
                 <form id="rsvp-form" class="rsvp-form"
                       action=""
                       method="POST">
@@ -393,12 +429,20 @@
                         </div>
                     </div>
                     <div class="row">
+                        <!--
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
                                 <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0"
                                                                   max="4"
                                                                   placeholder="Husband/Wife or kids"
                                                                   required>
+                            </div>
+                        </div>
+                        -->
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-users"></i><input name="extras" class=""
+                                                                    placeholder="RSVP for another">
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6">
