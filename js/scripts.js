@@ -200,7 +200,7 @@ $(document).ready(function () {
             address: 'Nádas Tó Park Hotel, Vasad',
 
             // Event Description
-            description: "Alig várjuk, hogy találkozzunk a nagy napon. Bármilyen kérdéssel vagy problémával kerress nyugodtan. Enci: 30-608-3538, Gábor: 20-328-3823"
+            description: "Alig várjuk, hogy találkozzunk a nagy napon. Bármilyen kérdéssel vagy problémával keress nyugodtan. Enci: 30-608-3538, Gábor: 20-328-3823"
         }
     });
 
@@ -222,9 +222,10 @@ $(document).ready(function () {
         e.preventDefault();
         var data = $(this).serialize();
 
-        $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
+        $('#alert-wrapper').html(alert_markup('info', '<strong>Egy pillanat!</strong> Épp beküldjük az adatokat.'));
 
-        $.post('https://script.google.com/macros/s/AKfycby80B1dtbluRuPHKzpKpLs48MlWhqgB1lpVWtZ5Uy2y7JqxtH-WEb482NPqXUuNOlXj/exec', data)
+        var scriptId = "AKfycbxjSoxr4vDrn1BDw51hFCW6VXTdJjNP0D-1xQaM3x4idCQ8It1q8kgvMw0HM5HXQ5k"
+        $.post('https://script.google.com/macros/s/' + scriptId + '/exec', data)
             .done(function (data) {
                 console.log(data);
                 if (data.result === "error") {
