@@ -428,8 +428,8 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
                         </button>
                         <div class="section-padding">
-                            <h3>Thank you!</h3>
-                            <p>We are glad to see you join us on our big day.</p>
+                            <h3>Köszönjük!</h3>
+                            <p>Örülünk, hogy csatlakozol hozzánk a nagy napon.</p>
                             <div id="add-to-cal"></div>
                         </div>
                     </div>
@@ -440,25 +440,58 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-md-offset-3">
-                    <h3>What are you waiting for?</h3>
-                    <p>We would greatly appreciate if you could RSVP before 1st of November '17</p>
+                    <h3>Mire vársz?</h3>
+                    <p>Kérlek töltsd ki a visszajelző felületet Április 25-ig.</p>
                 <form id="rsvp-form" class="rsvp-form"
                       action=""
                       method="POST">
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-input-group">
-                                    <i class="fa fa-envelope"></i><input type="email" name="email" class=""
-                                        placeholder="Your email" value="asd@asd.com" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                <div class="form-input-group">
-                                    <i class="fa fa-user"></i><input name="name" class="" placeholder="Your name"
-                                        value="Myname" required>
-                                </div>
-                            </div>
-                        </div>
+                      <div class="row">
+                          <div class="col-md-6 col-sm-6">
+                              <div class="form-input-group">
+                                  <i class="fa fa-envelope"></i><input type="email" name="email" class=""
+                                      placeholder="Your email" value="asd@asd.com" required>
+                              </div>
+                          </div>
+                          <div class="col-md-6 col-sm-6">
+                              <div class="form-input-group">
+                                  <i class="fa fa-user"></i><input name="name" class="" placeholder="Your name"
+                                      value="Myname" required>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-6 col-sm-6">
+                              <div class="form-input-group">
+                                <i class="fa fa-child"></i>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="isChild" class="checkbox" id="customCheckbox"/>
+                                    <div class="checkbox-custom"></div>
+                                    <span class="checkbox-label">14 alatti</span>
+                                </label>
+                              </div>
+                          </div>
+                          <div class="col-md-6 col-sm-6">
+                              <div class="form-input-group">
+                                  <i class="fa fa-cutlery"></i><input name="allergies" class="" placeholder="glutén, laktóz, vega, vegán...">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-6 col-sm-6">
+                              <div class="form-input-group">
+                                <i class="fa fa-hotel"></i>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="needHotel" class="checkbox" id="customCheckbox"/>
+                                    <div class="checkbox-custom"></div>
+                                    <span class="checkbox-label">szeretnék szállást</span>
+                                </label>
+                              </div>
+                          </div>
+                          <div class="col-md-6 col-sm-6">
+                              <div class="form-input-group">
+                              </div>
+                          </div>
+                      </div>
                         <div class="row">
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-input-group">
@@ -476,10 +509,7 @@
                         <div class="row">
                             <div class="col-md-12" id="alert-wrapper"></div>
                         </div>
-                        <button class="btn-fill rsvp-btn">
-                            Yes,
-                            that's me!
-                        </button>
+                        <button class="btn-fill rsvp-btn">Küldés</button>
                     </form>
                 </div>
             </div>

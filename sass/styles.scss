@@ -806,6 +806,7 @@ RSVP form
       border: solid 1px $keyline-color;
       text-align: left;
       position: relative;
+      align-content: center;
 
       i {
         color: $accent-color;
@@ -821,7 +822,7 @@ RSVP form
         left: 30px;
         transform: translateY(-50%);
       }
-      i.fa-user, i.fa-users, i.fa-envelope, .fa-key {
+      .fa-user, .fa-users, .fa-envelope, .fa-key, .fa-child, .fa-cutlery, .fa-hotel {
         font-size: 14px;
         position: absolute;
         top: 50%;
@@ -848,6 +849,42 @@ RSVP form
       }
       input:-ms-input-placeholder {
         color: $form-placeholder;
+      }
+
+      .checkbox-container {
+        padding-left: 68px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: unset;
+        margin: 0px;
+      }
+  
+      .checkbox-container input[type="checkbox"] {
+        display: none; /* Eltüntetjük az alapértelmezett checkboxot */
+      }
+  
+      .checkbox-custom {
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #d9d9d9;
+        border-radius: 4px;
+        display: flex;
+      }
+  
+      .checkbox-container input[type="checkbox"]:checked + .checkbox-custom {
+        background-color: #e8ca6f; /* Illeszkedik a gomb arany színéhez */
+        border-color: #e8ca6f;
+      }
+  
+      .checkbox-container input[type="checkbox"]:checked + .checkbox-custom::before {
+        content: "✓";
+        color: white;
+        font-size: 14px;
+        justify-content: center;
+        align-items: center;
       }
     }
   }

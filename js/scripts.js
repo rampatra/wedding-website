@@ -184,23 +184,23 @@ $(document).ready(function () {
         },
         data: {
             // Event title
-            title: "Ram and Antara's Wedding",
+            title: "Enci és Gábor esküvője",
 
             // Event start date
-            start: new Date('Nov 27, 2017 10:00'),
+            start: new Date('Aug 2, 2025 17:00'),
 
             // Event duration (IN MINUTES)
             // duration: 120,
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('Nov 29, 2017 00:00'),
+            end: new Date('Aug 2, 2025 23:59'),
 
             // Event Address
-            address: 'ITC Fortune Park Hotel, Kolkata',
+            address: 'Nádas Tó Park Hotel, Vasad',
 
             // Event Description
-            description: "We can't wait to see you on our big day. For any queries or issues, please contact Mr. Amit Roy at +91 9876543210."
+            description: "Alig várjuk, hogy találkozzunk a nagy napon. Bármilyen kérdéssel vagy problémával kerress nyugodtan. Enci: 30-608-3538, Gábor: 20-328-3823"
         }
     });
 
@@ -208,6 +208,16 @@ $(document).ready(function () {
 
 
     /********************** RSVP **********************/
+    /*$('#rsvp-form').on('submit', function (e) {
+        e.preventDefault();
+
+        $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
+
+        $('#alert-wrapper').html('');
+        $('#rsvp-modal').modal('show');
+    });
+    */
+    // original RSVP
     $('#rsvp-form').on('submit', function (e) {
         e.preventDefault();
         var data = $(this).serialize();
@@ -226,9 +236,10 @@ $(document).ready(function () {
             })
             .fail(function (data) {
                 console.log(data);
-                $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+                $('#alert-wrapper').html(alert_markup('danger', '<strong>AMANÓBA!</strong> A szerver jelenleg nem elérhető, kérjük próbáld meg később'));
             });
     });
+    //*/
 
 });
 
