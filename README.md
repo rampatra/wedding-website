@@ -30,11 +30,29 @@ customize each of them according to your needs.
 Hello, my name is Ram. I am a Director of Software Engineering at [Mastercard](https://www.mastercard.com/). I enjoy making teeny tiny applications in
 my leisure time and this is one of them. Now that my wedding is over, I am open-sourcing the project. Hope you like it!
 
-Lastly, if you use a Mac then you may also love [Presentify](https://presentifyapp.com/), [FaceScreen](https://facescreenapp.com/), or [ToDoBar](https://todobarapp.com/). Give them a whirl and let me know your thoughts.
+# Sponsors
+Proudly sponsored by these awesome apps. Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://x.com/rampatra_)]
+
+<table>
+    <tr>
+        <td>
+            <a href="https://presentifyapp.com/" target="_blank"><img src="https://presentifyapp.com/assets/img/presentify/app-icon-512.png" width="150" height="150"></a>
+        </td>
+        <td>
+            <a href="https://facescreenapp.com/" target="_blank"><img src="https://github.com/user-attachments/assets/b251b413-ccc4-48f1-a316-c2c2a71f959e" width="150" height="150"></a>
+        </td>
+        <td>
+            <a href="https://todobarapp.com/" target="_blank"><img src="https://todobarapp.com/assets/img/todobar/app-icon-512.png" width="150" height="150"></a>
+        </td>
+        <td>
+            <a href="https://simplefillapp.com/" target="_blank"><img src="https://github.com/user-attachments/assets/6c575d9c-b65b-4ce7-a468-30f74cfedf18" width="150" height="150"></a>
+        </td>
+    </tr>
+</table>
 
 # Contribute
-Firstly, a big thanks 🙏🏻 for the overwhelming response on [HackerNews](https://news.ycombinator.com/item?id=18556787), and [Reddit](https://www.reddit.com/r/opensource/comments/a1bx4h/i_am_open_sourcing_my_wedding_website_on_my_first/). If you would like to contribute to this project, you can do so by creating a [PR](https://help.github.com/articles/about-pull-requests/); and to support my work, you can click on one of the links under the "Sponsor this project" section or the button below.
+First, a big thank you 🙏🏻 for the overwhelming response on [Hacker News](https://news.ycombinator.com/item?id=18556787) and [Reddit](https://www.reddit.com/r/opensource/comments/a1bx4h/i_am_open_sourcing_my_wedding_website_on_my_first/). If you'd like to contribute to the project, feel free to create a [PR](https://help.github.com/articles/about-pull-requests/). To support my work, you can buy one of the apps listed under the "Sponsors" section or click the button below.
 
 <a href="https://www.buymeacoffee.com/rampatra" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
-_P.S. For any queries or concerns, you can reach out to me on [Twitter](https://twitter.com/ram__patra). I'll try my best to help._
+_P.S. For any queries or concerns, you can reach out to me on [Twitter](https://twitter.com/rampatra_). I'll try my best to help._
